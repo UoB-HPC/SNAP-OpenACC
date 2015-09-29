@@ -5,12 +5,12 @@
 # User defined parameters
 DBG 	 = no
 PROFILER = yes
-COPTION  = -qopt-report=5 -qopt-report-phase=vec
+COPTION  = 
 FOPTION  = 
-OPENMP 	 = -qopenmp
+OPENMP 	 = -mp
 TARGET 	 = snap
-CC 		 = mpiicc
-FORTRAN  = mpiifort
+CC 		 = mpicc
+FORTRAN  = mpif90
 
 # Enables debugging mode
 ifeq ($(DBG),yes)
@@ -22,14 +22,13 @@ else
   CFLAGS = -O3 $(MIC) $(OPENMP) $(COPTION)
 endif
 
+CFLAGS += -c99 
 CFLAGS2 = -lm
 FFLAG2 =
 
 # Enables fine grained profiling of C implementation
 ifeq ($(PROFILER), yes)
-  CFLAGS += -std=gnu99 -DENABLE_PROFILING
-else
-  CFLAGS += -std=c99 
+  CFLAGS += -DENABLE_PROFILING
 endif
 
 ifdef TIMING

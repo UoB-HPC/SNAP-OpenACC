@@ -77,9 +77,12 @@ void sweep_octant(
     // This bit string is lexiographically organised
     // This is the order to match the original SNAP
     // However this required all vacuum boundaries
-    int order_3d = 0b000001010011100101110111;
+    
+    //int order_3d = 0b000001010011100101110111;
+    int order_3d = 342391;
 
-    int order_2d = 0b11100100;
+    //int order_2d = 0b11100100;
+    int order_2d = 228;
 
     // Use the bit mask to get the right values for starting positions of the sweep
     int xhi = ((order_3d >> (oct * 3)) & 1) ? nx : 0;
@@ -142,6 +145,7 @@ void sweep_cell(
 {
     START_PROFILING;
 
+#pragma acc kernels
     for(int nc = 0; nc < num_cells; ++nc)
     {
         for(int tg = 0; tg < num_groups_todo; ++tg)

@@ -111,23 +111,23 @@ void initialise_device_memory(
     // flux_j(nang,ichunk,nz,ng) - Working psi_y array
     // flux_k(nang,ichunk,ny,ng) - Working psi_z array
 
-    flux_i = (double*)_mm_malloc(sizeof(double)*nang*ny*nz*ng, VEC_ALIGN);
-    flux_j = (double*)_mm_malloc(sizeof(double)*nang*nx*nz*ng, VEC_ALIGN);
-    flux_k = (double*)_mm_malloc(sizeof(double)*nang*nx*ny*ng, VEC_ALIGN);
+    flux_i = (double*)malloc(sizeof(double)*nang*ny*nz*ng);
+    flux_j = (double*)malloc(sizeof(double)*nang*nx*nz*ng);
+    flux_k = (double*)malloc(sizeof(double)*nang*nx*ny*ng);
 
     zero_flux_moments_buffer();
     zero_edge_flux_buffers();
     zero_scalar_flux();
 
-    dd_j = (double*)_mm_malloc(sizeof(double)*nang, VEC_ALIGN);
-    dd_k = (double*)_mm_malloc(sizeof(double)*nang, VEC_ALIGN);
-    total_cross_section = (double*)_mm_malloc(sizeof(double)*nx*ny*nz*ng, VEC_ALIGN);
-    scat_cs = (double*)_mm_malloc(sizeof(double)*nmom*nx*ny*nz*ng, VEC_ALIGN);
-    denom = (double*)_mm_malloc(sizeof(double)*nang*nx*ny*nz*ng, VEC_ALIGN);
-    source = (double*)_mm_malloc(sizeof(double)*cmom*nx*ny*nz*ng, VEC_ALIGN);
-    time_delta = (double*)_mm_malloc(sizeof(double)*ng, VEC_ALIGN);
-    groups_todo = (unsigned int*)_mm_malloc(sizeof(unsigned int)*ng, VEC_ALIGN);
-    g2g_source = (double*)_mm_malloc(sizeof(double)*cmom*nx*ny*nz*ng, VEC_ALIGN);
+    dd_j = (double*)malloc(sizeof(double)*nang);
+    dd_k = (double*)malloc(sizeof(double)*nang);
+    total_cross_section = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
+    scat_cs = (double*)malloc(sizeof(double)*nmom*nx*ny*nz*ng);
+    denom = (double*)malloc(sizeof(double)*nang*nx*ny*nz*ng);
+    source = (double*)malloc(sizeof(double)*cmom*nx*ny*nz*ng);
+    time_delta = (double*)malloc(sizeof(double)*ng);
+    groups_todo = (unsigned int*)malloc(sizeof(unsigned int)*ng);
+    g2g_source = (double*)malloc(sizeof(double)*cmom*nx*ny*nz*ng);
 
     // Read-only buffers initialised in Fortran code
     mu = mu_in;
@@ -148,18 +148,18 @@ void initialise_device_memory(
 // Initialises buffers required on the host
 void initialise_host_memory(void)
 {
-    scalar_flux = (double*)_mm_malloc(sizeof(double)*nx*ny*nz*ng, VEC_ALIGN);
-    flux_in = (double*)_mm_malloc(sizeof(double)*nang*nx*ny*nz*ng*noct, VEC_ALIGN);
-    flux_out = (double*)_mm_malloc(sizeof(double)*nang*nx*ny*nz*ng*noct, VEC_ALIGN);
-    scalar_mom = (double*)_mm_malloc(sizeof(double)*(cmom-1)*nx*ny*nz*ng, VEC_ALIGN);
+    scalar_flux = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
+    flux_in = (double*)malloc(sizeof(double)*nang*nx*ny*nz*ng*noct);
+    flux_out = (double*)malloc(sizeof(double)*nang*nx*ny*nz*ng*noct);
+    scalar_mom = (double*)malloc(sizeof(double)*(cmom-1)*nx*ny*nz*ng);
 }
 
 // Do the timestep, outer and inner iterations
 void iterate(void)
 {
-    double *old_outer_scalar = (double*)_mm_malloc(sizeof(double)*nx*ny*nz*ng, VEC_ALIGN);
-    double *old_inner_scalar = (double*)_mm_malloc(sizeof(double)*nx*ny*nz*ng, VEC_ALIGN);
-    double *new_scalar = (double*)_mm_malloc(sizeof(double)*nx*ny*nz*ng, VEC_ALIGN);
+    double *old_outer_scalar = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
+    double *old_inner_scalar = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
+    double *new_scalar = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
 
     unsigned int num_groups_todo;
     bool outer_done;
@@ -282,10 +282,10 @@ void iterate(void)
         printf("Warning: did not converge\n");
     }
 
-    _mm_free(old_outer_scalar);
-    _mm_free(new_scalar);
-    _mm_free(old_inner_scalar);
-    _mm_free(groups_todo);
+    free(old_outer_scalar);
+    free(new_scalar);
+    free(old_inner_scalar);
+    free(groups_todo);
 
     PRINT_PROFILING_RESULTS;
 }
