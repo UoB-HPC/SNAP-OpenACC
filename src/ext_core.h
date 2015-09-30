@@ -31,17 +31,17 @@ void initialise_host_memory(void);
 
 // Allocates buffers on the device
 void initialise_device_memory(
-		double *mu_in, 
-		double *eta_in, 
-		double *xi_in,
-		double *scat_coeff_in,
-		double *weights_in,
-		double *velocity_in,
-		double *xs_in,
-		int *mat_in,
-		double *fixed_source_in,
-		double *gg_cs_in,
-		int *lma_in);
+        double *mu_in, 
+        double *eta_in, 
+        double *xi_in,
+        double *scat_coeff_in,
+        double *weights_in,
+        double *velocity_in,
+        double *xs_in,
+        int *mat_in,
+        double *fixed_source_in,
+        double *gg_cs_in,
+        int *lma_in);
 
 // Do the timestep, outer and inner iterations
 void iterate(void);

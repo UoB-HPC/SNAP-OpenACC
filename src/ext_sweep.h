@@ -34,7 +34,6 @@ void sweep_cell(
 		const double* restrict l_flux_in,
 		double* restrict l_flux_out,
 		const struct cell * restrict cell_index,
-		const unsigned int * restrict groups_todo,
 		const unsigned int num_groups_todo,
 		const unsigned int num_cells);
 

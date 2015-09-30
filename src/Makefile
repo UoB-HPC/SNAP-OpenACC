@@ -5,7 +5,8 @@
 # User defined parameters
 DBG 	 = no
 PROFILER = yes
-COPTION  = 
+ACCEL	 = -acc -ta=nvidia
+COPTION  = -Minfo=accel
 FOPTION  = 
 OPENMP 	 = -mp
 TARGET 	 = snap
@@ -15,14 +16,13 @@ FORTRAN  = mpif90
 # Enables debugging mode
 ifeq ($(DBG),yes)
   #TARGET = snap_db
-  FFLAGS = -g -O0 -check bounds -traceback $(OPENMP) $(MIC) $(FOPTION)
-  CFLAGS = -g -O0 -debug all -traceback $(OPENMP) $(MIC) $(COPTION)
+  FFLAGS = -g -O0 -check bounds -traceback $(ACCEL) $(FOPTION)
+  CFLAGS = -g -O0 -debug all -traceback $(ACCEL) $(COPTION)
 else
-  FFLAGS = -O3 $(MIC) $(OPENMP)
-  CFLAGS = -O3 $(MIC) $(OPENMP) $(COPTION)
+  FFLAGS = -O3 $(ACCEL) 
+  CFLAGS = -O3 $(ACCEL) $(COPTION) -c99
 endif
 
-CFLAGS += -c99 
 CFLAGS2 = -lm
 FFLAG2 =
 
@@ -50,7 +50,7 @@ SRCS = global.f90 snap_main.f90 utils.f90 version.f90 plib.f90 geom.f90 \
        octsweep.f90 dim1_sweep.f90 dim3_sweep.f90 output.f90 time.f90 mms.f90
 
 $(TARGET) :	$(OBJS)
-		$(FORTRAN) $(FFLAGS) $(FFLAG2) -o $@ $(OBJS) $(OPENCL)
+		$(FORTRAN) $(FFLAGS) $(FFLAG2) -o $@ $(OBJS)
 
 snap_main.o :	global.o utils.o version.o input.o setup.o output.o time.o \
 		dealloc.o plib.o control.o
@@ -93,7 +93,7 @@ mms.o:	global.o geom.o sn.o data.o control.o plib.o
 # C rule
 #
 %.o:	%.c ext_sweep.h
-	$(CC) $(CFLAGS) -c $< $(OPENCL) $(CFLAGS2)
+	$(CC) $(CFLAGS) -c $< $(CFLAGS2)
 
 ext_init.o:	ext_kernels.h
 

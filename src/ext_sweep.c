@@ -13,6 +13,7 @@ plane *compute_sweep_order(void)
 
     unsigned int nplanes = ichunk + ny + nz - 2;
     plane *planes = (plane *)malloc(sizeof(plane)*nplanes);
+
     for (unsigned int i = 0; i < nplanes; i++)
     {
         planes[i].num_cells = 0;
@@ -37,7 +38,7 @@ plane *compute_sweep_order(void)
         planes[i].cells = (struct cell *)malloc(sizeof(struct cell)*planes[i].num_cells);
         planes[i].index = 0;
     }
-
+    
     // Store the cell indexes in the plane array
     for (unsigned int k = 0; k < nz; k++)
     {
@@ -62,11 +63,11 @@ plane *compute_sweep_order(void)
 
 // Sweep over the grid and compute the angular flux
 void sweep_octant(
-		const unsigned int timestep, 
-		const unsigned int oct, 
-		const unsigned int ndiag, 
-		const plane *planes, 
-		const unsigned int num_groups_todo)
+        const unsigned int timestep, 
+        const unsigned int oct, 
+        const unsigned int ndiag, 
+        const plane *planes, 
+        const unsigned int num_groups_todo)
 {
     // Determine the cell step parameters for the given octant
     // Create the list of octant co-ordinates in order
@@ -77,7 +78,7 @@ void sweep_octant(
     // This bit string is lexiographically organised
     // This is the order to match the original SNAP
     // However this required all vacuum boundaries
-    
+
     //int order_3d = 0b000001010011100101110111;
     int order_3d = 342391;
 
@@ -95,57 +96,62 @@ void sweep_octant(
     int kstep = (zhi == nz) ? -1 : 1;
 
     size_t offset = oct*nang*nx*ny*nz*ng;
-	double* l_flux_in = (timestep % 2 == 0 ? flux_in : flux_out) + offset;
-	double* l_flux_out = (timestep % 2 == 0 ? flux_out : flux_in) + offset;
+    double* l_flux_in = (timestep % 2 == 0 ? flux_in : flux_out) + offset;
+    double* l_flux_out = (timestep % 2 == 0 ? flux_out : flux_in) + offset;
 
-	for (unsigned int d = 0; d < ndiag; d++)
-	{
-		sweep_cell(istep, jstep, kstep, oct, l_flux_in, l_flux_out,
-			   	planes[d].cells, groups_todo, num_groups_todo, planes[d].num_cells);
-	}
+    for (unsigned int d = 0; d < ndiag; d++)
+    {
+        sweep_cell(istep, jstep, kstep, oct, l_flux_in, l_flux_out,
+                planes[d].cells, num_groups_todo, planes[d].num_cells);
+    }
 }
 
 // Perform a sweep over the grid for all the octants
 void perform_sweep(
-		unsigned int num_groups_todo)
+        unsigned int num_groups_todo)
 {
-	// Number of planes in this octant
-	unsigned int ndiag = ichunk + ny + nz - 2;
+    // Number of planes in this octant
+    unsigned int ndiag = ichunk + ny + nz - 2;
 
-	// Get the order of cells to enqueue
-	plane *planes = compute_sweep_order();
+    // Get the order of cells to enqueue
+    plane *planes = compute_sweep_order();
 
-	for (int o = 0; o < noct; o++)
-	{
-		sweep_octant(global_timestep, o, ndiag, planes, num_groups_todo);
-		zero_edge_flux_buffers();
-	}
+    for (int o = 0; o < noct; o++)
+    {
+        sweep_octant(global_timestep, o, ndiag, planes, num_groups_todo);
+        zero_edge_flux_buffers();
+    }
 
-	// Free planes
-	for (unsigned int i = 0; i < ndiag; i++)
-	{
-		free(planes[i].cells);
-	}
+    // Free planes
+    for (unsigned int i = 0; i < ndiag; i++)
+    {
+        free(planes[i].cells);
+    }
 
-	free(planes);
+    free(planes);
 }
 
 // Solve the transport equations for a single angle in a single cell for a single group
 void sweep_cell(
-		const int istep,
-		const int jstep,
-		const int kstep,
-		const unsigned int oct,
-		const double* restrict l_flux_in,
-		double* restrict l_flux_out,
-		const struct cell * restrict cell_index,
-		const unsigned int * restrict groups_todo,
-		const unsigned int num_groups_todo,
-		const unsigned int num_cells)
+        const int istep,
+        const int jstep,
+        const int kstep,
+        const unsigned int oct,
+        const double* restrict l_flux_in,
+        double* restrict l_flux_out,
+        const struct cell * restrict cell_index,
+        const unsigned int num_groups_todo,
+        const unsigned int num_cells)
 {
     START_PROFILING;
 
-#pragma acc kernels
+//#pragma acc parallel \
+    copyin(cell_index[0:num_cells])\
+    present(source[0:cmom*nx*ny*nz*ng], scat_coeff[0:nang*cmom*noct], \
+            flux_i[0:nang*ng*ny*nz], flux_j[0:nang*ng*nx*nz], flux_k[0:nang*ng*nx*ny], \
+            mu[0:nang], dd_j[0:nang], dd_k[0:nang], time_delta[0:ng], \
+            denom[0:nang*ng*nx*ny*nz], time_delta[0:ng], total_cross_section[0:nx*ny*nz*ng], \
+            l_flux_in[0:nang*nx*ny*nz*ng], l_flux_out[0:nang*nx*ny*nz*ng])
     for(int nc = 0; nc < num_cells; ++nc)
     {
         for(int tg = 0; tg < num_groups_todo; ++tg)
@@ -198,16 +204,16 @@ void sweep_cell(
                 }
 
                 // Perform the fixup loop
-                double zeros[4] = {1.0, 1.0, 1.0, 1.0};
+                double zeros[4];
                 int num_to_fix = 4;
                 // Fixup is a bounded loop as we will worst case fix up each face and centre value one after each other
                 for (int fix = 0; fix < 4; fix++)
                 {
                     // Record which ones are zero
-                    if (tmp_flux_i < 0.0) zeros[0] = 0.0;
-                    if (tmp_flux_j < 0.0) zeros[1] = 0.0;
-                    if (tmp_flux_k < 0.0) zeros[2] = 0.0;
-                    if (psi < 0.0) zeros[3] = 0.0;
+                    zeros[0] = (tmp_flux_i < 0.0) ? 0.0 : 1.0;
+                    zeros[1] = (tmp_flux_j < 0.0) ? 0.0 : 1.0;
+                    zeros[2] = (tmp_flux_k < 0.0) ? 0.0 : 1.0;
+                    zeros[3] =  (psi < 0.0) ? 0.0 : 1.0;
 
                     if (num_to_fix == zeros[0] + zeros[1] + zeros[2] + zeros[3])
                     {
