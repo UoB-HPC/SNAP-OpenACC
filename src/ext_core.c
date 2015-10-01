@@ -30,9 +30,11 @@ void ext_solve_(
 #pragma acc declare \
     copyin(mu[0:nang], dd_j[0:nang], dd_k[0:nang], mat[0:nx*ny*nz], \
             xs[0:nmat*ng], xi[0:nang], eta[0:nang], velocity[0:ng], \
-            gg_cs[0:nmat*nmom*ng*ng], scat_cs[0:nmom*nx*ny*nz*ng]),\
+            gg_cs[0:nmat*nmom*ng*ng], scat_cs[0:nmom*nx*ny*nz*ng], \
+            fixed_source[0:nx*ny*nz*ng]),\
     create(total_cross_section[0:nx*ny*nz*ng], denom[0:nang*nx*ny*nz*ng],\
-            time_delta[0:ng], groups_todo[0:ng])
+            time_delta[0:ng], groups_todo[0:ng], g2g_source[0:cmom*nx*ny*nz*ng],\
+            scalar_mom[0:(cmom-1)*nx*ny*nz*ng], scalar_flux[0:nx*ny*nz*ng])
     //scat_coeff[0:nang*cmom*noct], weights[0:nang], \
         , fixed_source[0:nx*ny*nz*ng], \
          lma[0:nmom]),\
@@ -52,7 +54,6 @@ void ext_solve_(
         //zero_flux_moments_buffer();
 
         iterate();
-
     }
 
     free(old_outer_scalar);
@@ -213,12 +214,13 @@ void iterate(void)
             calc_time_delta();
             calc_denominator();
 
-#pragma acc update host(total_cross_section[0:nx*ny*nz*ng], denom[0:nang*nx*ny*nz*ng],\
-            time_delta[0:ng], groups_todo[0:ng], dd_j[0:nang], dd_k[0:nang], scat_cs[0:nmom*nx*ny*nz*ng])
-
-
             // Compute the outer source
             calc_outer_source();
+
+#pragma acc update\
+            host(total_cross_section[0:nx*ny*nz*ng], denom[0:nang*nx*ny*nz*ng],\
+                    time_delta[0:ng], groups_todo[0:ng], dd_j[0:nang], dd_k[0:nang], \
+                    scat_cs[0:nmom*nx*ny*nz*ng], g2g_source[0:cmom*nx*ny*nz*ng])
 
             // Save flux
             store_scalar_flux(old_outer_scalar);
