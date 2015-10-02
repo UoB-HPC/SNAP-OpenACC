@@ -27,34 +27,7 @@ void ext_solve_(
     initialise_device_memory(mu, eta, xi, scat_coeff, weights, velocity,
             xs, mat, fixed_source, gg_cs, lma);
 
-#pragma acc declare \
-    copyin(mu[0:nang], dd_j[0:nang], dd_k[0:nang], mat[0:nx*ny*nz], \
-            xs[0:nmat*ng], xi[0:nang], eta[0:nang], velocity[0:ng], \
-            gg_cs[0:nmat*nmom*ng*ng], scat_cs[0:nmom*nx*ny*nz*ng], \
-            fixed_source[0:nx*ny*nz*ng]),\
-    create(total_cross_section[0:nx*ny*nz*ng], denom[0:nang*nx*ny*nz*ng],\
-            time_delta[0:ng], groups_todo[0:ng], g2g_source[0:cmom*nx*ny*nz*ng],\
-            scalar_mom[0:(cmom-1)*nx*ny*nz*ng], scalar_flux[0:nx*ny*nz*ng])
-    //scat_coeff[0:nang*cmom*noct], weights[0:nang], \
-        , fixed_source[0:nx*ny*nz*ng], \
-         lma[0:nmom]),\
-        //flux_i[0:nang*ny*nz*ng], flux_j[0:nang*nx*nz*ng],\
-        flux_k[0:nang*nx*ny*ng], \
-        , source[0:cmom*nx*ny*nz*ng],\
-        old_outer_scalar[0:nx*ny*nz*ng],old_inner_scalar[0:nx*ny*nz*ng],\
-        new_scalar[0:nx*ny*nz*ng], \
-        g2g_source[0:cmom*nx*ny*nz*ng]), \
-        copyout(scalar_flux[0:nx*ny*nz*ng], flux_in[0:nang*nx*ny*nz*ng*noct],\
-                flux_out[0:nang*nx*ny*nz*ng*noct], scalar_mom[0:(cmom-1)*nx*ny*nz*ng])
-    {
-        // Don't belong here...
-        //zero_flux_in_out();
-        //zero_scalar_flux();
-        //zero_edge_flux_buffers();
-        //zero_flux_moments_buffer();
-
-        iterate();
-    }
+    iterate();
 
     free(old_outer_scalar);
     free(new_scalar);
@@ -176,135 +149,152 @@ void initialise_device_memory(
 // Do the timestep, outer and inner iterations
 void iterate(void)
 {
-    unsigned int num_groups_todo;
-    bool outer_done;
-
-    double t1 = omp_get_wtime();
-
-    // Timestep loop
-    for (unsigned int t = 0; t < timesteps; t++)
+#pragma acc declare \
+    copyin(mu[0:nang], dd_j[0:nang], dd_k[0:nang], mat[0:nx*ny*nz], \
+            xs[0:nmat*ng], xi[0:nang], eta[0:nang], velocity[0:ng], \
+            gg_cs[0:nmat*nmom*ng*ng], scat_cs[0:nmom*nx*ny*nz*ng], \
+            fixed_source[0:nx*ny*nz*ng], lma[0:nmom], scat_coeff[0:nang*cmom*noct],\
+            weights[0:nang], fixed_source[0:nx*ny*nz*ng], lma[0:nmom]),\
+    create(total_cross_section[0:nx*ny*nz*ng], denom[0:nang*nx*ny*nz*ng],\
+            time_delta[0:ng], groups_todo[0:ng], g2g_source[0:cmom*nx*ny*nz*ng],\
+            old_outer_scalar[0:nx*ny*nz*ng], old_inner_scalar[0:nx*ny*nz*ng],\
+            source[0:cmom*nx*ny*nz*ng], flux_i[0:nang*ny*nz*ng], \
+            flux_j[0:nang*nx*nz*ng], flux_k[0:nang*nx*ny*ng], new_scalar[0:nx*ny*nz*ng]),\
+    copyout(flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct],\
+            scalar_mom[0:(cmom-1)*nx*ny*nz*ng], scalar_flux[0:nx*ny*nz*ng])
     {
-        unsigned int tot_outers = 0;
-        unsigned int tot_inners = 0;
-        global_timestep = t;
-
-        // Calculate data required at the beginning of each timestep
+        zero_flux_in_out();
         zero_scalar_flux();
+        zero_edge_flux_buffers();
         zero_flux_moments_buffer();
 
-        // Outer loop
-        outer_done = false;
+        unsigned int num_groups_todo;
+        bool outer_done;
 
-        for (unsigned int o = 0; o < outers; o++)
+        double t1 = omp_get_wtime();
+
+        // Timestep loop
+        for (unsigned int t = 0; t < timesteps; t++)
         {
-            // Reset the inner convergence list
-            bool inner_done = false;
+            unsigned int tot_outers = 0;
+            unsigned int tot_inners = 0;
+            global_timestep = t;
 
-#pragma acc parallel
-            for (unsigned int g = 0; g < ng; g++)
+            // Calculate data required at the beginning of each timestep
+            zero_scalar_flux();
+            zero_flux_moments_buffer();
+
+            // Outer loop
+            outer_done = false;
+
+            for (unsigned int o = 0; o < outers; o++)
             {
-                groups_todo[g] = g;
-            }
+                // Reset the inner convergence list
+                bool inner_done = false;
 
-            num_groups_todo = ng;
-            tot_outers++;
+#pragma acc parallel loop
+                for (unsigned int g = 0; g < ng; g++)
+                {
+                    groups_todo[g] = g;
+                }
 
-            calc_total_cross_section();
-            calc_scattering_cross_section();
-            calc_dd_coefficients();
-            calc_time_delta();
-            calc_denominator();
+                num_groups_todo = ng;
+                tot_outers++;
 
-            // Compute the outer source
-            calc_outer_source();
+                calc_total_cross_section();
+                calc_scattering_cross_section();
+                calc_dd_coefficients();
+                calc_time_delta();
+                calc_denominator();
 
-#pragma acc update\
-            host(total_cross_section[0:nx*ny*nz*ng], denom[0:nang*nx*ny*nz*ng],\
-                    time_delta[0:ng], groups_todo[0:ng], dd_j[0:nang], dd_k[0:nang], \
-                    scat_cs[0:nmom*nx*ny*nz*ng], g2g_source[0:cmom*nx*ny*nz*ng])
-
-            // Save flux
-            store_scalar_flux(old_outer_scalar);
-
-            // Inner loop
-            for (unsigned int i = 0; i < inners; i++)
-            {
-                tot_inners++;
-
-                // Compute the inner source
-                calc_inner_source();
+                // Compute the outer source
+                calc_outer_source();
 
                 // Save flux
-                store_scalar_flux(old_inner_scalar);
-                zero_edge_flux_buffers();
+                store_scalar_flux(old_outer_scalar);
+
+                // Inner loop
+                for (unsigned int i = 0; i < inners; i++)
+                {
+                    tot_inners++;
+
+                    // Compute the inner source
+                    calc_inner_source();
+
+                    // Save flux
+                    store_scalar_flux(old_inner_scalar);
+                    zero_edge_flux_buffers();
 
 #ifdef TIMING
-                double t1 = omp_get_wtime();
+                    double t1 = omp_get_wtime();
 #endif
 
-                // Sweep
-                printf("start sweep\n");
-                perform_sweep(num_groups_todo);
-                printf("finish sweep\n");
+//#pragma acc update\
+//    host(source[0:cmom*nx*ny*nz*ng], scat_coeff[0:nang*cmom*noct], \
+//            flux_i[0:nang*ng*ny*nz], flux_j[0:nang*ng*nx*nz], flux_k[0:nang*ng*nx*ny], \
+//            mu[0:nang], dd_j[0:nang], dd_k[0:nang], time_delta[0:ng], \
+//            denom[0:nang*ng*nx*ny*nz], total_cross_section[0:nx*ny*nz*ng])
+
+                    // Sweep
+                    perform_sweep(num_groups_todo);
 
 #ifdef TIMING
-                double t2 = omp_get_wtime();
-                printf("sweep took: %lfs\n", t2-t1);
+                    double t2 = omp_get_wtime();
+                    printf("sweep took: %lfs\n", t2-t1);
 #endif
 
-                // Scalar flux
-                reduce_angular();
+                    // Scalar flux
+                    reduce_angular();
 #ifdef TIMING
-                double t3 = omp_get_wtime();
-                printf("reductions took: %lfs\n", t3-t2);
+                    double t3 = omp_get_wtime();
+                    printf("reductions took: %lfs\n", t3-t2);
 #endif
+
+                    // Check convergence
+                    store_scalar_flux(new_scalar);
+
+#ifdef TIMING
+                    double t4 = omp_get_wtime();
+#endif
+
+                    inner_done = check_convergence(old_inner_scalar, new_scalar, epsi, &num_groups_todo, 1);
+
+#ifdef TIMING
+                    double t5 = omp_get_wtime();
+                    printf("inner conv test took %lfs\n",t5-t4);
+#endif
+                    if (inner_done)
+                    {
+                        break;
+                    }
+                }
 
                 // Check convergence
-                store_scalar_flux(new_scalar);
+                outer_done = check_convergence(old_outer_scalar, new_scalar, 100.0*epsi, &num_groups_todo, 0);
 
-#ifdef TIMING
-                double t4 = omp_get_wtime();
-#endif
-
-                printf("pre check convergence\n");
-                inner_done = check_convergence(old_inner_scalar, new_scalar, epsi, &num_groups_todo, 1);
-                printf("post check convergence\n");
-
-#ifdef TIMING
-                double t5 = omp_get_wtime();
-                printf("inner conv test took %lfs\n",t5-t4);
-#endif
-                if (inner_done)
+                if (outer_done && inner_done)
                 {
                     break;
                 }
             }
 
-            // Check convergence
-            outer_done = check_convergence(old_outer_scalar, new_scalar, 100.0*epsi, &num_groups_todo, 0);
+            printf("Time %d -  %d outers, %d inners.\n", t, tot_outers, tot_inners);
 
-            if (outer_done && inner_done)
+            // Exit the time loop early if outer not converged
+            if (!outer_done)
             {
                 break;
             }
         }
 
-        printf("Time %d -  %d outers, %d inners.\n", t, tot_outers, tot_inners);
+        double t2 = omp_get_wtime();
 
-        // Exit the time loop early if outer not converged
+        printf("Time to convergence: %.3lfs\n", t2-t1);
+
         if (!outer_done)
         {
-            break;
+            printf("Warning: did not converge\n");
         }
-    }
-
-    double t2 = omp_get_wtime();
-
-    printf("Time to convergence: %.3lfs\n", t2-t1);
-
-    if (!outer_done)
-    {
-        printf("Warning: did not converge\n");
     }
 
     PRINT_PROFILING_RESULTS;
@@ -321,18 +311,18 @@ void reduce_angular(void)
     double* angular = (global_timestep % 2 == 0) ? flux_out : flux_in;
     double* angular_prev = (global_timestep % 2 == 0) ? flux_in : flux_out;
 
-    for(unsigned int o = 0; o < 8; ++o)
+   for(unsigned int o = 0; o < 8; ++o)
     {
-        //#pragma acc parallel \
-        //    present(time_delta[0:ng], angular[0:nang*ng*nx*ny*nz*noct], \
-        //            angular_prev[0:nang*ng*nx*ny*nz*noct], weights[0:nang], \
-        //            scalar_mom[0:ng*(cmom-1)*nx*ny*nz], scalar_flux[0:nx*ny*nz*ng],\
-        //            scat_coeff[0:nang*cmom*noct])
+#pragma acc parallel loop \
+        present(time_delta[0:ng], angular[0:nang*ng*nx*ny*nz*noct], \
+                angular_prev[0:nang*ng*nx*ny*nz*noct], weights[0:nang], \
+                scalar_mom[0:ng*(cmom-1)*nx*ny*nz], scalar_flux[0:nx*ny*nz*ng],\
+                scat_coeff[0:nang*cmom*noct])
         for(unsigned int ind = 0; ind < nx*ny*nz; ++ind)
         {
             for (unsigned int g = 0; g < ng; g++)
             {
-                const bool tg = time_delta(g) != 0.0;
+                const int tg = time_delta(g) != 0.0;
 
                 for (unsigned int a = 0; a < nang; a++)
                 {

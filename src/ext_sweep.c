@@ -102,7 +102,7 @@ void sweep_octant(
     for (unsigned int d = 0; d < ndiag; d++)
     {
         sweep_cell(istep, jstep, kstep, oct, l_flux_in, l_flux_out,
-                planes[d].cells, num_groups_todo, planes[d].num_cells);
+                planes, d, ndiag, num_groups_todo);
     }
 }
 
@@ -116,6 +116,7 @@ void perform_sweep(
     // Get the order of cells to enqueue
     plane *planes = compute_sweep_order();
 
+#pragma acc data copyin(planes[0:ndiag])
     for (int o = 0; o < noct; o++)
     {
         sweep_octant(global_timestep, o, ndiag, planes, num_groups_todo);
@@ -139,19 +140,23 @@ void sweep_cell(
         const unsigned int oct,
         const double* restrict l_flux_in,
         double* restrict l_flux_out,
-        const struct cell * restrict cell_index,
-        const unsigned int num_groups_todo,
-        const unsigned int num_cells)
+        const plane* planes,
+        const unsigned int d, 
+        const unsigned int ndiag,
+        const unsigned int num_groups_todo)
 {
     START_PROFILING;
 
-//#pragma acc parallel \
-    copyin(cell_index[0:num_cells])\
+    const int num_cells = planes[d].num_cells;
+    const struct cell* cell_index = planes[d].cells;
+    
+#pragma acc parallel loop\
     present(source[0:cmom*nx*ny*nz*ng], scat_coeff[0:nang*cmom*noct], \
             flux_i[0:nang*ng*ny*nz], flux_j[0:nang*ng*nx*nz], flux_k[0:nang*ng*nx*ny], \
             mu[0:nang], dd_j[0:nang], dd_k[0:nang], time_delta[0:ng], \
-            denom[0:nang*ng*nx*ny*nz], time_delta[0:ng], total_cross_section[0:nx*ny*nz*ng], \
-            l_flux_in[0:nang*nx*ny*nz*ng], l_flux_out[0:nang*nx*ny*nz*ng])
+            denom[0:nang*ng*nx*ny*nz], total_cross_section[0:nx*ny*nz*ng], \
+            l_flux_in[0:nang*nx*ny*nz*ng], l_flux_out[0:nang*nx*ny*nz*ng], \
+            planes[0:ndiag])
     for(int nc = 0; nc < num_cells; ++nc)
     {
         for(int tg = 0; tg < num_groups_todo; ++tg)
@@ -207,6 +212,7 @@ void sweep_cell(
                 double zeros[4];
                 int num_to_fix = 4;
                 // Fixup is a bounded loop as we will worst case fix up each face and centre value one after each other
+#pragma acc loop private(tmp_flux_i, tmp_flux_j, tmp_flux_k, psi)
                 for (int fix = 0; fix < 4; fix++)
                 {
                     // Record which ones are zero

@@ -33,7 +33,7 @@ void sweep_cell(
 		const unsigned int oct,
 		const double* restrict l_flux_in,
 		double* restrict l_flux_out,
-		const struct cell * restrict cell_index,
-		const unsigned int num_groups_todo,
-		const unsigned int num_cells);
-
+        const plane* planes,
+        const unsigned int d,
+        const unsigned int ndiag,
+        const unsigned int num_groups_todo);
