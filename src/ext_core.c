@@ -229,13 +229,7 @@ void iterate(void)
                     double t1 = omp_get_wtime();
 #endif
 
-//#pragma acc update\
-//    host(source[0:cmom*nx*ny*nz*ng], scat_coeff[0:nang*cmom*noct], \
-//            flux_i[0:nang*ng*ny*nz], flux_j[0:nang*ng*nx*nz], flux_k[0:nang*ng*nx*ny], \
-//            mu[0:nang], dd_j[0:nang], dd_k[0:nang], time_delta[0:ng], \
-//            denom[0:nang*ng*nx*ny*nz], total_cross_section[0:nx*ny*nz*ng])
-
-                    // Sweep
+                   // Sweep
                     perform_sweep(num_groups_todo);
 
 #ifdef TIMING
@@ -311,43 +305,48 @@ void reduce_angular(void)
     double* angular = (global_timestep % 2 == 0) ? flux_out : flux_in;
     double* angular_prev = (global_timestep % 2 == 0) ? flux_in : flux_out;
 
-   for(unsigned int o = 0; o < 8; ++o)
-    {
-#pragma acc parallel loop \
-        present(time_delta[0:ng], angular[0:nang*ng*nx*ny*nz*noct], \
+#pragma acc kernels \
+    present(time_delta[0:ng], angular[0:nang*ng*nx*ny*nz*noct], \
                 angular_prev[0:nang*ng*nx*ny*nz*noct], weights[0:nang], \
                 scalar_mom[0:ng*(cmom-1)*nx*ny*nz], scalar_flux[0:nx*ny*nz*ng],\
                 scat_coeff[0:nang*cmom*noct])
-        for(unsigned int ind = 0; ind < nx*ny*nz; ++ind)
+    {
+        for(unsigned int o = 0; o < 8; ++o)
         {
-            for (unsigned int g = 0; g < ng; g++)
+#pragma acc loop independent
+            for(unsigned int ind = 0; ind < nx*ny*nz; ++ind)
             {
-                const int tg = time_delta(g) != 0.0;
-
-                for (unsigned int a = 0; a < nang; a++)
+#pragma acc loop independent
+                for (unsigned int g = 0; g < ng; g++)
                 {
-                    const double weight = weights(a);
-                    const double ang = angular(o,ind,g,a);
-                    const double ang_p = angular_prev(o,ind,g,a);
+                    const int tg = time_delta(g) != 0.0;
 
-                    if (tg)
+#pragma acc loop independent
+                    for (unsigned int a = 0; a < nang; a++)
                     {
-                        scalar_flux[g+ind*ng] += weight * (0.5 * (ang + ang_p));
+                        const double weight = weights(a);
+                        const double ang = angular(o,ind,g,a);
+                        const double ang_p = angular_prev(o,ind,g,a);
 
-                        for (unsigned int l = 0; l < (cmom-1); l++)
+                        if (tg)
                         {
-                            scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
-                                scat_coeff(l+1,a,o) * weight * (0.5 * (ang + ang_p));
+                            scalar_flux[g+ind*ng] += weight * (0.5 * (ang + ang_p));
+
+                            for (unsigned int l = 0; l < (cmom-1); l++)
+                            {
+                                scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
+                                    scat_coeff(l+1,a,o) * weight * (0.5 * (ang + ang_p));
+                            }
                         }
-                    }
-                    else
-                    {
-                        scalar_flux[g+ind*ng] += weight * ang;
-
-                        for (unsigned int l = 0; l < (cmom-1); l++)
+                        else
                         {
-                            scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
-                                scat_coeff(l+1,a,o) * weight * ang;
+                            scalar_flux[g+ind*ng] += weight * ang;
+
+                            for (unsigned int l = 0; l < (cmom-1); l++)
+                            {
+                                scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
+                                    scat_coeff(l+1,a,o) * weight * ang;
+                            }
                         }
                     }
                 }
