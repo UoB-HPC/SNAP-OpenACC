@@ -176,7 +176,7 @@ void sweep_cell(
                 // Add in the anisotropic scattering source moments
                 for (unsigned int l = 1; l < cmom; l++)
                 {
-                    source_term += scat_coeff(a,l,oct) * source(l,i,j,k,g);
+                    source_term += scat_coeff(l,a,oct) * source(l,i,j,k,g);
                 }
 
                 double psi = source_term 

@@ -1,4 +1,13 @@
-#pragma once
+#pragma once 
+
+#ifndef OFFLOAD
+    #define OFFLOAD 0
+#endif
+#ifndef MIC_DEVICE
+    #define MIC_DEVICE 0
+#endif
+
+#define VEC_ALIGN 64
 
 // Entry point for completing the solve
 void ext_solve_(
@@ -26,22 +35,24 @@ void initialise_parameters(
     int *timesteps_, int *outers_, int *inners_,
     double *epsi_, double *tolr_);
 
+#pragma omp declare target
+
 // Allocates buffers on the host
 void initialise_host_memory(void);
 
 // Allocates buffers on the device
 void initialise_device_memory(
-        double *mu_in, 
-        double *eta_in, 
-        double *xi_in,
-        double *scat_coeff_in,
-        double *weights_in,
-        double *velocity_in,
-        double *xs_in,
-        int *mat_in,
-        double *fixed_source_in,
-        double *gg_cs_in,
-        int *lma_in);
+		double *mu_in, 
+		double *eta_in, 
+		double *xi_in,
+		double *scat_coeff_in,
+		double *weights_in,
+		double *velocity_in,
+		double *xs_in,
+		int *mat_in,
+		double *fixed_source_in,
+		double *gg_cs_in,
+		int *lma_in);
 
 // Do the timestep, outer and inner iterations
 void iterate(void);
@@ -49,12 +60,18 @@ void iterate(void);
 // Compute the scalar flux from the angular flux
 void reduce_angular(void);
 
+// Transposes the scattering coefficient matrix
+double* transpose_scat_coeff(double* scat_coeff_in);
+
+#pragma omp end declare target
+
 // Transposes the scalar flux back to SNAP format
 void ext_get_transpose_scalar_flux_(double *scalar);
 
 // Transposes the scalar moments back to SNAP format
 void ext_get_transpose_scalar_moments_(double *scalar_moments);
 
-// Transposes teh output flux back to SNAp format
+// Transposes the output flux back to SNAP format
 void ext_get_transpose_output_flux_(double* output_flux);
+
 

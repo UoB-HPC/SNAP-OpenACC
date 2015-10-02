@@ -160,7 +160,6 @@ void initialise_device_memory(
     mu = mu_in;
     eta = eta_in;
     xi = xi_in;
-    scat_coeff = scat_coeff_in;
     weights = weights_in;
     velocity = velocity_in;
     mat = mat_in;
@@ -170,6 +169,8 @@ void initialise_device_memory(
     xs = xs_in;
 
     STOP_PROFILING(__func__, false);
+
+    scat_coeff = transpose_scat_coeff(scat_coeff_in);
 }
 
 // Do the timestep, outer and inner iterations
@@ -314,11 +315,11 @@ void reduce_angular(void)
 {
     START_PROFILING;
 
+    zero_scalar_flux();
     zero_flux_moments_buffer();
 
     double* angular = (global_timestep % 2 == 0) ? flux_out : flux_in;
     double* angular_prev = (global_timestep % 2 == 0) ? flux_in : flux_out;
-
 
     for(unsigned int o = 0; o < 8; ++o)
     {
@@ -331,31 +332,32 @@ void reduce_angular(void)
         {
             for (unsigned int g = 0; g < ng; g++)
             {
+                const bool tg = time_delta(g) != 0.0;
+
                 for (unsigned int a = 0; a < nang; a++)
                 {
-                    // NOTICE: we do the reduction with psi, not ptr_out.
-                    // This means that (line 307) the time dependant
-                    // case isnt the value that is summed, but rather the
-                    // flux in the cell
-                    if (time_delta(g) != 0.0)
+                    const double weight = weights(a);
+                    const double ang = angular(o,ind,g,a);
+                    const double ang_p = angular_prev(o,ind,g,a);
+
+                    if (tg)
                     {
-                        scalar_flux[g+ind*ng] += weights(a) * 
-                            (0.5 * (angular[a+g*nang+nang*ng*ind+(nang*nx*ny*nz*ng*(o))] + angular_prev[a+g*nang+nang*ng*ind+(nang*nx*ny*nz*ng*(o))]));
+                        scalar_flux[g+ind*ng] += weight * (0.5 * (ang + ang_p));
 
                         for (unsigned int l = 0; l < (cmom-1); l++)
                         {
-                            scalar_mom[g+l*ng+(ng*(cmom-1)*ind)] += scat_coeff(a,l+1,o) * weights(a) * 
-                                (0.5 * (angular[a+g*nang+nang*ng*ind+(nang*nx*ny*nz*ng*(o))] + angular_prev[a+g*nang+nang*ng*ind+(nang*nx*ny*nz*ng*(o))]));
+                            scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
+                                scat_coeff(l+1,a,o) * weight * (0.5 * (ang + ang_p));
                         }
                     }
                     else
                     {
-                        scalar_flux[g+ind*ng] += weights(a) * angular[a+g*nang+nang*ng*ind+(nang*nx*ny*nz*ng*(o))];
+                        scalar_flux[g+ind*ng] += weight * ang;
 
                         for (unsigned int l = 0; l < (cmom-1); l++)
                         {
-                            scalar_mom[g+l*ng+(ng*(cmom-1)*ind)] += scat_coeff(a,l+1,o) * 
-                                weights(a) * angular[a+g*nang+nang*ng*ind+(nang*nx*ny*nz*ng*(o))];
+                            scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
+                                scat_coeff(l+1,a,o) * weight * ang;
                         }
                     }
                 }
@@ -400,7 +402,7 @@ void ext_get_transpose_scalar_moments_(double *scalar_moments)
                     for (unsigned int i = 0; i < nx; i++)
                     {
                         scalar_moments[l+((cmom-1)*i)+((cmom-1)*nx*j)+((cmom-1)*nx*ny*k)+((cmom-1)*nx*ny*nz*g)] 
-                            = scalar_mom[g+(l*ng)+(ng*(cmom-1)*i)+(ng*(cmom-1)*nx*j)+(ng*(cmom-1)*nx*ny*k)];
+                            = scalar_mom[(l)+(g*(cmom-1))+(ng*(cmom-1)*i)+(ng*(cmom-1)*nx*j)+(ng*(cmom-1)*nx*ny*k)];
                     }
                 }
             }
@@ -434,4 +436,28 @@ void ext_get_transpose_output_flux_(double* output_flux)
             }
         }
     }
+}
+
+// Transpose the scatter coefficients matrix
+double* transpose_scat_coeff(double* scat_coeff_in)
+{
+    START_PROFILING;
+
+    double* scat_coeff = (double*)malloc(sizeof(double)*nang*cmom*noct);
+
+    for(unsigned int o = 0; o < noct; ++o)
+    {
+        for(unsigned int l = 0; l < cmom; ++l)
+        {
+            for(unsigned int a = 0; a < nang; ++a)
+            {
+                scat_coeff[l+a*cmom+o*(cmom*nang)] = 
+                    scat_coeff_in[a+l*nang+o*(cmom*nang)];
+            }
+        }
+    }
+
+    STOP_PROFILING(__func__,true);
+
+    return scat_coeff;
 }
