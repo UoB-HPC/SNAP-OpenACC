@@ -11,7 +11,7 @@ void calc_denominator(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop collapse(5) \
+#pragma acc parallel loop  \
     present(denom[0:nang*ng*nx*ny*nz], total_cross_section[0:ng*nx*ny*nz], \
             time_delta[0:ng], mu[0:nang], dd_j[0:nang], dd_k[0:nang])
     for (unsigned int k = 0; k < nz; k++)
@@ -73,7 +73,7 @@ void calc_total_cross_section(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop collapse(4)\
+#pragma acc parallel loop \
     present(total_cross_section[0:ng*nx*ny*nz], xs[0:nmat*ng], mat[0:nx*ny*nz])
     for (unsigned int k = 0; k < nz; k++)
     {
@@ -96,7 +96,7 @@ void calc_scattering_cross_section(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop collapse(5) \
+#pragma acc parallel loop  \
     present(scat_cs[0:nmom*nx*ny*nz*ng], gg_cs[0:nmat*nmom*ng*ng], mat[0:nx*ny*nz])
     for(unsigned int g = 0; g < ng; ++g)
     {
@@ -125,7 +125,7 @@ void calc_outer_source(void)
 
     for (unsigned int g1 = 0; g1 < ng; g1++)
     {
-#pragma acc parallel loop collapse(3) \
+#pragma acc parallel loop  \
         present(g2g_source[0:cmom*nx*ny*nz*ng], fixed_source[0:nx*ny*nz*ng],\
                 scalar_flux[0:nx*ny*nz*ng], gg_cs[0:nmat*nmom*ng*ng], \
                 mat[0:nx*ny*nz], scalar_mom[0:(cmom-1)*nx*ny*nz*ng], lma[0:nmom])
@@ -176,7 +176,7 @@ void calc_inner_source(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop collapse(4)\
+#pragma acc parallel loop \
     present(source[0:cmom*nx*ny*nz*ng], g2g_source[0:cmom*nx*ny*nz*ng], \
             scat_cs[0:nmom*nx*ny*nz*ng], scalar_flux[0:nx*ny*nz*ng], \
             scalar_mom[0:(cmom-1)*nx*ny*nz*ng], lma[0:nmom])
@@ -211,24 +211,13 @@ void calc_inner_source(void)
 
 void zero_flux_in_out(void)
 {
-    //TODO: REMOVE
-    //#pragma acc parallel \
-    present(flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct])
-        //    for(int i = 0; i < nang*nx*ny*nz*ng*noct; ++i)
-        //    {
-        //        flux_in[i] = 0.0;
-        //        flux_out[i] = 0.0;
-        //    }
-
 #pragma acc parallel \
-        present(flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct])
-        for(int i = 0; i < nang*nx*ny*nz*ng*noct; ++i)
-        {
-            flux_in[i] = 0.0;
-            flux_out[i] = 0.0;
-        }
-
-
+    present(flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct])
+    for(int i = 0; i < nang*nx*ny*nz*ng*noct; ++i)
+    {
+        flux_in[i] = 0.0;
+        flux_out[i] = 0.0;
+    }
 }
 
 void zero_edge_flux_buffers(void)
@@ -240,64 +229,34 @@ void zero_edge_flux_buffers(void)
 #define MAX(A,B) (((A) > (B)) ? (A) : (B))
     int max_length = MAX(MAX(fi_len, fj_len), fk_len);
 
-    //TODO: REMOVE
-    //#pragma acc parallel \
-    present(flux_i[0:fi_len], flux_j[0:fj_len], flux_k[0:fk_len])
-        //    for(int i = 0; i < max_length; ++i)
-        //    {
-        //        if(i < fi_len) flux_i[i] = 0.0;
-        //        if(i < fj_len) flux_j[i] = 0.0;
-        //        if(i < fk_len) flux_k[i] = 0.0;
-        //    }
-
-
 #pragma acc parallel \
-        present(flux_i[0:fi_len], flux_j[0:fj_len], flux_k[0:fk_len])
-        for(int i = 0; i < max_length; ++i)
-        {
-            if(i < fi_len) flux_i[i] = 0.0;
-            if(i < fj_len) flux_j[i] = 0.0;
-            if(i < fk_len) flux_k[i] = 0.0;
-        }
+    present(flux_i[0:fi_len], flux_j[0:fj_len], flux_k[0:fk_len])
+    for(int i = 0; i < max_length; ++i)
+    {
+        if(i < fi_len) flux_i[i] = 0.0;
+        if(i < fj_len) flux_j[i] = 0.0;
+        if(i < fk_len) flux_k[i] = 0.0;
+    }
 }
 
 void zero_flux_moments_buffer(void)
 {
-    //TODO: REMOVE
-    //#pragma acc parallel \
-    present(scalar_mom[0:(cmom-1)*nx*ny*nz*ng])
-        //    for(int i = 0; i < (cmom-1)*nx*ny*nz*ng; ++i)
-        //    {
-        //        scalar_mom[i] = 0.0;
-        //    }
-
-
 #pragma acc parallel \
-        present(scalar_mom[0:(cmom-1)*nx*ny*nz*ng])
-        for(int i = 0; i < (cmom-1)*nx*ny*nz*ng; ++i)
-        {
-            scalar_mom[i] = 0.0;
-        }
+    present(scalar_mom[0:(cmom-1)*nx*ny*nz*ng])
+    for(int i = 0; i < (cmom-1)*nx*ny*nz*ng; ++i)
+    {
+        scalar_mom[i] = 0.0;
+    }
 }
 
 void zero_scalar_flux(void)
 {
-    //TODO:REMOVE
-    //#pragma acc parallel \
-    present(scalar_flux[0:nx*ny*nz*ng])
-        //    for(int i = 0; i < nx*ny*nz*ng; ++i)
-        //    {
-        //        scalar_flux[i] = 0.0;
-        //    }
-
-
-
 #pragma acc parallel \
-        present(scalar_flux[0:nx*ny*nz*ng])
-        for(int i = 0; i < nx*ny*nz*ng; ++i)
-        {
-            scalar_flux[i] = 0.0;
-        }
+    present(scalar_flux[0:nx*ny*nz*ng])
+    for(int i = 0; i < nx*ny*nz*ng; ++i)
+    {
+        scalar_flux[i] = 0.0;
+    }
 }
 
 bool check_convergence(
@@ -372,10 +331,10 @@ void store_scalar_flux(double* to)
 #pragma acc parallel loop \
     present(old_inner_scalar[0:nx*ny*nz*ng], old_outer_scalar[0:nx*ny*nz*ng], \
             scalar_flux[0:nx*ny*nz*ng])
-    for(int i = 0; i < nx*ny*nz*ng; ++i)
-    {
-        to[i] = scalar_flux[i];
-    }
+        for(int i = 0; i < nx*ny*nz*ng; ++i)
+        {
+            to[i] = scalar_flux[i];
+        }
 
     STOP_PROFILING(__func__, true);
 }

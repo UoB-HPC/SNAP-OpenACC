@@ -150,18 +150,19 @@ void initialise_device_memory(
 void iterate(void)
 {
 #pragma acc declare \
-    copyin(mu[0:nang], dd_j[0:nang], dd_k[0:nang], mat[0:nx*ny*nz], \
+    copyin(mu[0:nang], mat[0:nx*ny*nz], \
             xs[0:nmat*ng], xi[0:nang], eta[0:nang], velocity[0:ng], \
             gg_cs[0:nmat*nmom*ng*ng], scat_cs[0:nmom*nx*ny*nz*ng], \
             fixed_source[0:nx*ny*nz*ng], lma[0:nmom], scat_coeff[0:nang*cmom*noct],\
             weights[0:nang], fixed_source[0:nx*ny*nz*ng], lma[0:nmom]),\
-    create(total_cross_section[0:nx*ny*nz*ng], denom[0:nang*nx*ny*nz*ng],\
+    create(total_cross_section[0:nx*ny*nz*ng], dd_j[0:nang], dd_k[0:nang],\
+            denom[0:nang*nx*ny*nz*ng],\
             time_delta[0:ng], groups_todo[0:ng], g2g_source[0:cmom*nx*ny*nz*ng],\
             old_outer_scalar[0:nx*ny*nz*ng], old_inner_scalar[0:nx*ny*nz*ng],\
             source[0:cmom*nx*ny*nz*ng], flux_i[0:nang*ny*nz*ng], \
-            flux_j[0:nang*nx*nz*ng], flux_k[0:nang*nx*ny*ng], new_scalar[0:nx*ny*nz*ng]),\
-    copyout(flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct],\
-            scalar_mom[0:(cmom-1)*nx*ny*nz*ng], scalar_flux[0:nx*ny*nz*ng])
+            flux_j[0:nang*nx*nz*ng], flux_k[0:nang*nx*ny*ng], new_scalar[0:nx*ny*nz*ng],\
+            flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct]) \
+    copyout(scalar_mom[0:(cmom-1)*nx*ny*nz*ng], scalar_flux[0:nx*ny*nz*ng])
     {
         zero_flux_in_out();
         zero_scalar_flux();
@@ -213,6 +214,7 @@ void iterate(void)
                 // Save flux
                 store_scalar_flux(old_outer_scalar);
 
+
                 // Inner loop
                 for (unsigned int i = 0; i < inners; i++)
                 {
@@ -229,12 +231,6 @@ void iterate(void)
                     double t1 = omp_get_wtime();
 #endif
 
-//#pragma acc update\
-//    host(source[0:cmom*nx*ny*nz*ng], scat_coeff[0:nang*cmom*noct], \
-//            flux_i[0:nang*ng*ny*nz], flux_j[0:nang*ng*nx*nz], flux_k[0:nang*ng*nx*ny], \
-//            mu[0:nang], dd_j[0:nang], dd_k[0:nang], time_delta[0:ng], \
-//            denom[0:nang*ng*nx*ny*nz], total_cross_section[0:nx*ny*nz*ng])
-
                     // Sweep
                     perform_sweep(num_groups_todo);
 
@@ -245,6 +241,8 @@ void iterate(void)
 
                     // Scalar flux
                     reduce_angular();
+
+
 #ifdef TIMING
                     double t3 = omp_get_wtime();
                     printf("reductions took: %lfs\n", t3-t2);
@@ -295,6 +293,11 @@ void iterate(void)
         {
             printf("Warning: did not converge\n");
         }
+
+        // Currently performing manual update, as having issues
+        // with the copyout clause...
+#pragma acc update \
+        host(flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct])
     }
 
     PRINT_PROFILING_RESULTS;
@@ -311,7 +314,7 @@ void reduce_angular(void)
     double* angular = (global_timestep % 2 == 0) ? flux_out : flux_in;
     double* angular_prev = (global_timestep % 2 == 0) ? flux_in : flux_out;
 
-   for(unsigned int o = 0; o < 8; ++o)
+    for(unsigned int o = 0; o < 8; ++o)
     {
 #pragma acc parallel loop \
         present(time_delta[0:ng], angular[0:nang*ng*nx*ny*nz*noct], \
