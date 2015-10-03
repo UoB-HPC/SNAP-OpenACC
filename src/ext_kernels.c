@@ -122,45 +122,55 @@ void calc_scattering_cross_section(void)
 void calc_outer_source(void)
 {
     START_PROFILING;
-
     for (unsigned int g1 = 0; g1 < ng; g1++)
     {
+<<<<<<< HEAD
 #pragma acc parallel loop  \
+=======
+#pragma acc kernels \
+>>>>>>> bcda47621f575122a22e741fa612f5315bbdfa85
         present(g2g_source[0:cmom*nx*ny*nz*ng], fixed_source[0:nx*ny*nz*ng],\
                 scalar_flux[0:nx*ny*nz*ng], gg_cs[0:nmat*nmom*ng*ng], \
                 mat[0:nx*ny*nz], scalar_mom[0:(cmom-1)*nx*ny*nz*ng], lma[0:nmom])
-        for (unsigned int k = 0; k < nz; k++)
         {
-            for (unsigned int j = 0; j < ny; j++)
+#pragma acc loop independent
+            for (unsigned int k = 0; k < nz; k++)
             {
-                for (unsigned int i = 0; i < nx; i++)
+#pragma acc loop independent
+                for (unsigned int j = 0; j < ny; j++)
                 {
-                    //for(int ind = 0; ind < nx*ny*nz; ++ind)
-                    //
-                    //    int k = ind / (nx*ny);
-                    //    int j = (ind / nx) % ny;
-                    //    int i = ind % nx;
-
-                    g2g_source(0,i,j,k,g1) = fixed_source(i,j,k,g1);
-
-                    for (unsigned int g2 = 0; g2 < ng; g2++)
+#pragma acc loop independent
+                    for (unsigned int i = 0; i < nx; i++)
                     {
-                        if (g1 == g2)
-                        {
-                            continue;
-                        }
+                        //for (unsigned int ind = 0; ind < nx*ny*nz; ++ind)
+                        //
+                        //    int k = ind / (nx*ny);
+                        //    int j = (ind / nx) % ny;
+                        //    int i = ind % nx;
 
-                        g2g_source(0,i,j,k,g1) += gg_cs(mat(i,j,k)-1,0,g2,g1) * scalar_flux(g2,i,j,k);
+                        g2g_source(0,i,j,k,g1) = fixed_source(i,j,k,g1);
 
-                        unsigned int mom = 1;
-                        for (unsigned int l = 1; l < nmom; l++)
+#pragma acc loop independent
+                        for (unsigned int g2 = 0; g2 < ng; g2++)
                         {
-                            for (int m = 0; m < lma(l); m++)
+                            if (g1 == g2)
                             {
-                                g2g_source(mom+m,i,j,k,g1) += gg_cs(mat(i,j,k)-1,l,g2,g1) * scalar_mom(g2,mom+m-1,i,j,k);
+                                continue;
                             }
 
-                            mom += lma(l);
+                            g2g_source(0,i,j,k,g1) += gg_cs(mat(i,j,k)-1,0,g2,g1) * scalar_flux(g2,i,j,k);
+
+                            unsigned int mom = 1;
+#pragma acc loop independent
+                            for (unsigned int l = 1; l < nmom; l++)
+                            {
+                                for (int m = 0; m < lma(l); m++)
+                                {
+                                    g2g_source(mom+m,i,j,k,g1) += gg_cs(mat(i,j,k)-1,l,g2,g1) * scalar_mom(g2,mom+m-1,i,j,k);
+                                }
+
+                                mom += lma(l);
+                            }
                         }
                     }
                 }
@@ -176,30 +186,36 @@ void calc_inner_source(void)
 {
     START_PROFILING;
 
+<<<<<<< HEAD
 #pragma acc parallel loop \
+=======
+#pragma acc kernels \
+>>>>>>> bcda47621f575122a22e741fa612f5315bbdfa85
     present(source[0:cmom*nx*ny*nz*ng], g2g_source[0:cmom*nx*ny*nz*ng], \
             scat_cs[0:nmom*nx*ny*nz*ng], scalar_flux[0:nx*ny*nz*ng], \
             scalar_mom[0:(cmom-1)*nx*ny*nz*ng], lma[0:nmom])
-    for(int k = 0; k < nz; ++k)
     {
-        for(int j = 0; j < ny; ++j)
+        for(int k = 0; k < nz; ++k)
         {
-            for(int i = 0; i < nx; ++i)
+            for(int j = 0; j < ny; ++j)
             {
-                for (unsigned int g = 0; g < ng; g++)
+                for(int i = 0; i < nx; ++i)
                 {
-                    source(0,i,j,k,g) = g2g_source(0,i,j,k,g) 
-                        + scat_cs(0,i,j,k,g) * scalar_flux(g,i,j,k);
-
-                    unsigned int mom = 1;
-                    for (unsigned int l = 1; l < nmom; l++)
+                    for (unsigned int g = 0; g < ng; g++)
                     {
-                        for (int m = 0; m < lma(l); m++)
+                        source(0,i,j,k,g) = g2g_source(0,i,j,k,g) 
+                            + scat_cs(0,i,j,k,g) * scalar_flux(g,i,j,k);
+
+                        unsigned int mom = 1;
+                        for (unsigned int l = 1; l < nmom; l++)
                         {
-                            source(mom+m,i,j,k,g) = g2g_source(mom+m,i,j,k,g) 
-                                + scat_cs(l,i,j,k,g) * scalar_mom(g,mom+m-1,i,j,k);
+                            for (int m = 0; m < lma(l); m++)
+                            {
+                                source(mom+m,i,j,k,g) = g2g_source(mom+m,i,j,k,g) 
+                                    + scat_cs(l,i,j,k,g) * scalar_mom(g,mom+m-1,i,j,k);
+                            }
+                            mom += lma(l);
                         }
-                        mom += lma(l);
                     }
                 }
             }
