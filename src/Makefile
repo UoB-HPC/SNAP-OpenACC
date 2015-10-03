@@ -6,7 +6,7 @@
 DBG 	 = no
 PROFILER = yes
 ACCEL	 = -acc -ta=nvidia
-COPTION  = -fast -Minfo=accel
+COPTION  = -Minfo=accel
 FOPTION  = 
 OPENMP 	 = -mp
 TARGET 	 = snap

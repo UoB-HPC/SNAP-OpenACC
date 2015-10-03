@@ -316,7 +316,7 @@ void reduce_angular(void)
 
     for(unsigned int o = 0; o < 8; ++o)
     {
-#pragma acc parallel \
+#pragma acc parallel loop \
         present(time_delta[0:ng], angular[0:nang*ng*nx*ny*nz*noct], \
                 angular_prev[0:nang*ng*nx*ny*nz*noct], weights[0:nang], \
                 scalar_mom[0:ng*(cmom-1)*nx*ny*nz], scalar_flux[0:nx*ny*nz*ng],\

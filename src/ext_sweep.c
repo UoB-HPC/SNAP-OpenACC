@@ -150,135 +150,130 @@ void sweep_cell(
     const int num_cells = planes[d].num_cells;
     const struct cell* cell_index = planes[d].cells;
     
-#pragma acc kernels\
-        present(source[0:cmom*nx*ny*nz*ng], scat_coeff[0:nang*cmom*noct], \
-                flux_i[0:nang*ng*ny*nz], flux_j[0:nang*ng*nx*nz], flux_k[0:nang*ng*nx*ny], \
-                mu[0:nang], dd_j[0:nang], dd_k[0:nang], time_delta[0:ng], \
-                denom[0:nang*ng*nx*ny*nz], total_cross_section[0:nx*ny*nz*ng], \
-                l_flux_in[0:nang*nx*ny*nz*ng], l_flux_out[0:nang*nx*ny*nz*ng], \
-                planes[0:ndiag])
+#pragma acc parallel loop\
+    present(source[0:cmom*nx*ny*nz*ng], scat_coeff[0:nang*cmom*noct], \
+            flux_i[0:nang*ng*ny*nz], flux_j[0:nang*ng*nx*nz], flux_k[0:nang*ng*nx*ny], \
+            mu[0:nang], dd_j[0:nang], dd_k[0:nang], time_delta[0:ng], \
+            denom[0:nang*ng*nx*ny*nz], total_cross_section[0:nx*ny*nz*ng], \
+            l_flux_in[0:nang*nx*ny*nz*ng], l_flux_out[0:nang*nx*ny*nz*ng], \
+            planes[0:ndiag])
+    for(int nc = 0; nc < num_cells; ++nc)
     {
-#pragma acc loop independent
-       for(int nc = 0; nc < num_cells; ++nc)
+        for(int tg = 0; tg < num_groups_todo; ++tg)
         {
-#pragma acc loop independent
-            for(int tg = 0; tg < num_groups_todo; ++tg)
+            for(int a = 0; a < nang; ++a)
             {
-#pragma acc loop independent
-                for(int a = 0; a < nang; ++a)
+                // Get indexes for angle and group
+                const unsigned int i = (istep > 0) ? cell_index[nc].i : nx - cell_index[nc].i - 1;
+                const unsigned int j = (jstep > 0) ? cell_index[nc].j : ny - cell_index[nc].j - 1;
+                const unsigned int k = (kstep > 0) ? cell_index[nc].k : nz - cell_index[nc].k - 1;
+                const unsigned int g = groups_todo[tg];
+
+                // Assume transmissive (vacuum boundaries) and that we
+                // are sweeping the whole grid so have access to all neighbours
+                // This means that we only consider the case for one MPI task
+                // at present.
+
+                // Compute angular source
+                // Begin with first scattering moment
+                double source_term = source(0,i,j,k,g);
+
+                // Add in the anisotropic scattering source moments
+                for (unsigned int l = 1; l < cmom; l++)
                 {
-                    // Get indexes for angle and group
-                    const unsigned int i = (istep > 0) ? cell_index[nc].i : nx - cell_index[nc].i - 1;
-                    const unsigned int j = (jstep > 0) ? cell_index[nc].j : ny - cell_index[nc].j - 1;
-                    const unsigned int k = (kstep > 0) ? cell_index[nc].k : nz - cell_index[nc].k - 1;
-                    const unsigned int g = groups_todo[tg];
-
-                    // Assume transmissive (vacuum boundaries) and that we
-                    // are sweeping the whole grid so have access to all neighbours
-                    // This means that we only consider the case for one MPI task
-                    // at present.
-
-                    // Compute angular source
-                    // Begin with first scattering moment
-                    double source_term = source(0,i,j,k,g);
-
-                    // Add in the anisotropic scattering source moments
-                    for (unsigned int l = 1; l < cmom; l++)
-                    {
-                        source_term += scat_coeff(l,a,oct) * source(l,i,j,k,g);
-                    }
-
-                    double psi = source_term 
-                        + flux_i(a,g,j,k)*mu(a)*dd_i 
-                        + flux_j(a,g,i,k)*dd_j(a) 
-                        + flux_k(a,g,i,j)*dd_k(a);
-
-                    // Add contribution from last timestep flux if time-dependant
-                    if (time_delta(g) != 0.0)
-                    {
-                        psi += time_delta(g) * l_flux_in(a,g,i,j,k);
-                    }
-
-                    psi *= denom(a,g,i,j,k);
-
-                    // Compute upwind fluxes
-                    double tmp_flux_i = 2.0*psi - flux_i(a,g,j,k);
-                    double tmp_flux_j = 2.0*psi - flux_j(a,g,i,k);
-                    double tmp_flux_k = 2.0*psi - flux_k(a,g,i,j);
-
-                    // Time differencing on final flux value
-                    if (time_delta(g) != 0.0)
-                    {
-                        psi = 2.0 * psi - l_flux_in(a,g,i,j,k);
-                    }
-
-                    // Perform the fixup loop
-                    double zeros[4];
-                    int num_to_fix = 4;
-                    // Fixup is a bounded loop as we will worst case fix up each face and centre value one after each other
-#pragma acc loop independent private(tmp_flux_i, tmp_flux_j, tmp_flux_k, psi)
-                    for (int fix = 0; fix < 4; fix++)
-                    {
-                        // Record which ones are zero
-                        zeros[0] = (tmp_flux_i < 0.0) ? 0.0 : 1.0;
-                        zeros[1] = (tmp_flux_j < 0.0) ? 0.0 : 1.0;
-                        zeros[2] = (tmp_flux_k < 0.0) ? 0.0 : 1.0;
-                        zeros[3] =  (psi < 0.0) ? 0.0 : 1.0;
-
-                        if (num_to_fix == zeros[0] + zeros[1] + zeros[2] + zeros[3])
-                        {
-                            // We have fixed up enough
-                            break;
-                        }
-                        num_to_fix = zeros[0] + zeros[1] + zeros[2] + zeros[3];
-
-                        // Recompute cell centre value
-                        psi = flux_i(a,g,j,k)*mu(a)*dd_i*(1.0+zeros[0]) 
-                            + flux_j(a,g,j,k)*dd_j(a)*(1.0+zeros[1]) 
-                            + flux_k(a,g,i,j)*dd_k(a)*(1.0+zeros[2]);
-
-                        if (time_delta(g) != 0.0)
-                        {
-                            psi += time_delta(g) * l_flux_in(a,g,i,j,k) * (1.0+zeros[3]);
-                        }
-                        psi = 0.5*psi + source_term;
-                        double recalc_denom = total_cross_section(g,i,j,k);
-                        recalc_denom += mu(a) * dd_i * zeros[0];
-                        recalc_denom += dd_j(a) * zeros[1];
-                        recalc_denom += dd_k(a) * zeros[2];
-                        recalc_denom += time_delta(g) * zeros[3];
-
-                        if (recalc_denom > 1.0E-12)
-                        {
-                            psi /= recalc_denom;
-                        }
-                        else
-                        {
-                            psi = 0.0;
-                        }
-
-                        // Recompute the edge fluxes with the new centre value
-                        tmp_flux_i = 2.0 * psi - flux_i(a,g,j,k);
-                        tmp_flux_j = 2.0 * psi - flux_j(a,g,i,k);
-                        tmp_flux_k = 2.0 * psi - flux_k(a,g,i,j);
-                        if (time_delta(g) != 0.0)
-                        {
-                            psi = 2.0*psi - l_flux_in(a,g,i,j,k);
-                        }
-                    }
-
-                    // Fix up loop is done, just need to set the final values
-                    tmp_flux_i = tmp_flux_i * zeros[0];
-                    tmp_flux_j = tmp_flux_j * zeros[1];
-                    tmp_flux_k = tmp_flux_k * zeros[2];
-                    psi = psi * zeros[3];
-
-                    // Write values to global memory
-                    flux_i(a,g,j,k) = tmp_flux_i;
-                    flux_j(a,g,i,k) = tmp_flux_j;
-                    flux_k(a,g,i,j) = tmp_flux_k;
-                    l_flux_out(a,g,i,j,k) = psi;
+                    source_term += scat_coeff(l,a,oct) * source(l,i,j,k,g);
                 }
+
+                double psi = source_term 
+                    + flux_i(a,g,j,k)*mu(a)*dd_i 
+                    + flux_j(a,g,i,k)*dd_j(a) 
+                    + flux_k(a,g,i,j)*dd_k(a);
+
+                // Add contribution from last timestep flux if time-dependant
+                if (time_delta(g) != 0.0)
+                {
+                    psi += time_delta(g) * l_flux_in(a,g,i,j,k);
+                }
+
+                psi *= denom(a,g,i,j,k);
+
+                // Compute upwind fluxes
+                double tmp_flux_i = 2.0*psi - flux_i(a,g,j,k);
+                double tmp_flux_j = 2.0*psi - flux_j(a,g,i,k);
+                double tmp_flux_k = 2.0*psi - flux_k(a,g,i,j);
+
+                // Time differencing on final flux value
+                if (time_delta(g) != 0.0)
+                {
+                    psi = 2.0 * psi - l_flux_in(a,g,i,j,k);
+                }
+
+                // Perform the fixup loop
+                double zeros[4];
+                int num_to_fix = 4;
+                // Fixup is a bounded loop as we will worst case fix up each face and centre value one after each other
+#pragma acc loop private(tmp_flux_i, tmp_flux_j, tmp_flux_k, psi)
+                for (int fix = 0; fix < 4; fix++)
+                {
+                    // Record which ones are zero
+                    zeros[0] = (tmp_flux_i < 0.0) ? 0.0 : 1.0;
+                    zeros[1] = (tmp_flux_j < 0.0) ? 0.0 : 1.0;
+                    zeros[2] = (tmp_flux_k < 0.0) ? 0.0 : 1.0;
+                    zeros[3] =  (psi < 0.0) ? 0.0 : 1.0;
+
+                    if (num_to_fix == zeros[0] + zeros[1] + zeros[2] + zeros[3])
+                    {
+                        // We have fixed up enough
+                        break;
+                    }
+                    num_to_fix = zeros[0] + zeros[1] + zeros[2] + zeros[3];
+
+                    // Recompute cell centre value
+                    psi = flux_i(a,g,j,k)*mu(a)*dd_i*(1.0+zeros[0]) 
+                        + flux_j(a,g,j,k)*dd_j(a)*(1.0+zeros[1]) 
+                        + flux_k(a,g,i,j)*dd_k(a)*(1.0+zeros[2]);
+
+                    if (time_delta(g) != 0.0)
+                    {
+                        psi += time_delta(g) * l_flux_in(a,g,i,j,k) * (1.0+zeros[3]);
+                    }
+                    psi = 0.5*psi + source_term;
+                    double recalc_denom = total_cross_section(g,i,j,k);
+                    recalc_denom += mu(a) * dd_i * zeros[0];
+                    recalc_denom += dd_j(a) * zeros[1];
+                    recalc_denom += dd_k(a) * zeros[2];
+                    recalc_denom += time_delta(g) * zeros[3];
+
+                    if (recalc_denom > 1.0E-12)
+                    {
+                        psi /= recalc_denom;
+                    }
+                    else
+                    {
+                        psi = 0.0;
+                    }
+
+                    // Recompute the edge fluxes with the new centre value
+                    tmp_flux_i = 2.0 * psi - flux_i(a,g,j,k);
+                    tmp_flux_j = 2.0 * psi - flux_j(a,g,i,k);
+                    tmp_flux_k = 2.0 * psi - flux_k(a,g,i,j);
+                    if (time_delta(g) != 0.0)
+                    {
+                        psi = 2.0*psi - l_flux_in(a,g,i,j,k);
+                    }
+                }
+
+                // Fix up loop is done, just need to set the final values
+                tmp_flux_i = tmp_flux_i * zeros[0];
+                tmp_flux_j = tmp_flux_j * zeros[1];
+                tmp_flux_k = tmp_flux_k * zeros[2];
+                psi = psi * zeros[3];
+
+                // Write values to global memory
+                flux_i(a,g,j,k) = tmp_flux_i;
+                flux_j(a,g,i,k) = tmp_flux_j;
+                flux_k(a,g,i,j) = tmp_flux_k;
+                l_flux_out(a,g,i,j,k) = psi;
             }
         }
     }
