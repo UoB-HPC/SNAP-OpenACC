@@ -51,8 +51,8 @@
 #define g2g_source_len cmom*nx*ny*nz*ng
 #define scalar_flux_len nx*ny*nz*ng
 #define flux_in_len nang*nx*ny*nz*ng*noct
-#define l_flux_in_len nang*nx*ny*nz*ng
 #define flux_out_len nang*nx*ny*nz*ng*noct
+#define l_flux_in_len nang*nx*ny*nz*ng
 #define l_flux_out_len nang*nx*ny*nz*ng
 #define scalar_mom_len (cmom-1)*nx*ny*nz*ng
 #define mu_len nang

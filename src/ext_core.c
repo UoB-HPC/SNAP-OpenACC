@@ -10,6 +10,7 @@
 #include "ext_problem.h"
 #include "ext_profiler.h"
 
+// Entry point for performing the solve
 void ext_solve_(
         double *mu, 
         double *eta, 
@@ -23,19 +24,13 @@ void ext_solve_(
         double *gg_cs,
         int *lma)
 {
-    // Are both create and local initialisation necessary?????
     initialise_device_memory(mu, eta, xi, scat_coeff, weights, velocity,
             xs, mat, fixed_source, gg_cs, lma);
 
     iterate();
-
-    free(old_outer_scalar);
-    free(new_scalar);
-    free(old_inner_scalar);
-    free(groups_todo);
 }
 
-// Initialises the problem parameters
+// Entry point for initialising the parameters
 void ext_initialise_parameters_(
         int *nx_, int *ny_, int *nz_,
         int *ng_, int *nang_, int *noct_,
@@ -109,25 +104,25 @@ void initialise_device_memory(
     // flux_j(nang,ichunk,nz,ng) - Working psi_y array
     // flux_k(nang,ichunk,ny,ng) - Working psi_z array
 
-    flux_i = (double*)malloc(sizeof(double)*nang*ny*nz*ng);
-    flux_j = (double*)malloc(sizeof(double)*nang*nx*nz*ng);
-    flux_k = (double*)malloc(sizeof(double)*nang*nx*ny*ng);
-    dd_j = (double*)malloc(sizeof(double)*nang);
-    dd_k = (double*)malloc(sizeof(double)*nang);
-    total_cross_section = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
-    scat_cs = (double*)malloc(sizeof(double)*nmom*nx*ny*nz*ng);
-    denom = (double*)malloc(sizeof(double)*nang*nx*ny*nz*ng);
-    source = (double*)malloc(sizeof(double)*cmom*nx*ny*nz*ng);
-    time_delta = (double*)malloc(sizeof(double)*ng);
-    groups_todo = (unsigned int*)malloc(sizeof(unsigned int)*ng);
-    g2g_source = (double*)malloc(sizeof(double)*cmom*nx*ny*nz*ng);
-    scalar_flux = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
-    flux_in = (double*)malloc(sizeof(double)*nang*nx*ny*nz*ng*noct);
-    flux_out = (double*)malloc(sizeof(double)*nang*nx*ny*nz*ng*noct);
-    scalar_mom = (double*)malloc(sizeof(double)*(cmom-1)*nx*ny*nz*ng);
-    old_outer_scalar = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
-    old_inner_scalar = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
-    new_scalar = (double*)malloc(sizeof(double)*nx*ny*nz*ng);
+    flux_i = (double*)malloc(sizeof(double)*flux_i_len);
+    flux_j = (double*)malloc(sizeof(double)*flux_j_len);
+    flux_k = (double*)malloc(sizeof(double)*flux_k_len);
+    dd_j = (double*)malloc(sizeof(double)*dd_j_len);
+    dd_k = (double*)malloc(sizeof(double)*dd_k_len);
+    total_cross_section = (double*)malloc(sizeof(double)*total_cross_section_len);
+    scat_cs = (double*)malloc(sizeof(double)*scat_cs_len);
+    denom = (double*)malloc(sizeof(double)*denom_len);
+    source = (double*)malloc(sizeof(double)*source_len);
+    time_delta = (double*)malloc(sizeof(double)*time_delta_len);
+    groups_todo = (unsigned int*)malloc(sizeof(unsigned int)*groups_todo_len);
+    g2g_source = (double*)malloc(sizeof(double)*g2g_source_len);
+    scalar_flux = (double*)malloc(sizeof(double)*scalar_flux_len);
+    flux_in = (double*)malloc(sizeof(double)*flux_in_len);
+    flux_out = (double*)malloc(sizeof(double)*flux_out_len);
+    scalar_mom = (double*)malloc(sizeof(double)*scalar_mom_len);
+    old_outer_scalar = (double*)malloc(sizeof(double)*scalar_flux_len);
+    old_inner_scalar = (double*)malloc(sizeof(double)*scalar_flux_len);
+    new_scalar = (double*)malloc(sizeof(double)*scalar_flux_len);
 
     // Read-only buffers initialised in Fortran code
     mu = mu_in;
@@ -150,19 +145,19 @@ void initialise_device_memory(
 void iterate(void)
 {
 #pragma acc declare \
-    copyin(mu[0:nang], mat[0:nx*ny*nz], \
-            xs[0:nmat*ng], xi[0:nang], eta[0:nang], velocity[0:ng], \
-            gg_cs[0:nmat*nmom*ng*ng], scat_cs[0:nmom*nx*ny*nz*ng], \
-            fixed_source[0:nx*ny*nz*ng], lma[0:nmom], scat_coeff[0:nang*cmom*noct],\
-            weights[0:nang], fixed_source[0:nx*ny*nz*ng], lma[0:nmom]),\
-    create(total_cross_section[0:nx*ny*nz*ng], dd_j[0:nang], dd_k[0:nang],\
-            denom[0:nang*nx*ny*nz*ng],\
-            time_delta[0:ng], groups_todo[0:ng], g2g_source[0:cmom*nx*ny*nz*ng],\
-            old_outer_scalar[0:nx*ny*nz*ng], old_inner_scalar[0:nx*ny*nz*ng],\
-            source[0:cmom*nx*ny*nz*ng], flux_i[0:nang*ny*nz*ng], \
-            flux_j[0:nang*nx*nz*ng], flux_k[0:nang*nx*ny*ng], new_scalar[0:nx*ny*nz*ng],\
-            flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct]) \
-    copyout(scalar_mom[0:(cmom-1)*nx*ny*nz*ng], scalar_flux[0:nx*ny*nz*ng])
+    copyin(mu[:mu_len], mat[:mat_len], xs[:xs_len], xi[:xi_len], \
+            eta[:eta_len], velocity[:velocity_len], gg_cs[:gg_cs_len], \
+            scat_cs[:scat_cs_len], fixed_source[:fixed_source_len], \
+            lma[:lma_len], scat_coeff[:scat_coeff_len],\
+            weights[:weights_len], lma[:lma_len]),\
+    create(total_cross_section[:total_cross_section_len], dd_j[:dd_j_len], \
+            dd_k[:dd_k_len], denom[:denom_len], time_delta[:time_delta_len], \
+            groups_todo[:groups_todo_len], g2g_source[:g2g_source_len],\
+            old_outer_scalar[:scalar_flux_len], old_inner_scalar[:scalar_flux_len],\
+            source[:source_len], flux_i[:flux_i_len], flux_j[:flux_j_len], \
+            flux_k[:flux_k_len], new_scalar[:scalar_flux_len], \
+            flux_in[:flux_in_len], flux_out[:flux_out_len], \
+            scalar_mom[:scalar_mom_len], scalar_flux[:scalar_flux_len])
     {
         zero_flux_in_out();
         zero_scalar_flux();
@@ -193,7 +188,8 @@ void iterate(void)
                 // Reset the inner convergence list
                 bool inner_done = false;
 
-#pragma acc parallel loop
+#pragma acc parallel loop \
+                present(groups_todo[:groups_todo_len])
                 for (unsigned int g = 0; g < ng; g++)
                 {
                     groups_todo[g] = g;
@@ -213,7 +209,6 @@ void iterate(void)
 
                 // Save flux
                 store_scalar_flux(old_outer_scalar);
-
 
                 // Inner loop
                 for (unsigned int i = 0; i < inners; i++)
@@ -239,9 +234,12 @@ void iterate(void)
                     printf("sweep took: %lfs\n", t2-t1);
 #endif
 
-                    // Scalar flux
-                    reduce_angular();
+#pragma acc update \
+                    host(flux_in[:flux_in_len], flux_out[:flux_out_len],\
+                    scalar_mom[:scalar_mom_len], scalar_flux[:scalar_flux_len])
 
+                   // Scalar flux
+                    reduce_angular();
 
 #ifdef TIMING
                     double t3 = omp_get_wtime();
@@ -296,8 +294,6 @@ void iterate(void)
 
         // Currently performing manual update, as having issues
         // with the copyout clause...
-#pragma acc update \
-        host(flux_in[0:nang*nx*ny*nz*ng*noct], flux_out[0:nang*nx*ny*nz*ng*noct])
     }
 
     PRINT_PROFILING_RESULTS;
@@ -316,46 +312,46 @@ void reduce_angular(void)
 
     for(unsigned int o = 0; o < 8; ++o)
     {
-#pragma acc parallel loop \
-        present(time_delta[0:ng], angular[0:nang*ng*nx*ny*nz*noct], \
-                angular_prev[0:nang*ng*nx*ny*nz*noct], weights[0:nang], \
-                scalar_mom[0:ng*(cmom-1)*nx*ny*nz], scalar_flux[0:nx*ny*nz*ng],\
-                scat_coeff[0:nang*cmom*noct])
-        for(unsigned int ind = 0; ind < nx*ny*nz; ++ind)
-        {
-            for (unsigned int g = 0; g < ng; g++)
+        //#pragma acc parallel loop \
+        present(angular[:flux_in_len], angular_prev[:flux_out_len], \
+                weights[:weights_len], scalar_mom[:scalar_mom_len], \
+                scalar_flux[:scalar_flux_len], scat_coeff[:scat_coeff_len])
+            for(unsigned int ind = 0; ind < nx*ny*nz; ++ind)
             {
-                const int tg = time_delta(g) != 0.0;
-
-                for (unsigned int a = 0; a < nang; a++)
+                for (unsigned int g = 0; g < ng; g++)
                 {
-                    const double weight = weights(a);
-                    const double ang = angular(o,ind,g,a);
-                    const double ang_p = angular_prev(o,ind,g,a);
+                    const bool tg = time_delta(g) != 0.0;
 
-                    if (tg)
+                    for (unsigned int a = 0; a < nang; a++)
                     {
-                        scalar_flux[g+ind*ng] += weight * (0.5 * (ang + ang_p));
+                        const double weight = weights(a);
+                        const double ang = angular(o,ind,g,a);
+                        const double ang_p = angular_prev(o,ind,g,a);
 
-                        for (unsigned int l = 0; l < (cmom-1); l++)
+                        if (tg)
                         {
-                            scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
-                                scat_coeff(l+1,a,o) * weight * (0.5 * (ang + ang_p));
+                            scalar_flux[g+ind*ng] += weight * (0.5 * (ang + ang_p));
+
+                            for (unsigned int l = 0; l < (cmom-1); l++)
+                            {
+                                scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
+                                    scat_coeff(l+1,a,o) * weight * (0.5 * (ang + ang_p));
+                            }
                         }
-                    }
-                    else
-                    {
-                        scalar_flux[g+ind*ng] += weight * ang;
-
-                        for (unsigned int l = 0; l < (cmom-1); l++)
+                        else
                         {
-                            scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
-                                scat_coeff(l+1,a,o) * weight * ang;
+                            scalar_flux[g+ind*ng] += weight * ang;
+
+                            for (unsigned int l = 0; l < (cmom-1); l++)
+                            {
+                                scalar_mom[l+g*(cmom-1)+(ng*(cmom-1)*ind)] += 
+                                    scat_coeff(l+1,a,o) * weight * ang;
+                            }
                         }
                     }
                 }
+
             }
-        }
     }
 
     STOP_PROFILING(__func__, true);
@@ -436,7 +432,7 @@ double* transpose_scat_coeff(double* scat_coeff_in)
 {
     START_PROFILING;
 
-    double* scat_coeff = (double*)malloc(sizeof(double)*nang*cmom*noct);
+    double* scat_coeff = (double*)malloc(sizeof(double)*cmom*noct*nang);
 
     for(unsigned int o = 0; o < noct; ++o)
     {

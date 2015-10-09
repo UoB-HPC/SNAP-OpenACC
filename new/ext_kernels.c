@@ -15,20 +15,14 @@ void calc_denominator(void)
     present(denom[:denom_len], total_cross_section[:total_cross_section_len], \
             time_delta[:time_delta_len], mu[:mu_len], dd_j[:dd_j_len], \
             dd_k[:dd_k_len])
-    for (unsigned int k = 0; k < nz; k++)
+    for (unsigned int ind = 0; ind < nx*ny*nz; ind++)
     {
-        for (unsigned int j = 0; j < ny; j++)
+        for (unsigned int g = 0; g < ng; ++g)
         {
-            for (unsigned int i = 0; i < nx; i++)
+            for (unsigned int a = 0; a < nang; ++a)
             {
-                for (unsigned int g = 0; g < ng; ++g)
-                {
-                    for (unsigned int a = 0; a < nang; ++a)
-                    {
-                        denom(a,g,i,j,k) = 1.0 / (total_cross_section(g,i,j,k)
-                                + time_delta(g) + mu(a)*dd_i + dd_j(a) + dd_k(a));
-                    }
-                }
+                denom[a+g*nang+ind*ng*nang] = 1.0 / (total_cross_section[g+ind*ng] 
+                        + time_delta(g) + mu(a)*dd_i + dd_j(a) + dd_k(a));
             }
         }
     }
@@ -57,11 +51,11 @@ void calc_dd_coefficients(void)
     START_PROFILING;
 
 #pragma acc kernels \
-    present(dd_j[:dd_j_len], dd_k[:dd_k_len], eta[:eta_len], xi[:xi_len])
+        present(dd_j[:dd_j_len], dd_k[:dd_k_len], eta[:eta_len], xi[:xi_len])
     {
         dd_i = 2.0 / dx;
 
-#pragma acc loop
+#pragma acc loop 
         for(int a = 0; a < nang; ++a)
         {
             dd_j(a) = (2.0/dy)*eta(a);
@@ -78,15 +72,14 @@ void calc_total_cross_section(void)
     START_PROFILING;
 
 #pragma acc parallel loop \
-    present(total_cross_section[:total_cross_section_len], xs[:xs_len], \
-            mat[:mat_len])
-    for (unsigned int k = 0; k < nz; k++)
+    present(total_cross_section[:total_cross_section_len], xs[:xs_len], mat[:mat_len])
+    for(int k = 0; k < nz; ++k)
     {
-        for (unsigned int j = 0; j < ny; j++)
+        for(int j = 0; j < ny; ++j)
         {
-            for (unsigned int i = 0; i < nx; i++)
+            for(int i = 0; i < nx; ++i)
             {
-                for(unsigned int g = 0; g < ng; ++g)
+                for(int g = 0; g < ng; ++g)
                 {
                     total_cross_section(g,i,j,k) = xs(mat(i,j,k)-1,g);
                 }
@@ -128,24 +121,18 @@ void calc_outer_source(void)
 {
     START_PROFILING;
 
+#pragma acc parallel loop \
+    present(g2g_source[:g2g_source_len], fixed_source[:fixed_source_len], \
+            scalar_flux[:scalar_flux_len], mat[:mat_len], lma[:lma_len], \
+            scalar_mom[:scalar_mom_len])
     for (unsigned int g1 = 0; g1 < ng; g1++)
     {
-#pragma acc parallel loop \
-        present(g2g_source[:g2g_source_len], fixed_source[:fixed_source_len],\
-                scalar_flux[:scalar_flux_len], gg_cs[:gg_cs_len], \
-                mat[:mat_len], scalar_mom[:scalar_mom_len], lma[:lma_len])
-        for (unsigned int k = 0; k < nz; k++)
+        for(int k = 0; k < nz; ++k)
         {
-            for (unsigned int j = 0; j < ny; j++)
+            for(int j = 0; j < ny; ++j)
             {
-                for (unsigned int i = 0; i < nx; i++)
+                for(int i = 0; i < nx; ++i)
                 {
-                    //for(int ind = 0; ind < nx*ny*nz; ++ind)
-                    //
-                    //    int k = ind / (nx*ny);
-                    //    int j = (ind / nx) % ny;
-                    //    int i = ind % nx;
-
                     g2g_source(0,i,j,k,g1) = fixed_source(i,j,k,g1);
 
                     for (unsigned int g2 = 0; g2 < ng; g2++)
@@ -162,10 +149,9 @@ void calc_outer_source(void)
                         {
                             for (int m = 0; m < lma(l); m++)
                             {
-                                g2g_source(mom+m,i,j,k,g1) += gg_cs(mat(i,j,k)-1,l,g2,g1) * scalar_mom(g2,mom+m-1,i,j,k);
+                                g2g_source(mom,i,j,k,g1) += gg_cs(mat(i,j,k)-1,l,g2,g1) * scalar_mom(g2,mom-1,i,j,k);
+                                mom++;
                             }
-
-                            mom += lma(l);
                         }
                     }
                 }
@@ -182,29 +168,26 @@ void calc_inner_source(void)
     START_PROFILING;
 
 #pragma acc parallel loop \
-    present(source[:source_len], g2g_source[:g2g_source_len], \
-            scat_cs[:scat_cs_len], scalar_flux[:scalar_flux_len], \
-            scalar_mom[:scalar_mom_len], lma[:lma_len])
-    for(int k = 0; k < nz; ++k)
+    present(source[:source_len], g2g_source[:g2g_source_len], scat_cs[:scat_cs_len], \
+            scalar_flux[:scalar_flux_len], lma[:lma_len], scalar_mom[:scalar_mom_len])
+    for (unsigned int g = 0; g < ng; g++)
     {
-        for(int j = 0; j < ny; ++j)
+        for(int k = 0; k < nz; ++k)
         {
-            for(int i = 0; i < nx; ++i)
+            for(int j = 0; j < ny; ++j)
             {
-                for (unsigned int g = 0; g < ng; g++)
+                for(int i = 0; i < nx; ++i)
                 {
-                    source(0,i,j,k,g) = g2g_source(0,i,j,k,g) 
-                        + scat_cs(0,i,j,k,g) * scalar_flux(g,i,j,k);
+                    source(0,i,j,k,g) = g2g_source(0,i,j,k,g) + scat_cs(0,i,j,k,g) * scalar_flux(g,i,j,k);
 
                     unsigned int mom = 1;
                     for (unsigned int l = 1; l < nmom; l++)
                     {
                         for (int m = 0; m < lma(l); m++)
                         {
-                            source(mom+m,i,j,k,g) = g2g_source(mom+m,i,j,k,g) 
-                                + scat_cs(l,i,j,k,g) * scalar_mom(g,mom+m-1,i,j,k);
+                            source(mom,i,j,k,g) = g2g_source(mom,i,j,k,g) + scat_cs(l,i,j,k,g) * scalar_mom(g,mom-1,i,j,k);
+                            mom++;
                         }
-                        mom += lma(l);
                     }
                 }
             }
@@ -216,16 +199,17 @@ void calc_inner_source(void)
 
 void zero_flux_in_out(void)
 {
-    for(int i = 0; i < nang*nx*ny*nz*ng*noct; ++i)
+#pragma acc parallel loop \
+    present(flux_in[:flux_in_len])
+    for(int i = 0; i < flux_in_len; ++i)
     {
         flux_in[i] = 0.0;
-        flux_out[i] = 0.0;
     }
-#pragma acc parallel loop\
-    present(flux_in[:flux_in_len], flux_out[:flux_out_len])
-    for(int i = 0; i < nang*nx*ny*nz*ng*noct; ++i)
+
+#pragma acc parallel loop \
+    present(flux_out[:flux_out_len])
+    for(int i = 0; i < flux_out_len; ++i)
     {
-        flux_in[i] = 0.0;
         flux_out[i] = 0.0;
     }
 }
@@ -239,13 +223,7 @@ void zero_edge_flux_buffers(void)
 #define MAX(A,B) (((A) > (B)) ? (A) : (B))
     int max_length = MAX(MAX(fi_len, fj_len), fk_len);
 
-    for(int i = 0; i < max_length; ++i)
-    {
-        if(i < fi_len) flux_i[i] = 0.0;
-        if(i < fj_len) flux_j[i] = 0.0;
-        if(i < fk_len) flux_k[i] = 0.0;
-    }
-#pragma acc parallel loop\
+#pragma acc parallel loop \
     present(flux_i[:flux_i_len], flux_j[:flux_j_len], flux_k[:flux_k_len])
     for(int i = 0; i < max_length; ++i)
     {
@@ -257,12 +235,8 @@ void zero_edge_flux_buffers(void)
 
 void zero_flux_moments_buffer(void)
 {
-    for(int i = 0; i < (cmom-1)*nx*ny*nz*ng; ++i)
-    {
-        scalar_mom[i] = 0.0;
-    }
 #pragma acc parallel loop \
-    present(scalar_mom[:scalar_mom_len])
+    present(scalar_mom[:scalar_mom])
     for(int i = 0; i < (cmom-1)*nx*ny*nz*ng; ++i)
     {
         scalar_mom[i] = 0.0;
@@ -271,10 +245,6 @@ void zero_flux_moments_buffer(void)
 
 void zero_scalar_flux(void)
 {
-    for(int i = 0; i < nx*ny*nz*ng; ++i)
-    {
-        scalar_flux[i] = 0.0;
-    }
 #pragma acc parallel loop \
     present(scalar_flux[:scalar_flux_len])
     for(int i = 0; i < nx*ny*nz*ng; ++i)
@@ -287,78 +257,86 @@ bool check_convergence(
         double *old, 
         double *new, 
         double epsi, 
+        unsigned int *groups_todo, 
         unsigned int *num_groups_todo, 
-        int inner)
+        bool inner)
 {
     START_PROFILING;
 
-    int converged = 1;
-    int ngt = *num_groups_todo;
+    bool r = true;
 
     // Reset the do_group list
     if (inner)
     {
-        ngt = 0;
+        *num_groups_todo = 0;
     }
 
-    //TODO: NEEDS SIGNIFICANT RETESTING
-#pragma acc parallel loop private(ngt, converged) reduction(+:ngt)\
-    present(old[:scalar_flux_len], new[:scalar_flux_len], \
-            groups_todo[:groups_todo_len]) \
-    copy(converged)
+#pragma acc parallel loop \
+    present(old[:scalar_flux_len], new[:scalar_flux_len], groups_todo[:groups_todo_len])
     for (unsigned int g = 0; g < ng; g++)
     {
-        for(unsigned int ind = 0; ind < nx*ny*nz; ++ind)
+        bool gr = false;
+        for (unsigned int k = 0; k < nz; k++)
         {
-            double val;
-            if (fabs(old[g+ind*ng] > tolr))
+            if (gr) break;
+            for (unsigned int j = 0; j < ny; j++)
             {
-                val = fabs(new[g+ind*ng]/old[g+ind*ng] - 1.0);
-            }
-            else
-            {
-                val = fabs(new[g+ind*ng] - old[g+ind*ng]);
-            }
-
-            if (val > epsi)
-            {
-                if (inner) 
+                if (gr) break;
+                for (unsigned int i = 0; i < nx; i++)
                 {
-                    groups_todo[ngt] = g;
-                    ngt += 1;
+                    double val;
+                    if (fabs(old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] > tolr))
+                    {
+                        val = fabs(new[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)]/old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] - 1.0);
+                    }
+                    else
+                    {
+                        val = fabs(new[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] - old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)]);
+                    }
+
+                    if (val > epsi)
+                    {
+                        if (inner)
+                        {
+                            gr = true;
+                        }
+
+                        r = false;
+                        break;
+                    }
                 }
-
-                converged = 0;
-
-                break;
             }
+        }
+
+        // Add g to the list of groups to do if we need to do it
+        if (inner && gr)
+        {
+            groups_todo[*num_groups_todo] = g;
+            *num_groups_todo += 1;
         }
     }
 
     // Check all inner groups are done in outer convergence test
-    if (!inner && ngt != 0)
+    if (!inner)
     {
-        converged = 0;
+        if (*num_groups_todo != 0)
+        {
+            r = false;
+        }
     }
-
-    *num_groups_todo = ngt;
 
     STOP_PROFILING(__func__, true);
 
-    return converged;
+    return r;
 }
 
 // Copies the value of scalar flux
 void store_scalar_flux(double* to)
 {
     START_PROFILING;
-    for(int i = 0; i < nx*ny*nz*ng; ++i)
-    {
-        to[i] = scalar_flux[i];
-    }
+
 #pragma acc parallel loop \
-    present(old_inner_scalar[:scalar_flux_len], old_outer_scalar[:scalar_flux_len], \
-            scalar_flux[:scalar_flux_len])
+    present(scalar_flux[:scalar_flux], to[:scalar_flux_len])
     for(int i = 0; i < nx*ny*nz*ng; ++i)
     {
         to[i] = scalar_flux[i];

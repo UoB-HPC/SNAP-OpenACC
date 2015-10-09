@@ -1,0 +1,3274 @@
+EXT buffer init time:      0.000s
+[Offload] [MIC 0] [File]                    ext_core.c
+[Offload] [MIC 0] [Line]                    29
+[Offload] [MIC 0] [Tag]                     Tag 0
+[Offload] [HOST]  [Tag 0] [CPU Time]        0.389576(seconds)
+[Offload] [MIC 0] [Tag 0] [CPU->MIC Data]   112 (bytes)
+[Offload] [MIC 0] [Tag 0] [MIC Time]        0.000000(seconds)
+[Offload] [MIC 0] [Tag 0] [MIC->CPU Data]   0 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_core.c
+[Offload] [MIC 0] [Line]                    32
+[Offload] [MIC 0] [Tag]                     Tag 1
+[Offload] [HOST]  [Tag 1] [CPU Time]        13.802861(seconds)
+[Offload] [MIC 0] [Tag 1] [CPU->MIC Data]   3573446760 (bytes)
+[Offload] [MIC 0] [Tag 1] [MIC Time]        0.000323(seconds)
+[Offload] [MIC 0] [Tag 1] [MIC->CPU Data]   0 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    240
+[Offload] [MIC 0] [Tag]                     Tag 2
+[Offload] [HOST]  [Tag 2] [CPU Time]        0.311918(seconds)
+[Offload] [MIC 0] [Tag 2] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 2] [MIC Time]        0.310169(seconds)
+[Offload] [MIC 0] [Tag 2] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 3
+[Offload] [HOST]  [Tag 3] [CPU Time]        0.005385(seconds)
+[Offload] [MIC 0] [Tag 3] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 3] [MIC Time]        0.005256(seconds)
+[Offload] [MIC 0] [Tag 3] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    230
+[Offload] [MIC 0] [Tag]                     Tag 4
+[Offload] [HOST]  [Tag 4] [CPU Time]        0.004583(seconds)
+[Offload] [MIC 0] [Tag 4] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 4] [MIC Time]        0.001484(seconds)
+[Offload] [MIC 0] [Tag 4] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    194
+[Offload] [MIC 0] [Tag]                     Tag 5
+[Offload] [HOST]  [Tag 5] [CPU Time]        0.172976(seconds)
+[Offload] [MIC 0] [Tag 5] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 5] [MIC Time]        0.171105(seconds)
+[Offload] [MIC 0] [Tag 5] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    201
+[Offload] [MIC 0] [Tag]                     Tag 6
+[Offload] [HOST]  [Tag 6] [CPU Time]        0.180971(seconds)
+[Offload] [MIC 0] [Tag 6] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 6] [MIC Time]        0.171857(seconds)
+[Offload] [MIC 0] [Tag 6] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    240
+[Offload] [MIC 0] [Tag]                     Tag 7
+[Offload] [HOST]  [Tag 7] [CPU Time]        0.004968(seconds)
+[Offload] [MIC 0] [Tag 7] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 7] [MIC Time]        0.000142(seconds)
+[Offload] [MIC 0] [Tag 7] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    230
+[Offload] [MIC 0] [Tag]                     Tag 8
+[Offload] [HOST]  [Tag 8] [CPU Time]        0.004989(seconds)
+[Offload] [MIC 0] [Tag 8] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 8] [MIC Time]        0.000164(seconds)
+[Offload] [MIC 0] [Tag 8] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_core.c
+[Offload] [MIC 0] [Line]                    194
+[Offload] [MIC 0] [Tag]                     Tag 9
+[Offload] [HOST]  [Tag 9] [CPU Time]        0.004993(seconds)
+[Offload] [MIC 0] [Tag 9] [CPU->MIC Data]   12 (bytes)
+[Offload] [MIC 0] [Tag 9] [MIC Time]        0.000082(seconds)
+[Offload] [MIC 0] [Tag 9] [MIC->CPU Data]   4 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    69
+[Offload] [MIC 0] [Tag]                     Tag 10
+[Offload] [HOST]  [Tag 10] [CPU Time]        0.004983(seconds)
+[Offload] [MIC 0] [Tag 10] [CPU->MIC Data]   36 (bytes)
+[Offload] [MIC 0] [Tag 10] [MIC Time]        0.000675(seconds)
+[Offload] [MIC 0] [Tag 10] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    92
+[Offload] [MIC 0] [Tag]                     Tag 11
+[Offload] [HOST]  [Tag 11] [CPU Time]        0.009984(seconds)
+[Offload] [MIC 0] [Tag 11] [CPU->MIC Data]   36 (bytes)
+[Offload] [MIC 0] [Tag 11] [MIC Time]        0.002850(seconds)
+[Offload] [MIC 0] [Tag 11] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    50
+[Offload] [MIC 0] [Tag]                     Tag 12
+[Offload] [HOST]  [Tag 12] [CPU Time]        0.004993(seconds)
+[Offload] [MIC 0] [Tag 12] [CPU->MIC Data]   32 (bytes)
+[Offload] [MIC 0] [Tag 12] [MIC Time]        0.000082(seconds)
+[Offload] [MIC 0] [Tag 12] [MIC->CPU Data]   0 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    36
+[Offload] [MIC 0] [Tag]                     Tag 13
+[Offload] [HOST]  [Tag 13] [CPU Time]        0.004984(seconds)
+[Offload] [MIC 0] [Tag 13] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 13] [MIC Time]        0.000068(seconds)
+[Offload] [MIC 0] [Tag 13] [MIC->CPU Data]   4 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    14
+[Offload] [MIC 0] [Tag]                     Tag 14
+[Offload] [HOST]  [Tag 14] [CPU Time]        0.027987(seconds)
+[Offload] [MIC 0] [Tag 14] [CPU->MIC Data]   60 (bytes)
+[Offload] [MIC 0] [Tag 14] [MIC Time]        0.027166(seconds)
+[Offload] [MIC 0] [Tag 14] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    119
+[Offload] [MIC 0] [Tag]                     Tag 15
+[Offload] [HOST]  [Tag 15] [CPU Time]        0.032973(seconds)
+[Offload] [MIC 0] [Tag 15] [CPU->MIC Data]   68 (bytes)
+[Offload] [MIC 0] [Tag 15] [MIC Time]        0.031729(seconds)
+[Offload] [MIC 0] [Tag 15] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    330
+[Offload] [MIC 0] [Tag]                     Tag 16
+[Offload] [HOST]  [Tag 16] [CPU Time]        0.009970(seconds)
+[Offload] [MIC 0] [Tag 16] [CPU->MIC Data]   28 (bytes)
+[Offload] [MIC 0] [Tag 16] [MIC Time]        0.001023(seconds)
+[Offload] [MIC 0] [Tag 16] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    163
+[Offload] [MIC 0] [Tag]                     Tag 17
+[Offload] [HOST]  [Tag 17] [CPU Time]        0.004500(seconds)
+[Offload] [MIC 0] [Tag 17] [CPU->MIC Data]   60 (bytes)
+[Offload] [MIC 0] [Tag 17] [MIC Time]        0.002560(seconds)
+[Offload] [MIC 0] [Tag 17] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    330
+[Offload] [MIC 0] [Tag]                     Tag 18
+[Offload] [HOST]  [Tag 18] [CPU Time]        0.004478(seconds)
+[Offload] [MIC 0] [Tag 18] [CPU->MIC Data]   28 (bytes)
+[Offload] [MIC 0] [Tag 18] [MIC Time]        0.001489(seconds)
+[Offload] [MIC 0] [Tag 18] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 19
+[Offload] [HOST]  [Tag 19] [CPU Time]        0.004989(seconds)
+[Offload] [MIC 0] [Tag 19] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 19] [MIC Time]        0.000687(seconds)
+[Offload] [MIC 0] [Tag 19] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 20
+[Offload] [HOST]  [Tag 20] [CPU Time]        0.007222(seconds)
+[Offload] [MIC 0] [Tag 20] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 20] [MIC Time]        0.002540(seconds)
+[Offload] [MIC 0] [Tag 20] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 21
+[Offload] [HOST]  [Tag 21] [CPU Time]        0.010936(seconds)
+[Offload] [MIC 0] [Tag 21] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 21] [MIC Time]        0.000797(seconds)
+[Offload] [MIC 0] [Tag 21] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 22
+[Offload] [HOST]  [Tag 22] [CPU Time]        0.005962(seconds)
+[Offload] [MIC 0] [Tag 22] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 22] [MIC Time]        0.001962(seconds)
+[Offload] [MIC 0] [Tag 22] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 23
+[Offload] [HOST]  [Tag 23] [CPU Time]        0.010918(seconds)
+[Offload] [MIC 0] [Tag 23] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 23] [MIC Time]        0.000888(seconds)
+[Offload] [MIC 0] [Tag 23] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 24
+[Offload] [HOST]  [Tag 24] [CPU Time]        0.006016(seconds)
+[Offload] [MIC 0] [Tag 24] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 24] [MIC Time]        0.001387(seconds)
+[Offload] [MIC 0] [Tag 24] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 25
+[Offload] [HOST]  [Tag 25] [CPU Time]        0.005946(seconds)
+[Offload] [MIC 0] [Tag 25] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 25] [MIC Time]        0.001122(seconds)
+[Offload] [MIC 0] [Tag 25] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 26
+[Offload] [HOST]  [Tag 26] [CPU Time]        0.006907(seconds)
+[Offload] [MIC 0] [Tag 26] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 26] [MIC Time]        0.001885(seconds)
+[Offload] [MIC 0] [Tag 26] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 27
+[Offload] [HOST]  [Tag 27] [CPU Time]        0.006087(seconds)
+[Offload] [MIC 0] [Tag 27] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 27] [MIC Time]        0.001325(seconds)
+[Offload] [MIC 0] [Tag 27] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 28
+[Offload] [HOST]  [Tag 28] [CPU Time]        0.005920(seconds)
+[Offload] [MIC 0] [Tag 28] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 28] [MIC Time]        0.001452(seconds)
+[Offload] [MIC 0] [Tag 28] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 29
+[Offload] [HOST]  [Tag 29] [CPU Time]        0.006918(seconds)
+[Offload] [MIC 0] [Tag 29] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 29] [MIC Time]        0.002332(seconds)
+[Offload] [MIC 0] [Tag 29] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 30
+[Offload] [HOST]  [Tag 30] [CPU Time]        0.005966(seconds)
+[Offload] [MIC 0] [Tag 30] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 30] [MIC Time]        0.002507(seconds)
+[Offload] [MIC 0] [Tag 30] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 31
+[Offload] [HOST]  [Tag 31] [CPU Time]        0.011069(seconds)
+[Offload] [MIC 0] [Tag 31] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 31] [MIC Time]        0.004138(seconds)
+[Offload] [MIC 0] [Tag 31] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 32
+[Offload] [HOST]  [Tag 32] [CPU Time]        0.005967(seconds)
+[Offload] [MIC 0] [Tag 32] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 32] [MIC Time]        0.002796(seconds)
+[Offload] [MIC 0] [Tag 32] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 33
+[Offload] [HOST]  [Tag 33] [CPU Time]        0.006951(seconds)
+[Offload] [MIC 0] [Tag 33] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 33] [MIC Time]        0.002520(seconds)
+[Offload] [MIC 0] [Tag 33] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 34
+[Offload] [HOST]  [Tag 34] [CPU Time]        0.011901(seconds)
+[Offload] [MIC 0] [Tag 34] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 34] [MIC Time]        0.003804(seconds)
+[Offload] [MIC 0] [Tag 34] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 35
+[Offload] [HOST]  [Tag 35] [CPU Time]        0.007015(seconds)
+[Offload] [MIC 0] [Tag 35] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 35] [MIC Time]        0.002490(seconds)
+[Offload] [MIC 0] [Tag 35] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 36
+[Offload] [HOST]  [Tag 36] [CPU Time]        0.009977(seconds)
+[Offload] [MIC 0] [Tag 36] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 36] [MIC Time]        0.003488(seconds)
+[Offload] [MIC 0] [Tag 36] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 37
+[Offload] [HOST]  [Tag 37] [CPU Time]        0.014976(seconds)
+[Offload] [MIC 0] [Tag 37] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 37] [MIC Time]        0.005993(seconds)
+[Offload] [MIC 0] [Tag 37] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 38
+[Offload] [HOST]  [Tag 38] [CPU Time]        0.010034(seconds)
+[Offload] [MIC 0] [Tag 38] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 38] [MIC Time]        0.003321(seconds)
+[Offload] [MIC 0] [Tag 38] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 39
+[Offload] [HOST]  [Tag 39] [CPU Time]        0.009956(seconds)
+[Offload] [MIC 0] [Tag 39] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 39] [MIC Time]        0.005009(seconds)
+[Offload] [MIC 0] [Tag 39] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 40
+[Offload] [HOST]  [Tag 40] [CPU Time]        0.009973(seconds)
+[Offload] [MIC 0] [Tag 40] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 40] [MIC Time]        0.005339(seconds)
+[Offload] [MIC 0] [Tag 40] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 41
+[Offload] [HOST]  [Tag 41] [CPU Time]        0.009977(seconds)
+[Offload] [MIC 0] [Tag 41] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 41] [MIC Time]        0.004959(seconds)
+[Offload] [MIC 0] [Tag 41] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 42
+[Offload] [HOST]  [Tag 42] [CPU Time]        0.005496(seconds)
+[Offload] [MIC 0] [Tag 42] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 42] [MIC Time]        0.004260(seconds)
+[Offload] [MIC 0] [Tag 42] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 43
+[Offload] [HOST]  [Tag 43] [CPU Time]        0.010501(seconds)
+[Offload] [MIC 0] [Tag 43] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 43] [MIC Time]        0.004184(seconds)
+[Offload] [MIC 0] [Tag 43] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 44
+[Offload] [HOST]  [Tag 44] [CPU Time]        0.009974(seconds)
+[Offload] [MIC 0] [Tag 44] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 44] [MIC Time]        0.005255(seconds)
+[Offload] [MIC 0] [Tag 44] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 45
+[Offload] [HOST]  [Tag 45] [CPU Time]        0.005121(seconds)
+[Offload] [MIC 0] [Tag 45] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 45] [MIC Time]        0.003994(seconds)
+[Offload] [MIC 0] [Tag 45] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 46
+[Offload] [HOST]  [Tag 46] [CPU Time]        0.006282(seconds)
+[Offload] [MIC 0] [Tag 46] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 46] [MIC Time]        0.005060(seconds)
+[Offload] [MIC 0] [Tag 46] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 47
+[Offload] [HOST]  [Tag 47] [CPU Time]        0.005536(seconds)
+[Offload] [MIC 0] [Tag 47] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 47] [MIC Time]        0.004144(seconds)
+[Offload] [MIC 0] [Tag 47] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 48
+[Offload] [HOST]  [Tag 48] [CPU Time]        0.010001(seconds)
+[Offload] [MIC 0] [Tag 48] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 48] [MIC Time]        0.005645(seconds)
+[Offload] [MIC 0] [Tag 48] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 49
+[Offload] [HOST]  [Tag 49] [CPU Time]        0.009981(seconds)
+[Offload] [MIC 0] [Tag 49] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 49] [MIC Time]        0.003219(seconds)
+[Offload] [MIC 0] [Tag 49] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 50
+[Offload] [HOST]  [Tag 50] [CPU Time]        0.009971(seconds)
+[Offload] [MIC 0] [Tag 50] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 50] [MIC Time]        0.004063(seconds)
+[Offload] [MIC 0] [Tag 50] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 51
+[Offload] [HOST]  [Tag 51] [CPU Time]        0.009980(seconds)
+[Offload] [MIC 0] [Tag 51] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 51] [MIC Time]        0.004852(seconds)
+[Offload] [MIC 0] [Tag 51] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 52
+[Offload] [HOST]  [Tag 52] [CPU Time]        0.009984(seconds)
+[Offload] [MIC 0] [Tag 52] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 52] [MIC Time]        0.004730(seconds)
+[Offload] [MIC 0] [Tag 52] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 53
+[Offload] [HOST]  [Tag 53] [CPU Time]        0.004981(seconds)
+[Offload] [MIC 0] [Tag 53] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 53] [MIC Time]        0.002972(seconds)
+[Offload] [MIC 0] [Tag 53] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 54
+[Offload] [HOST]  [Tag 54] [CPU Time]        0.004999(seconds)
+[Offload] [MIC 0] [Tag 54] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 54] [MIC Time]        0.003683(seconds)
+[Offload] [MIC 0] [Tag 54] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 55
+[Offload] [HOST]  [Tag 55] [CPU Time]        0.004992(seconds)
+[Offload] [MIC 0] [Tag 55] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 55] [MIC Time]        0.003700(seconds)
+[Offload] [MIC 0] [Tag 55] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 56
+[Offload] [HOST]  [Tag 56] [CPU Time]        0.004994(seconds)
+[Offload] [MIC 0] [Tag 56] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 56] [MIC Time]        0.002369(seconds)
+[Offload] [MIC 0] [Tag 56] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 57
+[Offload] [HOST]  [Tag 57] [CPU Time]        0.004974(seconds)
+[Offload] [MIC 0] [Tag 57] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 57] [MIC Time]        0.002179(seconds)
+[Offload] [MIC 0] [Tag 57] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 58
+[Offload] [HOST]  [Tag 58] [CPU Time]        0.004981(seconds)
+[Offload] [MIC 0] [Tag 58] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 58] [MIC Time]        0.001008(seconds)
+[Offload] [MIC 0] [Tag 58] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 59
+[Offload] [HOST]  [Tag 59] [CPU Time]        0.004959(seconds)
+[Offload] [MIC 0] [Tag 59] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 59] [MIC Time]        0.002872(seconds)
+[Offload] [MIC 0] [Tag 59] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 60
+[Offload] [HOST]  [Tag 60] [CPU Time]        0.005005(seconds)
+[Offload] [MIC 0] [Tag 60] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 60] [MIC Time]        0.001845(seconds)
+[Offload] [MIC 0] [Tag 60] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 61
+[Offload] [HOST]  [Tag 61] [CPU Time]        0.004990(seconds)
+[Offload] [MIC 0] [Tag 61] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 61] [MIC Time]        0.003049(seconds)
+[Offload] [MIC 0] [Tag 61] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 62
+[Offload] [HOST]  [Tag 62] [CPU Time]        0.004992(seconds)
+[Offload] [MIC 0] [Tag 62] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 62] [MIC Time]        0.001867(seconds)
+[Offload] [MIC 0] [Tag 62] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 63
+[Offload] [HOST]  [Tag 63] [CPU Time]        0.009964(seconds)
+[Offload] [MIC 0] [Tag 63] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 63] [MIC Time]        0.001853(seconds)
+[Offload] [MIC 0] [Tag 63] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 64
+[Offload] [HOST]  [Tag 64] [CPU Time]        0.004970(seconds)
+[Offload] [MIC 0] [Tag 64] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 64] [MIC Time]        0.001055(seconds)
+[Offload] [MIC 0] [Tag 64] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 65
+[Offload] [HOST]  [Tag 65] [CPU Time]        0.004998(seconds)
+[Offload] [MIC 0] [Tag 65] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 65] [MIC Time]        0.000417(seconds)
+[Offload] [MIC 0] [Tag 65] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 66
+[Offload] [HOST]  [Tag 66] [CPU Time]        0.004736(seconds)
+[Offload] [MIC 0] [Tag 66] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 66] [MIC Time]        0.000986(seconds)
+[Offload] [MIC 0] [Tag 66] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 67
+[Offload] [HOST]  [Tag 67] [CPU Time]        0.005238(seconds)
+[Offload] [MIC 0] [Tag 67] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 67] [MIC Time]        0.001145(seconds)
+[Offload] [MIC 0] [Tag 67] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 68
+[Offload] [HOST]  [Tag 68] [CPU Time]        0.004984(seconds)
+[Offload] [MIC 0] [Tag 68] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 68] [MIC Time]        0.000480(seconds)
+[Offload] [MIC 0] [Tag 68] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 69
+[Offload] [HOST]  [Tag 69] [CPU Time]        0.004988(seconds)
+[Offload] [MIC 0] [Tag 69] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 69] [MIC Time]        0.000884(seconds)
+[Offload] [MIC 0] [Tag 69] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 70
+[Offload] [HOST]  [Tag 70] [CPU Time]        0.004967(seconds)
+[Offload] [MIC 0] [Tag 70] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 70] [MIC Time]        0.000961(seconds)
+[Offload] [MIC 0] [Tag 70] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 71
+[Offload] [HOST]  [Tag 71] [CPU Time]        0.005005(seconds)
+[Offload] [MIC 0] [Tag 71] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 71] [MIC Time]        0.002288(seconds)
+[Offload] [MIC 0] [Tag 71] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 72
+[Offload] [HOST]  [Tag 72] [CPU Time]        0.009986(seconds)
+[Offload] [MIC 0] [Tag 72] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 72] [MIC Time]        0.002640(seconds)
+[Offload] [MIC 0] [Tag 72] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 73
+[Offload] [HOST]  [Tag 73] [CPU Time]        0.004951(seconds)
+[Offload] [MIC 0] [Tag 73] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 73] [MIC Time]        0.001578(seconds)
+[Offload] [MIC 0] [Tag 73] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 74
+[Offload] [HOST]  [Tag 74] [CPU Time]        0.004993(seconds)
+[Offload] [MIC 0] [Tag 74] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 74] [MIC Time]        0.003036(seconds)
+[Offload] [MIC 0] [Tag 74] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 75
+[Offload] [HOST]  [Tag 75] [CPU Time]        0.009989(seconds)
+[Offload] [MIC 0] [Tag 75] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 75] [MIC Time]        0.002443(seconds)
+[Offload] [MIC 0] [Tag 75] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 76
+[Offload] [HOST]  [Tag 76] [CPU Time]        0.004972(seconds)
+[Offload] [MIC 0] [Tag 76] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 76] [MIC Time]        0.003208(seconds)
+[Offload] [MIC 0] [Tag 76] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 77
+[Offload] [HOST]  [Tag 77] [CPU Time]        0.004977(seconds)
+[Offload] [MIC 0] [Tag 77] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 77] [MIC Time]        0.002608(seconds)
+[Offload] [MIC 0] [Tag 77] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 78
+[Offload] [HOST]  [Tag 78] [CPU Time]        0.010003(seconds)
+[Offload] [MIC 0] [Tag 78] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 78] [MIC Time]        0.004749(seconds)
+[Offload] [MIC 0] [Tag 78] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 79
+[Offload] [HOST]  [Tag 79] [CPU Time]        0.004979(seconds)
+[Offload] [MIC 0] [Tag 79] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 79] [MIC Time]        0.001588(seconds)
+[Offload] [MIC 0] [Tag 79] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 80
+[Offload] [HOST]  [Tag 80] [CPU Time]        0.005367(seconds)
+[Offload] [MIC 0] [Tag 80] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 80] [MIC Time]        0.004178(seconds)
+[Offload] [MIC 0] [Tag 80] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 81
+[Offload] [HOST]  [Tag 81] [CPU Time]        0.005582(seconds)
+[Offload] [MIC 0] [Tag 81] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 81] [MIC Time]        0.003701(seconds)
+[Offload] [MIC 0] [Tag 81] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 82
+[Offload] [HOST]  [Tag 82] [CPU Time]        0.009998(seconds)
+[Offload] [MIC 0] [Tag 82] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 82] [MIC Time]        0.005082(seconds)
+[Offload] [MIC 0] [Tag 82] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 83
+[Offload] [HOST]  [Tag 83] [CPU Time]        0.015002(seconds)
+[Offload] [MIC 0] [Tag 83] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 83] [MIC Time]        0.005108(seconds)
+[Offload] [MIC 0] [Tag 83] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 84
+[Offload] [HOST]  [Tag 84] [CPU Time]        0.009947(seconds)
+[Offload] [MIC 0] [Tag 84] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 84] [MIC Time]        0.004357(seconds)
+[Offload] [MIC 0] [Tag 84] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 85
+[Offload] [HOST]  [Tag 85] [CPU Time]        0.014969(seconds)
+[Offload] [MIC 0] [Tag 85] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 85] [MIC Time]        0.005393(seconds)
+[Offload] [MIC 0] [Tag 85] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 86
+[Offload] [HOST]  [Tag 86] [CPU Time]        0.005396(seconds)
+[Offload] [MIC 0] [Tag 86] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 86] [MIC Time]        0.004241(seconds)
+[Offload] [MIC 0] [Tag 86] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 87
+[Offload] [HOST]  [Tag 87] [CPU Time]        0.005576(seconds)
+[Offload] [MIC 0] [Tag 87] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 87] [MIC Time]        0.003832(seconds)
+[Offload] [MIC 0] [Tag 87] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 88
+[Offload] [HOST]  [Tag 88] [CPU Time]        0.014983(seconds)
+[Offload] [MIC 0] [Tag 88] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 88] [MIC Time]        0.004213(seconds)
+[Offload] [MIC 0] [Tag 88] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 89
+[Offload] [HOST]  [Tag 89] [CPU Time]        0.014989(seconds)
+[Offload] [MIC 0] [Tag 89] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 89] [MIC Time]        0.004650(seconds)
+[Offload] [MIC 0] [Tag 89] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 90
+[Offload] [HOST]  [Tag 90] [CPU Time]        0.009995(seconds)
+[Offload] [MIC 0] [Tag 90] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 90] [MIC Time]        0.005994(seconds)
+[Offload] [MIC 0] [Tag 90] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 91
+[Offload] [HOST]  [Tag 91] [CPU Time]        0.009993(seconds)
+[Offload] [MIC 0] [Tag 91] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 91] [MIC Time]        0.004496(seconds)
+[Offload] [MIC 0] [Tag 91] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 92
+[Offload] [HOST]  [Tag 92] [CPU Time]        0.009991(seconds)
+[Offload] [MIC 0] [Tag 92] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 92] [MIC Time]        0.004848(seconds)
+[Offload] [MIC 0] [Tag 92] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 93
+[Offload] [HOST]  [Tag 93] [CPU Time]        0.009958(seconds)
+[Offload] [MIC 0] [Tag 93] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 93] [MIC Time]        0.005514(seconds)
+[Offload] [MIC 0] [Tag 93] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 94
+[Offload] [HOST]  [Tag 94] [CPU Time]        0.005369(seconds)
+[Offload] [MIC 0] [Tag 94] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 94] [MIC Time]        0.004153(seconds)
+[Offload] [MIC 0] [Tag 94] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 95
+[Offload] [HOST]  [Tag 95] [CPU Time]        0.005688(seconds)
+[Offload] [MIC 0] [Tag 95] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 95] [MIC Time]        0.004234(seconds)
+[Offload] [MIC 0] [Tag 95] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 96
+[Offload] [HOST]  [Tag 96] [CPU Time]        0.009873(seconds)
+[Offload] [MIC 0] [Tag 96] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 96] [MIC Time]        0.002134(seconds)
+[Offload] [MIC 0] [Tag 96] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 97
+[Offload] [HOST]  [Tag 97] [CPU Time]        0.014989(seconds)
+[Offload] [MIC 0] [Tag 97] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 97] [MIC Time]        0.004015(seconds)
+[Offload] [MIC 0] [Tag 97] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 98
+[Offload] [HOST]  [Tag 98] [CPU Time]        0.006992(seconds)
+[Offload] [MIC 0] [Tag 98] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 98] [MIC Time]        0.003774(seconds)
+[Offload] [MIC 0] [Tag 98] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 99
+[Offload] [HOST]  [Tag 99] [CPU Time]        0.005981(seconds)
+[Offload] [MIC 0] [Tag 99] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 99] [MIC Time]        0.002383(seconds)
+[Offload] [MIC 0] [Tag 99] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 100
+[Offload] [HOST]  [Tag 100] [CPU Time]        0.010982(seconds)
+[Offload] [MIC 0] [Tag 100] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 100] [MIC Time]        0.003387(seconds)
+[Offload] [MIC 0] [Tag 100] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 101
+[Offload] [HOST]  [Tag 101] [CPU Time]        0.006986(seconds)
+[Offload] [MIC 0] [Tag 101] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 101] [MIC Time]        0.002513(seconds)
+[Offload] [MIC 0] [Tag 101] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 102
+[Offload] [HOST]  [Tag 102] [CPU Time]        0.004985(seconds)
+[Offload] [MIC 0] [Tag 102] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 102] [MIC Time]        0.002396(seconds)
+[Offload] [MIC 0] [Tag 102] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 103
+[Offload] [HOST]  [Tag 103] [CPU Time]        0.014982(seconds)
+[Offload] [MIC 0] [Tag 103] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 103] [MIC Time]        0.004553(seconds)
+[Offload] [MIC 0] [Tag 103] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 104
+[Offload] [HOST]  [Tag 104] [CPU Time]        0.005002(seconds)
+[Offload] [MIC 0] [Tag 104] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 104] [MIC Time]        0.001032(seconds)
+[Offload] [MIC 0] [Tag 104] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 105
+[Offload] [HOST]  [Tag 105] [CPU Time]        0.021023(seconds)
+[Offload] [MIC 0] [Tag 105] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 105] [MIC Time]        0.004578(seconds)
+[Offload] [MIC 0] [Tag 105] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 106
+[Offload] [HOST]  [Tag 106] [CPU Time]        0.005912(seconds)
+[Offload] [MIC 0] [Tag 106] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 106] [MIC Time]        0.001929(seconds)
+[Offload] [MIC 0] [Tag 106] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 107
+[Offload] [HOST]  [Tag 107] [CPU Time]        0.005990(seconds)
+[Offload] [MIC 0] [Tag 107] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 107] [MIC Time]        0.002556(seconds)
+[Offload] [MIC 0] [Tag 107] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 108
+[Offload] [HOST]  [Tag 108] [CPU Time]        0.009979(seconds)
+[Offload] [MIC 0] [Tag 108] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 108] [MIC Time]        0.002144(seconds)
+[Offload] [MIC 0] [Tag 108] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 109
+[Offload] [HOST]  [Tag 109] [CPU Time]        0.005990(seconds)
+[Offload] [MIC 0] [Tag 109] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 109] [MIC Time]        0.001008(seconds)
+[Offload] [MIC 0] [Tag 109] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 110
+[Offload] [HOST]  [Tag 110] [CPU Time]        0.005981(seconds)
+[Offload] [MIC 0] [Tag 110] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 110] [MIC Time]        0.000993(seconds)
+[Offload] [MIC 0] [Tag 110] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 111
+[Offload] [HOST]  [Tag 111] [CPU Time]        0.005985(seconds)
+[Offload] [MIC 0] [Tag 111] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 111] [MIC Time]        0.000572(seconds)
+[Offload] [MIC 0] [Tag 111] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 112
+[Offload] [HOST]  [Tag 112] [CPU Time]        0.004990(seconds)
+[Offload] [MIC 0] [Tag 112] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 112] [MIC Time]        0.000452(seconds)
+[Offload] [MIC 0] [Tag 112] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 113
+[Offload] [HOST]  [Tag 113] [CPU Time]        0.004785(seconds)
+[Offload] [MIC 0] [Tag 113] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 113] [MIC Time]        0.001000(seconds)
+[Offload] [MIC 0] [Tag 113] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 114
+[Offload] [HOST]  [Tag 114] [CPU Time]        0.006181(seconds)
+[Offload] [MIC 0] [Tag 114] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 114] [MIC Time]        0.000712(seconds)
+[Offload] [MIC 0] [Tag 114] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 115
+[Offload] [HOST]  [Tag 115] [CPU Time]        0.005989(seconds)
+[Offload] [MIC 0] [Tag 115] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 115] [MIC Time]        0.000205(seconds)
+[Offload] [MIC 0] [Tag 115] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 116
+[Offload] [HOST]  [Tag 116] [CPU Time]        0.005991(seconds)
+[Offload] [MIC 0] [Tag 116] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 116] [MIC Time]        0.000476(seconds)
+[Offload] [MIC 0] [Tag 116] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 117
+[Offload] [HOST]  [Tag 117] [CPU Time]        0.006003(seconds)
+[Offload] [MIC 0] [Tag 117] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 117] [MIC Time]        0.000773(seconds)
+[Offload] [MIC 0] [Tag 117] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 118
+[Offload] [HOST]  [Tag 118] [CPU Time]        0.010970(seconds)
+[Offload] [MIC 0] [Tag 118] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 118] [MIC Time]        0.000417(seconds)
+[Offload] [MIC 0] [Tag 118] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 119
+[Offload] [HOST]  [Tag 119] [CPU Time]        0.005974(seconds)
+[Offload] [MIC 0] [Tag 119] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 119] [MIC Time]        0.003113(seconds)
+[Offload] [MIC 0] [Tag 119] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 120
+[Offload] [HOST]  [Tag 120] [CPU Time]        0.010986(seconds)
+[Offload] [MIC 0] [Tag 120] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 120] [MIC Time]        0.001391(seconds)
+[Offload] [MIC 0] [Tag 120] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 121
+[Offload] [HOST]  [Tag 121] [CPU Time]        0.004988(seconds)
+[Offload] [MIC 0] [Tag 121] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 121] [MIC Time]        0.002620(seconds)
+[Offload] [MIC 0] [Tag 121] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 122
+[Offload] [HOST]  [Tag 122] [CPU Time]        0.006035(seconds)
+[Offload] [MIC 0] [Tag 122] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 122] [MIC Time]        0.001723(seconds)
+[Offload] [MIC 0] [Tag 122] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 123
+[Offload] [HOST]  [Tag 123] [CPU Time]        0.005906(seconds)
+[Offload] [MIC 0] [Tag 123] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 123] [MIC Time]        0.002114(seconds)
+[Offload] [MIC 0] [Tag 123] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 124
+[Offload] [HOST]  [Tag 124] [CPU Time]        0.005975(seconds)
+[Offload] [MIC 0] [Tag 124] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 124] [MIC Time]        0.003299(seconds)
+[Offload] [MIC 0] [Tag 124] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 125
+[Offload] [HOST]  [Tag 125] [CPU Time]        0.004983(seconds)
+[Offload] [MIC 0] [Tag 125] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 125] [MIC Time]        0.002756(seconds)
+[Offload] [MIC 0] [Tag 125] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 126
+[Offload] [HOST]  [Tag 126] [CPU Time]        0.005971(seconds)
+[Offload] [MIC 0] [Tag 126] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 126] [MIC Time]        0.002654(seconds)
+[Offload] [MIC 0] [Tag 126] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 127
+[Offload] [HOST]  [Tag 127] [CPU Time]        0.006994(seconds)
+[Offload] [MIC 0] [Tag 127] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 127] [MIC Time]        0.002093(seconds)
+[Offload] [MIC 0] [Tag 127] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 128
+[Offload] [HOST]  [Tag 128] [CPU Time]        0.007418(seconds)
+[Offload] [MIC 0] [Tag 128] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 128] [MIC Time]        0.004355(seconds)
+[Offload] [MIC 0] [Tag 128] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 129
+[Offload] [HOST]  [Tag 129] [CPU Time]        0.011547(seconds)
+[Offload] [MIC 0] [Tag 129] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 129] [MIC Time]        0.005190(seconds)
+[Offload] [MIC 0] [Tag 129] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 130
+[Offload] [HOST]  [Tag 130] [CPU Time]        0.016032(seconds)
+[Offload] [MIC 0] [Tag 130] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 130] [MIC Time]        0.003425(seconds)
+[Offload] [MIC 0] [Tag 130] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 131
+[Offload] [HOST]  [Tag 131] [CPU Time]        0.005943(seconds)
+[Offload] [MIC 0] [Tag 131] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 131] [MIC Time]        0.003560(seconds)
+[Offload] [MIC 0] [Tag 131] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 132
+[Offload] [HOST]  [Tag 132] [CPU Time]        0.005098(seconds)
+[Offload] [MIC 0] [Tag 132] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 132] [MIC Time]        0.003920(seconds)
+[Offload] [MIC 0] [Tag 132] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 133
+[Offload] [HOST]  [Tag 133] [CPU Time]        0.007145(seconds)
+[Offload] [MIC 0] [Tag 133] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 133] [MIC Time]        0.003987(seconds)
+[Offload] [MIC 0] [Tag 133] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 134
+[Offload] [HOST]  [Tag 134] [CPU Time]        0.011704(seconds)
+[Offload] [MIC 0] [Tag 134] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 134] [MIC Time]        0.003879(seconds)
+[Offload] [MIC 0] [Tag 134] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 135
+[Offload] [HOST]  [Tag 135] [CPU Time]        0.015024(seconds)
+[Offload] [MIC 0] [Tag 135] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 135] [MIC Time]        0.005701(seconds)
+[Offload] [MIC 0] [Tag 135] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 136
+[Offload] [HOST]  [Tag 136] [CPU Time]        0.005946(seconds)
+[Offload] [MIC 0] [Tag 136] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 136] [MIC Time]        0.003776(seconds)
+[Offload] [MIC 0] [Tag 136] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 137
+[Offload] [HOST]  [Tag 137] [CPU Time]        0.005969(seconds)
+[Offload] [MIC 0] [Tag 137] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 137] [MIC Time]        0.002683(seconds)
+[Offload] [MIC 0] [Tag 137] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 138
+[Offload] [HOST]  [Tag 138] [CPU Time]        0.016989(seconds)
+[Offload] [MIC 0] [Tag 138] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 138] [MIC Time]        0.003217(seconds)
+[Offload] [MIC 0] [Tag 138] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 139
+[Offload] [HOST]  [Tag 139] [CPU Time]        0.009984(seconds)
+[Offload] [MIC 0] [Tag 139] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 139] [MIC Time]        0.005897(seconds)
+[Offload] [MIC 0] [Tag 139] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 140
+[Offload] [HOST]  [Tag 140] [CPU Time]        0.005025(seconds)
+[Offload] [MIC 0] [Tag 140] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 140] [MIC Time]        0.003897(seconds)
+[Offload] [MIC 0] [Tag 140] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 141
+[Offload] [HOST]  [Tag 141] [CPU Time]        0.005957(seconds)
+[Offload] [MIC 0] [Tag 141] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 141] [MIC Time]        0.002937(seconds)
+[Offload] [MIC 0] [Tag 141] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 142
+[Offload] [HOST]  [Tag 142] [CPU Time]        0.006985(seconds)
+[Offload] [MIC 0] [Tag 142] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 142] [MIC Time]        0.003375(seconds)
+[Offload] [MIC 0] [Tag 142] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 143
+[Offload] [HOST]  [Tag 143] [CPU Time]        0.005973(seconds)
+[Offload] [MIC 0] [Tag 143] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 143] [MIC Time]        0.002452(seconds)
+[Offload] [MIC 0] [Tag 143] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 144
+[Offload] [HOST]  [Tag 144] [CPU Time]        0.005053(seconds)
+[Offload] [MIC 0] [Tag 144] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 144] [MIC Time]        0.003395(seconds)
+[Offload] [MIC 0] [Tag 144] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 145
+[Offload] [HOST]  [Tag 145] [CPU Time]        0.011901(seconds)
+[Offload] [MIC 0] [Tag 145] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 145] [MIC Time]        0.004044(seconds)
+[Offload] [MIC 0] [Tag 145] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 146
+[Offload] [HOST]  [Tag 146] [CPU Time]        0.007277(seconds)
+[Offload] [MIC 0] [Tag 146] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 146] [MIC Time]        0.004101(seconds)
+[Offload] [MIC 0] [Tag 146] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 147
+[Offload] [HOST]  [Tag 147] [CPU Time]        0.015754(seconds)
+[Offload] [MIC 0] [Tag 147] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 147] [MIC Time]        0.002505(seconds)
+[Offload] [MIC 0] [Tag 147] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 148
+[Offload] [HOST]  [Tag 148] [CPU Time]        0.010887(seconds)
+[Offload] [MIC 0] [Tag 148] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 148] [MIC Time]        0.001967(seconds)
+[Offload] [MIC 0] [Tag 148] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 149
+[Offload] [HOST]  [Tag 149] [CPU Time]        0.009980(seconds)
+[Offload] [MIC 0] [Tag 149] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 149] [MIC Time]        0.003962(seconds)
+[Offload] [MIC 0] [Tag 149] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 150
+[Offload] [HOST]  [Tag 150] [CPU Time]        0.011003(seconds)
+[Offload] [MIC 0] [Tag 150] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 150] [MIC Time]        0.001012(seconds)
+[Offload] [MIC 0] [Tag 150] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 151
+[Offload] [HOST]  [Tag 151] [CPU Time]        0.005985(seconds)
+[Offload] [MIC 0] [Tag 151] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 151] [MIC Time]        0.002203(seconds)
+[Offload] [MIC 0] [Tag 151] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 152
+[Offload] [HOST]  [Tag 152] [CPU Time]        0.006017(seconds)
+[Offload] [MIC 0] [Tag 152] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 152] [MIC Time]        0.002074(seconds)
+[Offload] [MIC 0] [Tag 152] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 153
+[Offload] [HOST]  [Tag 153] [CPU Time]        0.020934(seconds)
+[Offload] [MIC 0] [Tag 153] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 153] [MIC Time]        0.003242(seconds)
+[Offload] [MIC 0] [Tag 153] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 154
+[Offload] [HOST]  [Tag 154] [CPU Time]        0.019990(seconds)
+[Offload] [MIC 0] [Tag 154] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 154] [MIC Time]        0.001636(seconds)
+[Offload] [MIC 0] [Tag 154] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 155
+[Offload] [HOST]  [Tag 155] [CPU Time]        0.005976(seconds)
+[Offload] [MIC 0] [Tag 155] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 155] [MIC Time]        0.000420(seconds)
+[Offload] [MIC 0] [Tag 155] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 156
+[Offload] [HOST]  [Tag 156] [CPU Time]        0.004995(seconds)
+[Offload] [MIC 0] [Tag 156] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 156] [MIC Time]        0.003067(seconds)
+[Offload] [MIC 0] [Tag 156] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 157
+[Offload] [HOST]  [Tag 157] [CPU Time]        0.010030(seconds)
+[Offload] [MIC 0] [Tag 157] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 157] [MIC Time]        0.001664(seconds)
+[Offload] [MIC 0] [Tag 157] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 158
+[Offload] [HOST]  [Tag 158] [CPU Time]        0.005923(seconds)
+[Offload] [MIC 0] [Tag 158] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 158] [MIC Time]        0.000202(seconds)
+[Offload] [MIC 0] [Tag 158] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 159
+[Offload] [HOST]  [Tag 159] [CPU Time]        0.005020(seconds)
+[Offload] [MIC 0] [Tag 159] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 159] [MIC Time]        0.000495(seconds)
+[Offload] [MIC 0] [Tag 159] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 160
+[Offload] [HOST]  [Tag 160] [CPU Time]        0.004756(seconds)
+[Offload] [MIC 0] [Tag 160] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 160] [MIC Time]        0.000986(seconds)
+[Offload] [MIC 0] [Tag 160] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 161
+[Offload] [HOST]  [Tag 161] [CPU Time]        0.005217(seconds)
+[Offload] [MIC 0] [Tag 161] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 161] [MIC Time]        0.001524(seconds)
+[Offload] [MIC 0] [Tag 161] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 162
+[Offload] [HOST]  [Tag 162] [CPU Time]        0.009983(seconds)
+[Offload] [MIC 0] [Tag 162] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 162] [MIC Time]        0.000477(seconds)
+[Offload] [MIC 0] [Tag 162] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 163
+[Offload] [HOST]  [Tag 163] [CPU Time]        0.004964(seconds)
+[Offload] [MIC 0] [Tag 163] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 163] [MIC Time]        0.001095(seconds)
+[Offload] [MIC 0] [Tag 163] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 164
+[Offload] [HOST]  [Tag 164] [CPU Time]        0.004973(seconds)
+[Offload] [MIC 0] [Tag 164] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 164] [MIC Time]        0.001951(seconds)
+[Offload] [MIC 0] [Tag 164] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 165
+[Offload] [HOST]  [Tag 165] [CPU Time]        0.005003(seconds)
+[Offload] [MIC 0] [Tag 165] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 165] [MIC Time]        0.002321(seconds)
+[Offload] [MIC 0] [Tag 165] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 166
+[Offload] [HOST]  [Tag 166] [CPU Time]        0.004955(seconds)
+[Offload] [MIC 0] [Tag 166] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 166] [MIC Time]        0.002288(seconds)
+[Offload] [MIC 0] [Tag 166] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 167
+[Offload] [HOST]  [Tag 167] [CPU Time]        0.004964(seconds)
+[Offload] [MIC 0] [Tag 167] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 167] [MIC Time]        0.001314(seconds)
+[Offload] [MIC 0] [Tag 167] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 168
+[Offload] [HOST]  [Tag 168] [CPU Time]        0.014960(seconds)
+[Offload] [MIC 0] [Tag 168] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 168] [MIC Time]        0.001834(seconds)
+[Offload] [MIC 0] [Tag 168] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 169
+[Offload] [HOST]  [Tag 169] [CPU Time]        0.004996(seconds)
+[Offload] [MIC 0] [Tag 169] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 169] [MIC Time]        0.001552(seconds)
+[Offload] [MIC 0] [Tag 169] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 170
+[Offload] [HOST]  [Tag 170] [CPU Time]        0.009983(seconds)
+[Offload] [MIC 0] [Tag 170] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 170] [MIC Time]        0.003370(seconds)
+[Offload] [MIC 0] [Tag 170] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 171
+[Offload] [HOST]  [Tag 171] [CPU Time]        0.004988(seconds)
+[Offload] [MIC 0] [Tag 171] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 171] [MIC Time]        0.001314(seconds)
+[Offload] [MIC 0] [Tag 171] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 172
+[Offload] [HOST]  [Tag 172] [CPU Time]        0.009982(seconds)
+[Offload] [MIC 0] [Tag 172] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 172] [MIC Time]        0.004603(seconds)
+[Offload] [MIC 0] [Tag 172] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 173
+[Offload] [HOST]  [Tag 173] [CPU Time]        0.004977(seconds)
+[Offload] [MIC 0] [Tag 173] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 173] [MIC Time]        0.001528(seconds)
+[Offload] [MIC 0] [Tag 173] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 174
+[Offload] [HOST]  [Tag 174] [CPU Time]        0.009991(seconds)
+[Offload] [MIC 0] [Tag 174] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 174] [MIC Time]        0.006210(seconds)
+[Offload] [MIC 0] [Tag 174] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 175
+[Offload] [HOST]  [Tag 175] [CPU Time]        0.009992(seconds)
+[Offload] [MIC 0] [Tag 175] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 175] [MIC Time]        0.005558(seconds)
+[Offload] [MIC 0] [Tag 175] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 176
+[Offload] [HOST]  [Tag 176] [CPU Time]        0.009980(seconds)
+[Offload] [MIC 0] [Tag 176] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 176] [MIC Time]        0.002821(seconds)
+[Offload] [MIC 0] [Tag 176] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 177
+[Offload] [HOST]  [Tag 177] [CPU Time]        0.009992(seconds)
+[Offload] [MIC 0] [Tag 177] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 177] [MIC Time]        0.004685(seconds)
+[Offload] [MIC 0] [Tag 177] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 178
+[Offload] [HOST]  [Tag 178] [CPU Time]        0.004982(seconds)
+[Offload] [MIC 0] [Tag 178] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 178] [MIC Time]        0.002875(seconds)
+[Offload] [MIC 0] [Tag 178] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 179
+[Offload] [HOST]  [Tag 179] [CPU Time]        0.004981(seconds)
+[Offload] [MIC 0] [Tag 179] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 179] [MIC Time]        0.003537(seconds)
+[Offload] [MIC 0] [Tag 179] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 180
+[Offload] [HOST]  [Tag 180] [CPU Time]        0.019974(seconds)
+[Offload] [MIC 0] [Tag 180] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 180] [MIC Time]        0.005485(seconds)
+[Offload] [MIC 0] [Tag 180] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 181
+[Offload] [HOST]  [Tag 181] [CPU Time]        0.005124(seconds)
+[Offload] [MIC 0] [Tag 181] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 181] [MIC Time]        0.003978(seconds)
+[Offload] [MIC 0] [Tag 181] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 182
+[Offload] [HOST]  [Tag 182] [CPU Time]        0.005410(seconds)
+[Offload] [MIC 0] [Tag 182] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 182] [MIC Time]        0.004178(seconds)
+[Offload] [MIC 0] [Tag 182] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 183
+[Offload] [HOST]  [Tag 183] [CPU Time]        0.005451(seconds)
+[Offload] [MIC 0] [Tag 183] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 183] [MIC Time]        0.003796(seconds)
+[Offload] [MIC 0] [Tag 183] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 184
+[Offload] [HOST]  [Tag 184] [CPU Time]        0.009976(seconds)
+[Offload] [MIC 0] [Tag 184] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 184] [MIC Time]        0.005240(seconds)
+[Offload] [MIC 0] [Tag 184] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 185
+[Offload] [HOST]  [Tag 185] [CPU Time]        0.005030(seconds)
+[Offload] [MIC 0] [Tag 185] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 185] [MIC Time]        0.003826(seconds)
+[Offload] [MIC 0] [Tag 185] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 186
+[Offload] [HOST]  [Tag 186] [CPU Time]        0.014928(seconds)
+[Offload] [MIC 0] [Tag 186] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 186] [MIC Time]        0.004628(seconds)
+[Offload] [MIC 0] [Tag 186] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 187
+[Offload] [HOST]  [Tag 187] [CPU Time]        0.009997(seconds)
+[Offload] [MIC 0] [Tag 187] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 187] [MIC Time]        0.005491(seconds)
+[Offload] [MIC 0] [Tag 187] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 188
+[Offload] [HOST]  [Tag 188] [CPU Time]        0.005098(seconds)
+[Offload] [MIC 0] [Tag 188] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 188] [MIC Time]        0.003910(seconds)
+[Offload] [MIC 0] [Tag 188] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 189
+[Offload] [HOST]  [Tag 189] [CPU Time]        0.009858(seconds)
+[Offload] [MIC 0] [Tag 189] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 189] [MIC Time]        0.004718(seconds)
+[Offload] [MIC 0] [Tag 189] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 190
+[Offload] [HOST]  [Tag 190] [CPU Time]        0.005016(seconds)
+[Offload] [MIC 0] [Tag 190] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 190] [MIC Time]        0.003365(seconds)
+[Offload] [MIC 0] [Tag 190] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 191
+[Offload] [HOST]  [Tag 191] [CPU Time]        0.004977(seconds)
+[Offload] [MIC 0] [Tag 191] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 191] [MIC Time]        0.003690(seconds)
+[Offload] [MIC 0] [Tag 191] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 192
+[Offload] [HOST]  [Tag 192] [CPU Time]        0.004989(seconds)
+[Offload] [MIC 0] [Tag 192] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 192] [MIC Time]        0.003302(seconds)
+[Offload] [MIC 0] [Tag 192] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 193
+[Offload] [HOST]  [Tag 193] [CPU Time]        0.004963(seconds)
+[Offload] [MIC 0] [Tag 193] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 193] [MIC Time]        0.003003(seconds)
+[Offload] [MIC 0] [Tag 193] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 194
+[Offload] [HOST]  [Tag 194] [CPU Time]        0.009992(seconds)
+[Offload] [MIC 0] [Tag 194] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 194] [MIC Time]        0.004138(seconds)
+[Offload] [MIC 0] [Tag 194] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 195
+[Offload] [HOST]  [Tag 195] [CPU Time]        0.005396(seconds)
+[Offload] [MIC 0] [Tag 195] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 195] [MIC Time]        0.004236(seconds)
+[Offload] [MIC 0] [Tag 195] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 196
+[Offload] [HOST]  [Tag 196] [CPU Time]        0.005553(seconds)
+[Offload] [MIC 0] [Tag 196] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 196] [MIC Time]        0.002470(seconds)
+[Offload] [MIC 0] [Tag 196] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 197
+[Offload] [HOST]  [Tag 197] [CPU Time]        0.009993(seconds)
+[Offload] [MIC 0] [Tag 197] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 197] [MIC Time]        0.002969(seconds)
+[Offload] [MIC 0] [Tag 197] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 198
+[Offload] [HOST]  [Tag 198] [CPU Time]        0.004981(seconds)
+[Offload] [MIC 0] [Tag 198] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 198] [MIC Time]        0.001757(seconds)
+[Offload] [MIC 0] [Tag 198] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 199
+[Offload] [HOST]  [Tag 199] [CPU Time]        0.004979(seconds)
+[Offload] [MIC 0] [Tag 199] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 199] [MIC Time]        0.002908(seconds)
+[Offload] [MIC 0] [Tag 199] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 200
+[Offload] [HOST]  [Tag 200] [CPU Time]        0.005004(seconds)
+[Offload] [MIC 0] [Tag 200] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 200] [MIC Time]        0.003606(seconds)
+[Offload] [MIC 0] [Tag 200] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 201
+[Offload] [HOST]  [Tag 201] [CPU Time]        0.004988(seconds)
+[Offload] [MIC 0] [Tag 201] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 201] [MIC Time]        0.003252(seconds)
+[Offload] [MIC 0] [Tag 201] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 202
+[Offload] [HOST]  [Tag 202] [CPU Time]        0.014975(seconds)
+[Offload] [MIC 0] [Tag 202] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 202] [MIC Time]        0.000594(seconds)
+[Offload] [MIC 0] [Tag 202] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 203
+[Offload] [HOST]  [Tag 203] [CPU Time]        0.009984(seconds)
+[Offload] [MIC 0] [Tag 203] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 203] [MIC Time]        0.002432(seconds)
+[Offload] [MIC 0] [Tag 203] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 204
+[Offload] [HOST]  [Tag 204] [CPU Time]        0.005019(seconds)
+[Offload] [MIC 0] [Tag 204] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 204] [MIC Time]        0.000494(seconds)
+[Offload] [MIC 0] [Tag 204] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 205
+[Offload] [HOST]  [Tag 205] [CPU Time]        0.004954(seconds)
+[Offload] [MIC 0] [Tag 205] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 205] [MIC Time]        0.001807(seconds)
+[Offload] [MIC 0] [Tag 205] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 206
+[Offload] [HOST]  [Tag 206] [CPU Time]        0.004978(seconds)
+[Offload] [MIC 0] [Tag 206] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 206] [MIC Time]        0.000962(seconds)
+[Offload] [MIC 0] [Tag 206] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 207
+[Offload] [HOST]  [Tag 207] [CPU Time]        0.004762(seconds)
+[Offload] [MIC 0] [Tag 207] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 207] [MIC Time]        0.000991(seconds)
+[Offload] [MIC 0] [Tag 207] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 208
+[Offload] [HOST]  [Tag 208] [CPU Time]        0.004737(seconds)
+[Offload] [MIC 0] [Tag 208] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 208] [MIC Time]        0.001195(seconds)
+[Offload] [MIC 0] [Tag 208] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 209
+[Offload] [HOST]  [Tag 209] [CPU Time]        0.010445(seconds)
+[Offload] [MIC 0] [Tag 209] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 209] [MIC Time]        0.000477(seconds)
+[Offload] [MIC 0] [Tag 209] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 210
+[Offload] [HOST]  [Tag 210] [CPU Time]        0.004972(seconds)
+[Offload] [MIC 0] [Tag 210] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 210] [MIC Time]        0.001342(seconds)
+[Offload] [MIC 0] [Tag 210] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 211
+[Offload] [HOST]  [Tag 211] [CPU Time]        0.005004(seconds)
+[Offload] [MIC 0] [Tag 211] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 211] [MIC Time]        0.001328(seconds)
+[Offload] [MIC 0] [Tag 211] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 212
+[Offload] [HOST]  [Tag 212] [CPU Time]        0.004967(seconds)
+[Offload] [MIC 0] [Tag 212] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 212] [MIC Time]        0.000587(seconds)
+[Offload] [MIC 0] [Tag 212] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 213
+[Offload] [HOST]  [Tag 213] [CPU Time]        0.005010(seconds)
+[Offload] [MIC 0] [Tag 213] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 213] [MIC Time]        0.001753(seconds)
+[Offload] [MIC 0] [Tag 213] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 214
+[Offload] [HOST]  [Tag 214] [CPU Time]        0.009981(seconds)
+[Offload] [MIC 0] [Tag 214] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 214] [MIC Time]        0.002699(seconds)
+[Offload] [MIC 0] [Tag 214] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 215
+[Offload] [HOST]  [Tag 215] [CPU Time]        0.005010(seconds)
+[Offload] [MIC 0] [Tag 215] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 215] [MIC Time]        0.003039(seconds)
+[Offload] [MIC 0] [Tag 215] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 216
+[Offload] [HOST]  [Tag 216] [CPU Time]        0.014940(seconds)
+[Offload] [MIC 0] [Tag 216] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 216] [MIC Time]        0.003080(seconds)
+[Offload] [MIC 0] [Tag 216] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 217
+[Offload] [HOST]  [Tag 217] [CPU Time]        0.010006(seconds)
+[Offload] [MIC 0] [Tag 217] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 217] [MIC Time]        0.001051(seconds)
+[Offload] [MIC 0] [Tag 217] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 218
+[Offload] [HOST]  [Tag 218] [CPU Time]        0.004963(seconds)
+[Offload] [MIC 0] [Tag 218] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 218] [MIC Time]        0.002948(seconds)
+[Offload] [MIC 0] [Tag 218] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 219
+[Offload] [HOST]  [Tag 219] [CPU Time]        0.005184(seconds)
+[Offload] [MIC 0] [Tag 219] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 219] [MIC Time]        0.004046(seconds)
+[Offload] [MIC 0] [Tag 219] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 220
+[Offload] [HOST]  [Tag 220] [CPU Time]        0.004788(seconds)
+[Offload] [MIC 0] [Tag 220] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 220] [MIC Time]        0.003221(seconds)
+[Offload] [MIC 0] [Tag 220] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 221
+[Offload] [HOST]  [Tag 221] [CPU Time]        0.010990(seconds)
+[Offload] [MIC 0] [Tag 221] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 221] [MIC Time]        0.004815(seconds)
+[Offload] [MIC 0] [Tag 221] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 222
+[Offload] [HOST]  [Tag 222] [CPU Time]        0.005984(seconds)
+[Offload] [MIC 0] [Tag 222] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 222] [MIC Time]        0.002024(seconds)
+[Offload] [MIC 0] [Tag 222] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 223
+[Offload] [HOST]  [Tag 223] [CPU Time]        0.009974(seconds)
+[Offload] [MIC 0] [Tag 223] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 223] [MIC Time]        0.004042(seconds)
+[Offload] [MIC 0] [Tag 223] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 224
+[Offload] [HOST]  [Tag 224] [CPU Time]        0.005980(seconds)
+[Offload] [MIC 0] [Tag 224] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 224] [MIC Time]        0.003209(seconds)
+[Offload] [MIC 0] [Tag 224] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 225
+[Offload] [HOST]  [Tag 225] [CPU Time]        0.006169(seconds)
+[Offload] [MIC 0] [Tag 225] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 225] [MIC Time]        0.003875(seconds)
+[Offload] [MIC 0] [Tag 225] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 226
+[Offload] [HOST]  [Tag 226] [CPU Time]        0.005802(seconds)
+[Offload] [MIC 0] [Tag 226] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 226] [MIC Time]        0.003414(seconds)
+[Offload] [MIC 0] [Tag 226] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 227
+[Offload] [HOST]  [Tag 227] [CPU Time]        0.011072(seconds)
+[Offload] [MIC 0] [Tag 227] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 227] [MIC Time]        0.004714(seconds)
+[Offload] [MIC 0] [Tag 227] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 228
+[Offload] [HOST]  [Tag 228] [CPU Time]        0.006917(seconds)
+[Offload] [MIC 0] [Tag 228] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 228] [MIC Time]        0.003410(seconds)
+[Offload] [MIC 0] [Tag 228] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 229
+[Offload] [HOST]  [Tag 229] [CPU Time]        0.020983(seconds)
+[Offload] [MIC 0] [Tag 229] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 229] [MIC Time]        0.005576(seconds)
+[Offload] [MIC 0] [Tag 229] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 230
+[Offload] [HOST]  [Tag 230] [CPU Time]        0.010945(seconds)
+[Offload] [MIC 0] [Tag 230] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 230] [MIC Time]        0.006556(seconds)
+[Offload] [MIC 0] [Tag 230] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 231
+[Offload] [HOST]  [Tag 231] [CPU Time]        0.010975(seconds)
+[Offload] [MIC 0] [Tag 231] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 231] [MIC Time]        0.007555(seconds)
+[Offload] [MIC 0] [Tag 231] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 232
+[Offload] [HOST]  [Tag 232] [CPU Time]        0.005060(seconds)
+[Offload] [MIC 0] [Tag 232] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 232] [MIC Time]        0.003893(seconds)
+[Offload] [MIC 0] [Tag 232] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 233
+[Offload] [HOST]  [Tag 233] [CPU Time]        0.009929(seconds)
+[Offload] [MIC 0] [Tag 233] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 233] [MIC Time]        0.003954(seconds)
+[Offload] [MIC 0] [Tag 233] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 234
+[Offload] [HOST]  [Tag 234] [CPU Time]        0.015973(seconds)
+[Offload] [MIC 0] [Tag 234] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 234] [MIC Time]        0.003945(seconds)
+[Offload] [MIC 0] [Tag 234] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 235
+[Offload] [HOST]  [Tag 235] [CPU Time]        0.010991(seconds)
+[Offload] [MIC 0] [Tag 235] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 235] [MIC Time]        0.004055(seconds)
+[Offload] [MIC 0] [Tag 235] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 236
+[Offload] [HOST]  [Tag 236] [CPU Time]        0.006020(seconds)
+[Offload] [MIC 0] [Tag 236] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 236] [MIC Time]        0.002798(seconds)
+[Offload] [MIC 0] [Tag 236] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 237
+[Offload] [HOST]  [Tag 237] [CPU Time]        0.005933(seconds)
+[Offload] [MIC 0] [Tag 237] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 237] [MIC Time]        0.002985(seconds)
+[Offload] [MIC 0] [Tag 237] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 238
+[Offload] [HOST]  [Tag 238] [CPU Time]        0.010998(seconds)
+[Offload] [MIC 0] [Tag 238] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 238] [MIC Time]        0.004774(seconds)
+[Offload] [MIC 0] [Tag 238] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 239
+[Offload] [HOST]  [Tag 239] [CPU Time]        0.010958(seconds)
+[Offload] [MIC 0] [Tag 239] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 239] [MIC Time]        0.006124(seconds)
+[Offload] [MIC 0] [Tag 239] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 240
+[Offload] [HOST]  [Tag 240] [CPU Time]        0.005965(seconds)
+[Offload] [MIC 0] [Tag 240] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 240] [MIC Time]        0.003420(seconds)
+[Offload] [MIC 0] [Tag 240] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 241
+[Offload] [HOST]  [Tag 241] [CPU Time]        0.006994(seconds)
+[Offload] [MIC 0] [Tag 241] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 241] [MIC Time]        0.002246(seconds)
+[Offload] [MIC 0] [Tag 241] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 242
+[Offload] [HOST]  [Tag 242] [CPU Time]        0.005981(seconds)
+[Offload] [MIC 0] [Tag 242] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 242] [MIC Time]        0.002871(seconds)
+[Offload] [MIC 0] [Tag 242] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 243
+[Offload] [HOST]  [Tag 243] [CPU Time]        0.006985(seconds)
+[Offload] [MIC 0] [Tag 243] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 243] [MIC Time]        0.002435(seconds)
+[Offload] [MIC 0] [Tag 243] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 244
+[Offload] [HOST]  [Tag 244] [CPU Time]        0.006330(seconds)
+[Offload] [MIC 0] [Tag 244] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 244] [MIC Time]        0.003970(seconds)
+[Offload] [MIC 0] [Tag 244] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 245
+[Offload] [HOST]  [Tag 245] [CPU Time]        0.005637(seconds)
+[Offload] [MIC 0] [Tag 245] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 245] [MIC Time]        0.003281(seconds)
+[Offload] [MIC 0] [Tag 245] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 246
+[Offload] [HOST]  [Tag 246] [CPU Time]        0.005983(seconds)
+[Offload] [MIC 0] [Tag 246] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 246] [MIC Time]        0.001605(seconds)
+[Offload] [MIC 0] [Tag 246] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 247
+[Offload] [HOST]  [Tag 247] [CPU Time]        0.005973(seconds)
+[Offload] [MIC 0] [Tag 247] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 247] [MIC Time]        0.002739(seconds)
+[Offload] [MIC 0] [Tag 247] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 248
+[Offload] [HOST]  [Tag 248] [CPU Time]        0.006029(seconds)
+[Offload] [MIC 0] [Tag 248] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 248] [MIC Time]        0.003110(seconds)
+[Offload] [MIC 0] [Tag 248] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 249
+[Offload] [HOST]  [Tag 249] [CPU Time]        0.004942(seconds)
+[Offload] [MIC 0] [Tag 249] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 249] [MIC Time]        0.000917(seconds)
+[Offload] [MIC 0] [Tag 249] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 250
+[Offload] [HOST]  [Tag 250] [CPU Time]        0.011076(seconds)
+[Offload] [MIC 0] [Tag 250] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 250] [MIC Time]        0.001892(seconds)
+[Offload] [MIC 0] [Tag 250] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 251
+[Offload] [HOST]  [Tag 251] [CPU Time]        0.010870(seconds)
+[Offload] [MIC 0] [Tag 251] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 251] [MIC Time]        0.002241(seconds)
+[Offload] [MIC 0] [Tag 251] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 252
+[Offload] [HOST]  [Tag 252] [CPU Time]        0.004986(seconds)
+[Offload] [MIC 0] [Tag 252] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 252] [MIC Time]        0.001380(seconds)
+[Offload] [MIC 0] [Tag 252] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 253
+[Offload] [HOST]  [Tag 253] [CPU Time]        0.004989(seconds)
+[Offload] [MIC 0] [Tag 253] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 253] [MIC Time]        0.000472(seconds)
+[Offload] [MIC 0] [Tag 253] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 254
+[Offload] [HOST]  [Tag 254] [CPU Time]        0.004778(seconds)
+[Offload] [MIC 0] [Tag 254] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 254] [MIC Time]        0.001025(seconds)
+[Offload] [MIC 0] [Tag 254] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 255
+[Offload] [HOST]  [Tag 255] [CPU Time]        0.012187(seconds)
+[Offload] [MIC 0] [Tag 255] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 255] [MIC Time]        0.001018(seconds)
+[Offload] [MIC 0] [Tag 255] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 256
+[Offload] [HOST]  [Tag 256] [CPU Time]        0.010976(seconds)
+[Offload] [MIC 0] [Tag 256] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 256] [MIC Time]        0.000419(seconds)
+[Offload] [MIC 0] [Tag 256] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 257
+[Offload] [HOST]  [Tag 257] [CPU Time]        0.004984(seconds)
+[Offload] [MIC 0] [Tag 257] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 257] [MIC Time]        0.000755(seconds)
+[Offload] [MIC 0] [Tag 257] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 258
+[Offload] [HOST]  [Tag 258] [CPU Time]        0.006018(seconds)
+[Offload] [MIC 0] [Tag 258] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 258] [MIC Time]        0.001084(seconds)
+[Offload] [MIC 0] [Tag 258] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 259
+[Offload] [HOST]  [Tag 259] [CPU Time]        0.009986(seconds)
+[Offload] [MIC 0] [Tag 259] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 259] [MIC Time]        0.000985(seconds)
+[Offload] [MIC 0] [Tag 259] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 260
+[Offload] [HOST]  [Tag 260] [CPU Time]        0.004953(seconds)
+[Offload] [MIC 0] [Tag 260] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 260] [MIC Time]        0.001676(seconds)
+[Offload] [MIC 0] [Tag 260] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 261
+[Offload] [HOST]  [Tag 261] [CPU Time]        0.005990(seconds)
+[Offload] [MIC 0] [Tag 261] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 261] [MIC Time]        0.001530(seconds)
+[Offload] [MIC 0] [Tag 261] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 262
+[Offload] [HOST]  [Tag 262] [CPU Time]        0.005977(seconds)
+[Offload] [MIC 0] [Tag 262] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 262] [MIC Time]        0.001886(seconds)
+[Offload] [MIC 0] [Tag 262] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 263
+[Offload] [HOST]  [Tag 263] [CPU Time]        0.011045(seconds)
+[Offload] [MIC 0] [Tag 263] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 263] [MIC Time]        0.002842(seconds)
+[Offload] [MIC 0] [Tag 263] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 264
+[Offload] [HOST]  [Tag 264] [CPU Time]        0.005928(seconds)
+[Offload] [MIC 0] [Tag 264] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 264] [MIC Time]        0.002652(seconds)
+[Offload] [MIC 0] [Tag 264] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 265
+[Offload] [HOST]  [Tag 265] [CPU Time]        0.005980(seconds)
+[Offload] [MIC 0] [Tag 265] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 265] [MIC Time]        0.001893(seconds)
+[Offload] [MIC 0] [Tag 265] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 266
+[Offload] [HOST]  [Tag 266] [CPU Time]        0.024953(seconds)
+[Offload] [MIC 0] [Tag 266] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 266] [MIC Time]        0.004784(seconds)
+[Offload] [MIC 0] [Tag 266] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 267
+[Offload] [HOST]  [Tag 267] [CPU Time]        0.010977(seconds)
+[Offload] [MIC 0] [Tag 267] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 267] [MIC Time]        0.001861(seconds)
+[Offload] [MIC 0] [Tag 267] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 268
+[Offload] [HOST]  [Tag 268] [CPU Time]        0.004997(seconds)
+[Offload] [MIC 0] [Tag 268] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 268] [MIC Time]        0.003663(seconds)
+[Offload] [MIC 0] [Tag 268] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 269
+[Offload] [HOST]  [Tag 269] [CPU Time]        0.005989(seconds)
+[Offload] [MIC 0] [Tag 269] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 269] [MIC Time]        0.003422(seconds)
+[Offload] [MIC 0] [Tag 269] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 270
+[Offload] [HOST]  [Tag 270] [CPU Time]        0.007242(seconds)
+[Offload] [MIC 0] [Tag 270] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 270] [MIC Time]        0.004134(seconds)
+[Offload] [MIC 0] [Tag 270] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 271
+[Offload] [HOST]  [Tag 271] [CPU Time]        0.010723(seconds)
+[Offload] [MIC 0] [Tag 271] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 271] [MIC Time]        0.004227(seconds)
+[Offload] [MIC 0] [Tag 271] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 272
+[Offload] [HOST]  [Tag 272] [CPU Time]        0.007010(seconds)
+[Offload] [MIC 0] [Tag 272] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 272] [MIC Time]        0.003772(seconds)
+[Offload] [MIC 0] [Tag 272] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 273
+[Offload] [HOST]  [Tag 273] [CPU Time]        0.006052(seconds)
+[Offload] [MIC 0] [Tag 273] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 273] [MIC Time]        0.003629(seconds)
+[Offload] [MIC 0] [Tag 273] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 274
+[Offload] [HOST]  [Tag 274] [CPU Time]        0.006005(seconds)
+[Offload] [MIC 0] [Tag 274] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 274] [MIC Time]        0.003472(seconds)
+[Offload] [MIC 0] [Tag 274] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 275
+[Offload] [HOST]  [Tag 275] [CPU Time]        0.010858(seconds)
+[Offload] [MIC 0] [Tag 275] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 275] [MIC Time]        0.005282(seconds)
+[Offload] [MIC 0] [Tag 275] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 276
+[Offload] [HOST]  [Tag 276] [CPU Time]        0.006066(seconds)
+[Offload] [MIC 0] [Tag 276] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 276] [MIC Time]        0.003477(seconds)
+[Offload] [MIC 0] [Tag 276] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 277
+[Offload] [HOST]  [Tag 277] [CPU Time]        0.009141(seconds)
+[Offload] [MIC 0] [Tag 277] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 277] [MIC Time]        0.005317(seconds)
+[Offload] [MIC 0] [Tag 277] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 278
+[Offload] [HOST]  [Tag 278] [CPU Time]        0.015734(seconds)
+[Offload] [MIC 0] [Tag 278] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 278] [MIC Time]        0.003504(seconds)
+[Offload] [MIC 0] [Tag 278] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 279
+[Offload] [HOST]  [Tag 279] [CPU Time]        0.011962(seconds)
+[Offload] [MIC 0] [Tag 279] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 279] [MIC Time]        0.004255(seconds)
+[Offload] [MIC 0] [Tag 279] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 280
+[Offload] [HOST]  [Tag 280] [CPU Time]        0.011990(seconds)
+[Offload] [MIC 0] [Tag 280] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 280] [MIC Time]        0.004343(seconds)
+[Offload] [MIC 0] [Tag 280] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 281
+[Offload] [HOST]  [Tag 281] [CPU Time]        0.010970(seconds)
+[Offload] [MIC 0] [Tag 281] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 281] [MIC Time]        0.005774(seconds)
+[Offload] [MIC 0] [Tag 281] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 282
+[Offload] [HOST]  [Tag 282] [CPU Time]        0.005416(seconds)
+[Offload] [MIC 0] [Tag 282] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 282] [MIC Time]        0.004271(seconds)
+[Offload] [MIC 0] [Tag 282] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 283
+[Offload] [HOST]  [Tag 283] [CPU Time]        0.011564(seconds)
+[Offload] [MIC 0] [Tag 283] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 283] [MIC Time]        0.005975(seconds)
+[Offload] [MIC 0] [Tag 283] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 284
+[Offload] [HOST]  [Tag 284] [CPU Time]        0.015014(seconds)
+[Offload] [MIC 0] [Tag 284] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 284] [MIC Time]        0.004580(seconds)
+[Offload] [MIC 0] [Tag 284] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 285
+[Offload] [HOST]  [Tag 285] [CPU Time]        0.010946(seconds)
+[Offload] [MIC 0] [Tag 285] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 285] [MIC Time]        0.004076(seconds)
+[Offload] [MIC 0] [Tag 285] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 286
+[Offload] [HOST]  [Tag 286] [CPU Time]        0.005043(seconds)
+[Offload] [MIC 0] [Tag 286] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 286] [MIC Time]        0.003881(seconds)
+[Offload] [MIC 0] [Tag 286] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 287
+[Offload] [HOST]  [Tag 287] [CPU Time]        0.014930(seconds)
+[Offload] [MIC 0] [Tag 287] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 287] [MIC Time]        0.003242(seconds)
+[Offload] [MIC 0] [Tag 287] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 288
+[Offload] [HOST]  [Tag 288] [CPU Time]        0.004983(seconds)
+[Offload] [MIC 0] [Tag 288] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 288] [MIC Time]        0.002114(seconds)
+[Offload] [MIC 0] [Tag 288] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 289
+[Offload] [HOST]  [Tag 289] [CPU Time]        0.004994(seconds)
+[Offload] [MIC 0] [Tag 289] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 289] [MIC Time]        0.002512(seconds)
+[Offload] [MIC 0] [Tag 289] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 290
+[Offload] [HOST]  [Tag 290] [CPU Time]        0.009971(seconds)
+[Offload] [MIC 0] [Tag 290] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 290] [MIC Time]        0.005466(seconds)
+[Offload] [MIC 0] [Tag 290] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 291
+[Offload] [HOST]  [Tag 291] [CPU Time]        0.015001(seconds)
+[Offload] [MIC 0] [Tag 291] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 291] [MIC Time]        0.002929(seconds)
+[Offload] [MIC 0] [Tag 291] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 292
+[Offload] [HOST]  [Tag 292] [CPU Time]        0.009977(seconds)
+[Offload] [MIC 0] [Tag 292] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 292] [MIC Time]        0.002891(seconds)
+[Offload] [MIC 0] [Tag 292] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 293
+[Offload] [HOST]  [Tag 293] [CPU Time]        0.004984(seconds)
+[Offload] [MIC 0] [Tag 293] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 293] [MIC Time]        0.002749(seconds)
+[Offload] [MIC 0] [Tag 293] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 294
+[Offload] [HOST]  [Tag 294] [CPU Time]        0.004982(seconds)
+[Offload] [MIC 0] [Tag 294] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 294] [MIC Time]        0.002563(seconds)
+[Offload] [MIC 0] [Tag 294] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 295
+[Offload] [HOST]  [Tag 295] [CPU Time]        0.004982(seconds)
+[Offload] [MIC 0] [Tag 295] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 295] [MIC Time]        0.001358(seconds)
+[Offload] [MIC 0] [Tag 295] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 296
+[Offload] [HOST]  [Tag 296] [CPU Time]        0.005001(seconds)
+[Offload] [MIC 0] [Tag 296] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 296] [MIC Time]        0.000549(seconds)
+[Offload] [MIC 0] [Tag 296] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 297
+[Offload] [HOST]  [Tag 297] [CPU Time]        0.004994(seconds)
+[Offload] [MIC 0] [Tag 297] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 297] [MIC Time]        0.001333(seconds)
+[Offload] [MIC 0] [Tag 297] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 298
+[Offload] [HOST]  [Tag 298] [CPU Time]        0.009990(seconds)
+[Offload] [MIC 0] [Tag 298] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 298] [MIC Time]        0.000850(seconds)
+[Offload] [MIC 0] [Tag 298] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 299
+[Offload] [HOST]  [Tag 299] [CPU Time]        0.004970(seconds)
+[Offload] [MIC 0] [Tag 299] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 299] [MIC Time]        0.001103(seconds)
+[Offload] [MIC 0] [Tag 299] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 300
+[Offload] [HOST]  [Tag 300] [CPU Time]        0.004977(seconds)
+[Offload] [MIC 0] [Tag 300] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 300] [MIC Time]        0.000405(seconds)
+[Offload] [MIC 0] [Tag 300] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 301
+[Offload] [HOST]  [Tag 301] [CPU Time]        0.004773(seconds)
+[Offload] [MIC 0] [Tag 301] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 301] [MIC Time]        0.001015(seconds)
+[Offload] [MIC 0] [Tag 301] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 302
+[Offload] [HOST]  [Tag 302] [CPU Time]        0.010202(seconds)
+[Offload] [MIC 0] [Tag 302] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 302] [MIC Time]        0.000969(seconds)
+[Offload] [MIC 0] [Tag 302] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 303
+[Offload] [HOST]  [Tag 303] [CPU Time]        0.004959(seconds)
+[Offload] [MIC 0] [Tag 303] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 303] [MIC Time]        0.000471(seconds)
+[Offload] [MIC 0] [Tag 303] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 304
+[Offload] [HOST]  [Tag 304] [CPU Time]        0.009991(seconds)
+[Offload] [MIC 0] [Tag 304] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 304] [MIC Time]        0.001538(seconds)
+[Offload] [MIC 0] [Tag 304] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 305
+[Offload] [HOST]  [Tag 305] [CPU Time]        0.009989(seconds)
+[Offload] [MIC 0] [Tag 305] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 305] [MIC Time]        0.002068(seconds)
+[Offload] [MIC 0] [Tag 305] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 306
+[Offload] [HOST]  [Tag 306] [CPU Time]        0.004987(seconds)
+[Offload] [MIC 0] [Tag 306] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 306] [MIC Time]        0.000913(seconds)
+[Offload] [MIC 0] [Tag 306] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 307
+[Offload] [HOST]  [Tag 307] [CPU Time]        0.004988(seconds)
+[Offload] [MIC 0] [Tag 307] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 307] [MIC Time]        0.002033(seconds)
+[Offload] [MIC 0] [Tag 307] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 308
+[Offload] [HOST]  [Tag 308] [CPU Time]        0.004982(seconds)
+[Offload] [MIC 0] [Tag 308] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 308] [MIC Time]        0.001083(seconds)
+[Offload] [MIC 0] [Tag 308] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 309
+[Offload] [HOST]  [Tag 309] [CPU Time]        0.004974(seconds)
+[Offload] [MIC 0] [Tag 309] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 309] [MIC Time]        0.003649(seconds)
+[Offload] [MIC 0] [Tag 309] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 310
+[Offload] [HOST]  [Tag 310] [CPU Time]        0.004999(seconds)
+[Offload] [MIC 0] [Tag 310] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 310] [MIC Time]        0.002321(seconds)
+[Offload] [MIC 0] [Tag 310] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 311
+[Offload] [HOST]  [Tag 311] [CPU Time]        0.014973(seconds)
+[Offload] [MIC 0] [Tag 311] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 311] [MIC Time]        0.001919(seconds)
+[Offload] [MIC 0] [Tag 311] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 312
+[Offload] [HOST]  [Tag 312] [CPU Time]        0.004979(seconds)
+[Offload] [MIC 0] [Tag 312] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 312] [MIC Time]        0.003524(seconds)
+[Offload] [MIC 0] [Tag 312] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 313
+[Offload] [HOST]  [Tag 313] [CPU Time]        0.014980(seconds)
+[Offload] [MIC 0] [Tag 313] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 313] [MIC Time]        0.001880(seconds)
+[Offload] [MIC 0] [Tag 313] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 314
+[Offload] [HOST]  [Tag 314] [CPU Time]        0.009977(seconds)
+[Offload] [MIC 0] [Tag 314] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 314] [MIC Time]        0.002357(seconds)
+[Offload] [MIC 0] [Tag 314] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 315
+[Offload] [HOST]  [Tag 315] [CPU Time]        0.004980(seconds)
+[Offload] [MIC 0] [Tag 315] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 315] [MIC Time]        0.002766(seconds)
+[Offload] [MIC 0] [Tag 315] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 316
+[Offload] [HOST]  [Tag 316] [CPU Time]        0.004970(seconds)
+[Offload] [MIC 0] [Tag 316] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 316] [MIC Time]        0.002554(seconds)
+[Offload] [MIC 0] [Tag 316] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 317
+[Offload] [HOST]  [Tag 317] [CPU Time]        0.005008(seconds)
+[Offload] [MIC 0] [Tag 317] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 317] [MIC Time]        0.003341(seconds)
+[Offload] [MIC 0] [Tag 317] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 318
+[Offload] [HOST]  [Tag 318] [CPU Time]        0.019962(seconds)
+[Offload] [MIC 0] [Tag 318] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 318] [MIC Time]        0.004501(seconds)
+[Offload] [MIC 0] [Tag 318] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 319
+[Offload] [HOST]  [Tag 319] [CPU Time]        0.005008(seconds)
+[Offload] [MIC 0] [Tag 319] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 319] [MIC Time]        0.003782(seconds)
+[Offload] [MIC 0] [Tag 319] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 320
+[Offload] [HOST]  [Tag 320] [CPU Time]        0.005063(seconds)
+[Offload] [MIC 0] [Tag 320] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 320] [MIC Time]        0.003904(seconds)
+[Offload] [MIC 0] [Tag 320] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 321
+[Offload] [HOST]  [Tag 321] [CPU Time]        0.010905(seconds)
+[Offload] [MIC 0] [Tag 321] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 321] [MIC Time]        0.003604(seconds)
+[Offload] [MIC 0] [Tag 321] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 322
+[Offload] [HOST]  [Tag 322] [CPU Time]        0.005073(seconds)
+[Offload] [MIC 0] [Tag 322] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 322] [MIC Time]        0.003909(seconds)
+[Offload] [MIC 0] [Tag 322] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 323
+[Offload] [HOST]  [Tag 323] [CPU Time]        0.004894(seconds)
+[Offload] [MIC 0] [Tag 323] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 323] [MIC Time]        0.003594(seconds)
+[Offload] [MIC 0] [Tag 323] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 324
+[Offload] [HOST]  [Tag 324] [CPU Time]        0.004987(seconds)
+[Offload] [MIC 0] [Tag 324] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 324] [MIC Time]        0.003312(seconds)
+[Offload] [MIC 0] [Tag 324] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 325
+[Offload] [HOST]  [Tag 325] [CPU Time]        0.009986(seconds)
+[Offload] [MIC 0] [Tag 325] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 325] [MIC Time]        0.005566(seconds)
+[Offload] [MIC 0] [Tag 325] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 326
+[Offload] [HOST]  [Tag 326] [CPU Time]        0.010008(seconds)
+[Offload] [MIC 0] [Tag 326] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 326] [MIC Time]        0.005909(seconds)
+[Offload] [MIC 0] [Tag 326] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 327
+[Offload] [HOST]  [Tag 327] [CPU Time]        0.009963(seconds)
+[Offload] [MIC 0] [Tag 327] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 327] [MIC Time]        0.005413(seconds)
+[Offload] [MIC 0] [Tag 327] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 328
+[Offload] [HOST]  [Tag 328] [CPU Time]        0.015289(seconds)
+[Offload] [MIC 0] [Tag 328] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 328] [MIC Time]        0.004423(seconds)
+[Offload] [MIC 0] [Tag 328] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 329
+[Offload] [HOST]  [Tag 329] [CPU Time]        0.005695(seconds)
+[Offload] [MIC 0] [Tag 329] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 329] [MIC Time]        0.004144(seconds)
+[Offload] [MIC 0] [Tag 329] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 330
+[Offload] [HOST]  [Tag 330] [CPU Time]        0.005001(seconds)
+[Offload] [MIC 0] [Tag 330] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 330] [MIC Time]        0.003385(seconds)
+[Offload] [MIC 0] [Tag 330] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 331
+[Offload] [HOST]  [Tag 331] [CPU Time]        0.005128(seconds)
+[Offload] [MIC 0] [Tag 331] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 331] [MIC Time]        0.003978(seconds)
+[Offload] [MIC 0] [Tag 331] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 332
+[Offload] [HOST]  [Tag 332] [CPU Time]        0.010811(seconds)
+[Offload] [MIC 0] [Tag 332] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 332] [MIC Time]        0.003052(seconds)
+[Offload] [MIC 0] [Tag 332] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 333
+[Offload] [HOST]  [Tag 333] [CPU Time]        0.005023(seconds)
+[Offload] [MIC 0] [Tag 333] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 333] [MIC Time]        0.003439(seconds)
+[Offload] [MIC 0] [Tag 333] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 334
+[Offload] [HOST]  [Tag 334] [CPU Time]        0.005433(seconds)
+[Offload] [MIC 0] [Tag 334] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 334] [MIC Time]        0.004276(seconds)
+[Offload] [MIC 0] [Tag 334] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 335
+[Offload] [HOST]  [Tag 335] [CPU Time]        0.010503(seconds)
+[Offload] [MIC 0] [Tag 335] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 335] [MIC Time]        0.005007(seconds)
+[Offload] [MIC 0] [Tag 335] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 336
+[Offload] [HOST]  [Tag 336] [CPU Time]        0.005002(seconds)
+[Offload] [MIC 0] [Tag 336] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 336] [MIC Time]        0.001820(seconds)
+[Offload] [MIC 0] [Tag 336] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 337
+[Offload] [HOST]  [Tag 337] [CPU Time]        0.004988(seconds)
+[Offload] [MIC 0] [Tag 337] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 337] [MIC Time]        0.003686(seconds)
+[Offload] [MIC 0] [Tag 337] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 338
+[Offload] [HOST]  [Tag 338] [CPU Time]        0.014954(seconds)
+[Offload] [MIC 0] [Tag 338] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 338] [MIC Time]        0.003298(seconds)
+[Offload] [MIC 0] [Tag 338] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 339
+[Offload] [HOST]  [Tag 339] [CPU Time]        0.005001(seconds)
+[Offload] [MIC 0] [Tag 339] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 339] [MIC Time]        0.003480(seconds)
+[Offload] [MIC 0] [Tag 339] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 340
+[Offload] [HOST]  [Tag 340] [CPU Time]        0.005016(seconds)
+[Offload] [MIC 0] [Tag 340] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 340] [MIC Time]        0.003766(seconds)
+[Offload] [MIC 0] [Tag 340] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 341
+[Offload] [HOST]  [Tag 341] [CPU Time]        0.004935(seconds)
+[Offload] [MIC 0] [Tag 341] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 341] [MIC Time]        0.003577(seconds)
+[Offload] [MIC 0] [Tag 341] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 342
+[Offload] [HOST]  [Tag 342] [CPU Time]        0.005017(seconds)
+[Offload] [MIC 0] [Tag 342] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 342] [MIC Time]        0.001839(seconds)
+[Offload] [MIC 0] [Tag 342] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 343
+[Offload] [HOST]  [Tag 343] [CPU Time]        0.004957(seconds)
+[Offload] [MIC 0] [Tag 343] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 343] [MIC Time]        0.002886(seconds)
+[Offload] [MIC 0] [Tag 343] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 344
+[Offload] [HOST]  [Tag 344] [CPU Time]        0.004993(seconds)
+[Offload] [MIC 0] [Tag 344] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 344] [MIC Time]        0.001357(seconds)
+[Offload] [MIC 0] [Tag 344] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 345
+[Offload] [HOST]  [Tag 345] [CPU Time]        0.004979(seconds)
+[Offload] [MIC 0] [Tag 345] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 345] [MIC Time]        0.002152(seconds)
+[Offload] [MIC 0] [Tag 345] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 346
+[Offload] [HOST]  [Tag 346] [CPU Time]        0.004998(seconds)
+[Offload] [MIC 0] [Tag 346] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 346] [MIC Time]        0.000518(seconds)
+[Offload] [MIC 0] [Tag 346] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 347
+[Offload] [HOST]  [Tag 347] [CPU Time]        0.004954(seconds)
+[Offload] [MIC 0] [Tag 347] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 347] [MIC Time]        0.001047(seconds)
+[Offload] [MIC 0] [Tag 347] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 348
+[Offload] [HOST]  [Tag 348] [CPU Time]        0.004778(seconds)
+[Offload] [MIC 0] [Tag 348] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 348] [MIC Time]        0.001052(seconds)
+[Offload] [MIC 0] [Tag 348] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 349
+[Offload] [HOST]  [Tag 349] [CPU Time]        0.007190(seconds)
+[Offload] [MIC 0] [Tag 349] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 349] [MIC Time]        0.000653(seconds)
+[Offload] [MIC 0] [Tag 349] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 350
+[Offload] [HOST]  [Tag 350] [CPU Time]        0.005972(seconds)
+[Offload] [MIC 0] [Tag 350] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 350] [MIC Time]        0.000218(seconds)
+[Offload] [MIC 0] [Tag 350] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 351
+[Offload] [HOST]  [Tag 351] [CPU Time]        0.004995(seconds)
+[Offload] [MIC 0] [Tag 351] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 351] [MIC Time]        0.000750(seconds)
+[Offload] [MIC 0] [Tag 351] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 352
+[Offload] [HOST]  [Tag 352] [CPU Time]        0.005980(seconds)
+[Offload] [MIC 0] [Tag 352] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 352] [MIC Time]        0.001419(seconds)
+[Offload] [MIC 0] [Tag 352] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 353
+[Offload] [HOST]  [Tag 353] [CPU Time]        0.004987(seconds)
+[Offload] [MIC 0] [Tag 353] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 353] [MIC Time]        0.001665(seconds)
+[Offload] [MIC 0] [Tag 353] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 354
+[Offload] [HOST]  [Tag 354] [CPU Time]        0.004982(seconds)
+[Offload] [MIC 0] [Tag 354] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 354] [MIC Time]        0.001797(seconds)
+[Offload] [MIC 0] [Tag 354] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 355
+[Offload] [HOST]  [Tag 355] [CPU Time]        0.005026(seconds)
+[Offload] [MIC 0] [Tag 355] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 355] [MIC Time]        0.002693(seconds)
+[Offload] [MIC 0] [Tag 355] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 356
+[Offload] [HOST]  [Tag 356] [CPU Time]        0.010942(seconds)
+[Offload] [MIC 0] [Tag 356] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 356] [MIC Time]        0.000693(seconds)
+[Offload] [MIC 0] [Tag 356] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 357
+[Offload] [HOST]  [Tag 357] [CPU Time]        0.005034(seconds)
+[Offload] [MIC 0] [Tag 357] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 357] [MIC Time]        0.002601(seconds)
+[Offload] [MIC 0] [Tag 357] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 358
+[Offload] [HOST]  [Tag 358] [CPU Time]        0.005936(seconds)
+[Offload] [MIC 0] [Tag 358] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 358] [MIC Time]        0.003270(seconds)
+[Offload] [MIC 0] [Tag 358] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 359
+[Offload] [HOST]  [Tag 359] [CPU Time]        0.006016(seconds)
+[Offload] [MIC 0] [Tag 359] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 359] [MIC Time]        0.002999(seconds)
+[Offload] [MIC 0] [Tag 359] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 360
+[Offload] [HOST]  [Tag 360] [CPU Time]        0.004954(seconds)
+[Offload] [MIC 0] [Tag 360] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 360] [MIC Time]        0.003013(seconds)
+[Offload] [MIC 0] [Tag 360] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 361
+[Offload] [HOST]  [Tag 361] [CPU Time]        0.009986(seconds)
+[Offload] [MIC 0] [Tag 361] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 361] [MIC Time]        0.003003(seconds)
+[Offload] [MIC 0] [Tag 361] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 362
+[Offload] [HOST]  [Tag 362] [CPU Time]        0.019990(seconds)
+[Offload] [MIC 0] [Tag 362] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 362] [MIC Time]        0.004510(seconds)
+[Offload] [MIC 0] [Tag 362] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 363
+[Offload] [HOST]  [Tag 363] [CPU Time]        0.005986(seconds)
+[Offload] [MIC 0] [Tag 363] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 363] [MIC Time]        0.002342(seconds)
+[Offload] [MIC 0] [Tag 363] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 364
+[Offload] [HOST]  [Tag 364] [CPU Time]        0.004979(seconds)
+[Offload] [MIC 0] [Tag 364] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 364] [MIC Time]        0.002635(seconds)
+[Offload] [MIC 0] [Tag 364] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 365
+[Offload] [HOST]  [Tag 365] [CPU Time]        0.005331(seconds)
+[Offload] [MIC 0] [Tag 365] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 365] [MIC Time]        0.003881(seconds)
+[Offload] [MIC 0] [Tag 365] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 366
+[Offload] [HOST]  [Tag 366] [CPU Time]        0.011645(seconds)
+[Offload] [MIC 0] [Tag 366] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 366] [MIC Time]        0.003438(seconds)
+[Offload] [MIC 0] [Tag 366] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 367
+[Offload] [HOST]  [Tag 367] [CPU Time]        0.015034(seconds)
+[Offload] [MIC 0] [Tag 367] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 367] [MIC Time]        0.006379(seconds)
+[Offload] [MIC 0] [Tag 367] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 368
+[Offload] [HOST]  [Tag 368] [CPU Time]        0.006953(seconds)
+[Offload] [MIC 0] [Tag 368] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 368] [MIC Time]        0.003030(seconds)
+[Offload] [MIC 0] [Tag 368] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 369
+[Offload] [HOST]  [Tag 369] [CPU Time]        0.006966(seconds)
+[Offload] [MIC 0] [Tag 369] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 369] [MIC Time]        0.003374(seconds)
+[Offload] [MIC 0] [Tag 369] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 370
+[Offload] [HOST]  [Tag 370] [CPU Time]        0.011948(seconds)
+[Offload] [MIC 0] [Tag 370] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 370] [MIC Time]        0.003179(seconds)
+[Offload] [MIC 0] [Tag 370] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 371
+[Offload] [HOST]  [Tag 371] [CPU Time]        0.009986(seconds)
+[Offload] [MIC 0] [Tag 371] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 371] [MIC Time]        0.005182(seconds)
+[Offload] [MIC 0] [Tag 371] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 372
+[Offload] [HOST]  [Tag 372] [CPU Time]        0.009988(seconds)
+[Offload] [MIC 0] [Tag 372] [CPU->MIC Data]   2452 (bytes)
+[Offload] [MIC 0] [Tag 372] [MIC Time]        0.005159(seconds)
+[Offload] [MIC 0] [Tag 372] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 373
+[Offload] [HOST]  [Tag 373] [CPU Time]        0.010974(seconds)
+[Offload] [MIC 0] [Tag 373] [CPU->MIC Data]   2428 (bytes)
+[Offload] [MIC 0] [Tag 373] [MIC Time]        0.004961(seconds)
+[Offload] [MIC 0] [Tag 373] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 374
+[Offload] [HOST]  [Tag 374] [CPU Time]        0.011997(seconds)
+[Offload] [MIC 0] [Tag 374] [CPU->MIC Data]   2380 (bytes)
+[Offload] [MIC 0] [Tag 374] [MIC Time]        0.005540(seconds)
+[Offload] [MIC 0] [Tag 374] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 375
+[Offload] [HOST]  [Tag 375] [CPU Time]        0.007013(seconds)
+[Offload] [MIC 0] [Tag 375] [CPU->MIC Data]   2308 (bytes)
+[Offload] [MIC 0] [Tag 375] [MIC Time]        0.003752(seconds)
+[Offload] [MIC 0] [Tag 375] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 376
+[Offload] [HOST]  [Tag 376] [CPU Time]        0.006311(seconds)
+[Offload] [MIC 0] [Tag 376] [CPU->MIC Data]   2212 (bytes)
+[Offload] [MIC 0] [Tag 376] [MIC Time]        0.002481(seconds)
+[Offload] [MIC 0] [Tag 376] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 377
+[Offload] [HOST]  [Tag 377] [CPU Time]        0.010626(seconds)
+[Offload] [MIC 0] [Tag 377] [CPU->MIC Data]   2092 (bytes)
+[Offload] [MIC 0] [Tag 377] [MIC Time]        0.004537(seconds)
+[Offload] [MIC 0] [Tag 377] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 378
+[Offload] [HOST]  [Tag 378] [CPU Time]        0.006147(seconds)
+[Offload] [MIC 0] [Tag 378] [CPU->MIC Data]   1948 (bytes)
+[Offload] [MIC 0] [Tag 378] [MIC Time]        0.003554(seconds)
+[Offload] [MIC 0] [Tag 378] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 379
+[Offload] [HOST]  [Tag 379] [CPU Time]        0.010867(seconds)
+[Offload] [MIC 0] [Tag 379] [CPU->MIC Data]   1780 (bytes)
+[Offload] [MIC 0] [Tag 379] [MIC Time]        0.005806(seconds)
+[Offload] [MIC 0] [Tag 379] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 380
+[Offload] [HOST]  [Tag 380] [CPU Time]        0.006903(seconds)
+[Offload] [MIC 0] [Tag 380] [CPU->MIC Data]   1588 (bytes)
+[Offload] [MIC 0] [Tag 380] [MIC Time]        0.002510(seconds)
+[Offload] [MIC 0] [Tag 380] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 381
+[Offload] [HOST]  [Tag 381] [CPU Time]        0.016968(seconds)
+[Offload] [MIC 0] [Tag 381] [CPU->MIC Data]   1408 (bytes)
+[Offload] [MIC 0] [Tag 381] [MIC Time]        0.005985(seconds)
+[Offload] [MIC 0] [Tag 381] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 382
+[Offload] [HOST]  [Tag 382] [CPU Time]        0.004983(seconds)
+[Offload] [MIC 0] [Tag 382] [CPU->MIC Data]   1240 (bytes)
+[Offload] [MIC 0] [Tag 382] [MIC Time]        0.002938(seconds)
+[Offload] [MIC 0] [Tag 382] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 383
+[Offload] [HOST]  [Tag 383] [CPU Time]        0.014993(seconds)
+[Offload] [MIC 0] [Tag 383] [CPU->MIC Data]   1084 (bytes)
+[Offload] [MIC 0] [Tag 383] [MIC Time]        0.002817(seconds)
+[Offload] [MIC 0] [Tag 383] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 384
+[Offload] [HOST]  [Tag 384] [CPU Time]        0.010982(seconds)
+[Offload] [MIC 0] [Tag 384] [CPU->MIC Data]   940 (bytes)
+[Offload] [MIC 0] [Tag 384] [MIC Time]        0.004931(seconds)
+[Offload] [MIC 0] [Tag 384] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 385
+[Offload] [HOST]  [Tag 385] [CPU Time]        0.010982(seconds)
+[Offload] [MIC 0] [Tag 385] [CPU->MIC Data]   808 (bytes)
+[Offload] [MIC 0] [Tag 385] [MIC Time]        0.004447(seconds)
+[Offload] [MIC 0] [Tag 385] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 386
+[Offload] [HOST]  [Tag 386] [CPU Time]        0.006326(seconds)
+[Offload] [MIC 0] [Tag 386] [CPU->MIC Data]   688 (bytes)
+[Offload] [MIC 0] [Tag 386] [MIC Time]        0.001107(seconds)
+[Offload] [MIC 0] [Tag 386] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 387
+[Offload] [HOST]  [Tag 387] [CPU Time]        0.005644(seconds)
+[Offload] [MIC 0] [Tag 387] [CPU->MIC Data]   580 (bytes)
+[Offload] [MIC 0] [Tag 387] [MIC Time]        0.000983(seconds)
+[Offload] [MIC 0] [Tag 387] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 388
+[Offload] [HOST]  [Tag 388] [CPU Time]        0.010982(seconds)
+[Offload] [MIC 0] [Tag 388] [CPU->MIC Data]   484 (bytes)
+[Offload] [MIC 0] [Tag 388] [MIC Time]        0.004400(seconds)
+[Offload] [MIC 0] [Tag 388] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 389
+[Offload] [HOST]  [Tag 389] [CPU Time]        0.005061(seconds)
+[Offload] [MIC 0] [Tag 389] [CPU->MIC Data]   400 (bytes)
+[Offload] [MIC 0] [Tag 389] [MIC Time]        0.001236(seconds)
+[Offload] [MIC 0] [Tag 389] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 390
+[Offload] [HOST]  [Tag 390] [CPU Time]        0.005948(seconds)
+[Offload] [MIC 0] [Tag 390] [CPU->MIC Data]   328 (bytes)
+[Offload] [MIC 0] [Tag 390] [MIC Time]        0.000403(seconds)
+[Offload] [MIC 0] [Tag 390] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 391
+[Offload] [HOST]  [Tag 391] [CPU Time]        0.005916(seconds)
+[Offload] [MIC 0] [Tag 391] [CPU->MIC Data]   268 (bytes)
+[Offload] [MIC 0] [Tag 391] [MIC Time]        0.001712(seconds)
+[Offload] [MIC 0] [Tag 391] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 392
+[Offload] [HOST]  [Tag 392] [CPU Time]        0.006011(seconds)
+[Offload] [MIC 0] [Tag 392] [CPU->MIC Data]   220 (bytes)
+[Offload] [MIC 0] [Tag 392] [MIC Time]        0.001044(seconds)
+[Offload] [MIC 0] [Tag 392] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 393
+[Offload] [HOST]  [Tag 393] [CPU Time]        0.010317(seconds)
+[Offload] [MIC 0] [Tag 393] [CPU->MIC Data]   184 (bytes)
+[Offload] [MIC 0] [Tag 393] [MIC Time]        0.002161(seconds)
+[Offload] [MIC 0] [Tag 393] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_sweep.c
+[Offload] [MIC 0] [Line]                    145
+[Offload] [MIC 0] [Tag]                     Tag 394
+[Offload] [HOST]  [Tag 394] [CPU Time]        0.005617(seconds)
+[Offload] [MIC 0] [Tag 394] [CPU->MIC Data]   160 (bytes)
+[Offload] [MIC 0] [Tag 394] [MIC Time]        0.000215(seconds)
+[Offload] [MIC 0] [Tag 394] [MIC->CPU Data]   36 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    218
+[Offload] [MIC 0] [Tag]                     Tag 395
+[Offload] [HOST]  [Tag 395] [CPU Time]        0.004793(seconds)
+[Offload] [MIC 0] [Tag 395] [CPU->MIC Data]   52 (bytes)
+[Offload] [MIC 0] [Tag 395] [MIC Time]        0.001023(seconds)
+[Offload] [MIC 0] [Tag 395] [MIC->CPU Data]   28 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    240
+[Offload] [MIC 0] [Tag]                     Tag 396
+[Offload] [HOST]  [Tag 396] [CPU Time]        0.009981(seconds)
+[Offload] [MIC 0] [Tag 396] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 396] [MIC Time]        0.000136(seconds)
+[Offload] [MIC 0] [Tag 396] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    230
+[Offload] [MIC 0] [Tag]                     Tag 397
+[Offload] [HOST]  [Tag 397] [CPU Time]        0.004992(seconds)
+[Offload] [MIC 0] [Tag 397] [CPU->MIC Data]   20 (bytes)
+[Offload] [MIC 0] [Tag 397] [MIC Time]        0.000157(seconds)
+[Offload] [MIC 0] [Tag 397] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_core.c
+[Offload] [MIC 0] [Line]                    306
+[Offload] [MIC 0] [Tag]                     Tag 398
+[Offload] [HOST]  [Tag 398] [CPU Time]        0.158978(seconds)
+[Offload] [MIC 0] [Tag 398] [CPU->MIC Data]   60 (bytes)
+[Offload] [MIC 0] [Tag 398] [MIC Time]        0.157392(seconds)
+[Offload] [MIC 0] [Tag 398] [MIC->CPU Data]   4 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    330
+[Offload] [MIC 0] [Tag]                     Tag 399
+[Offload] [HOST]  [Tag 399] [CPU Time]        0.009980(seconds)
+[Offload] [MIC 0] [Tag 399] [CPU->MIC Data]   28 (bytes)
+[Offload] [MIC 0] [Tag 399] [MIC Time]        0.001302(seconds)
+[Offload] [MIC 0] [Tag 399] [MIC->CPU Data]   12 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    266
+[Offload] [MIC 0] [Tag]                     Tag 400
+[Offload] [HOST]  [Tag 400] [CPU Time]        0.030733(seconds)
+[Offload] [MIC 0] [Tag 400] [CPU->MIC Data]   50 (bytes)
+[Offload] [MIC 0] [Tag 400] [MIC Time]        0.000403(seconds)
+[Offload] [MIC 0] [Tag 400] [MIC->CPU Data]   26 (bytes)
+
+[Offload] [MIC 0] [File]                    ext_kernels.c
+[Offload] [MIC 0] [Line]                    266
+[Offload] [MIC 0] [Tag]                     Tag 401
+[Offload] [HOST]  [Tag 401] [CPU Time]        0.005946(seconds)
+[Offload] [MIC 0] [Tag 401] [CPU->MIC Data]   50 (bytes)
+[Offload] [MIC 0] [Tag 401] [MIC Time]        0.003167(seconds)
+[Offload] [MIC 0] [Tag 401] [MIC->CPU Data]   26 (bytes)
+
+Time 0 -  1 outers, 1 inners.
+Time to convergence: 3.336s
+Warning: did not converge
+
+-------------------------------------------------------------
+
+Profiling Results:
+
+Kernel Name                      Calls        Runtime (ms)
+ext_initialise_parameters_           1               0.000*
+initialise_host_memory               1               4.474*
+transpose_scat_coeff                 1               0.019 
+calc_total_cross_section             1               4.994 
+calc_scattering_cross_section        1               9.995 
+calc_dd_coefficients                 1               5.003 
+calc_time_delta                      1               4.995 
+calc_denominator                     1              27.999 
+calc_outer_source                    1              32.997 
+store_scalar_flux                    3              24.472 
+calc_inner_source                    1               4.511 
+compute_sweep_order                  1               0.047 
+sweep_cell                         368            2951.574 
+reduce_angular                       1             173.997 
+check_convergence                    2              36.728 
+
+Total elapsed time: 3277.332ms, entries * are excluded.
+
+-------------------------------------------------------------
+
+[Offload] [MIC 0] [File]                    ext_core.c
+[Offload] [MIC 0] [Line]                    51
+[Offload] [MIC 0] [Tag]                     Tag 402
+[Offload] [HOST]  [Tag 402] [CPU Time]        0.555144(seconds)
+[Offload] [MIC 0] [Tag 402] [CPU->MIC Data]   240 (bytes)
+[Offload] [MIC 0] [Tag 402] [MIC Time]        0.000443(seconds)
+[Offload] [MIC 0] [Tag 402] [MIC->CPU Data]   3571712000 (bytes)
+
+Original time:     20.126s
+Fortran Runtime:      0.538s
+ 
+ Checking angular flux
+ Max difference out:  8.659739592076221E-015
+ Max difference in:   2.15984023550301     
+ 
+ OCL SUM   259501912.550013     
+ ORIG SUM   259501912.550013     
+ 
+ Checking scalar and moments match
+ Tolerance  1.000000000000000E-003
+ 
+ Scalar flux matched
+ Max error:  3.996802888650564E-015
+ 
+ Scalar flux moments matched
+ Max error:  5.828670879282072E-016
+ 
+ Oh SNAP. That did not converge. But take a look at the Timing Summary anyway!

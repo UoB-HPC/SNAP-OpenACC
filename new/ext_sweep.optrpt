@@ -1,0 +1,247 @@
+
+Begin optimization report for: compute_sweep_order(void)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ext_sweep.c(16,5)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15462: unmasked indexed (or gather) loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 4 
+   remark #15477: vector loop cost: 8.750 
+   remark #15478: estimated potential speedup: 0.450 
+   remark #15479: lightweight vector operations: 2 
+   remark #15481: heavy-overhead vector operations: 1 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(16,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(22,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between planes line 29 and planes line 29
+   remark #15346: vector dependence: assumed OUTPUT dependence between planes line 29 and planes line 29
+
+   LOOP BEGIN at ext_sweep.c(24,9)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between planes line 29 and planes line 29
+      remark #15346: vector dependence: assumed OUTPUT dependence between planes line 29 and planes line 29
+
+      LOOP BEGIN at ext_sweep.c(26,13)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15460: masked strided loads: 1 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 9 
+         remark #15477: vector loop cost: 17.250 
+         remark #15478: estimated potential speedup: 0.520 
+         remark #15479: lightweight vector operations: 3 
+         remark #15481: heavy-overhead vector operations: 2 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ext_sweep.c(26,13)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(35,5)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ ext_sweep.c(37,42) ]
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(42,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between planes line 49 and planes line 53
+   remark #15346: vector dependence: assumed FLOW dependence between planes line 53 and planes line 49
+
+   LOOP BEGIN at ext_sweep.c(44,9)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between planes line 49 and planes line 53
+      remark #15346: vector dependence: assumed FLOW dependence between planes line 53 and planes line 49
+
+      LOOP BEGIN at ext_sweep.c(46,13)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15459: masked indexed (or scatter) stores: 3 
+         remark #15460: masked strided loads: 5 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 37 
+         remark #15477: vector loop cost: 55.500 
+         remark #15478: estimated potential speedup: 0.660 
+         remark #15479: lightweight vector operations: 30 
+         remark #15480: medium-overhead vector operations: 4 
+         remark #15481: heavy-overhead vector operations: 1 
+         remark #15487: type converts: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: sweep_octant(const unsigned int, const unsigned int, const unsigned int, const plane *, const unsigned int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ext_sweep.c(98,2)
+   remark #15382: vectorization support: call to function sweep_cell(const int, const int, const int, const unsigned int, const double *__restrict__, double *__restrict__, const struct cell *__restrict__, const unsigned int *__restrict__, const unsigned int, const unsigned int) cannot be vectorized   [ ext_sweep.c(100,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+===========================================================================
+
+Begin optimization report for: perform_sweep(unsigned int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ext_sweep.c(16,5) inlined into ext_sweep.c(113,18)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15462: unmasked indexed (or gather) loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 4 
+   remark #15477: vector loop cost: 8.750 
+   remark #15478: estimated potential speedup: 0.450 
+   remark #15479: lightweight vector operations: 2 
+   remark #15481: heavy-overhead vector operations: 1 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(16,5) inlined into ext_sweep.c(113,18)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(22,5) inlined into ext_sweep.c(113,18)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between planes.165 line 29 and planes.165 line 29
+   remark #15346: vector dependence: assumed OUTPUT dependence between planes.165 line 29 and planes.165 line 29
+
+   LOOP BEGIN at ext_sweep.c(24,9) inlined into ext_sweep.c(113,18)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between planes.165 line 29 and planes.165 line 29
+      remark #15346: vector dependence: assumed OUTPUT dependence between planes.165 line 29 and planes.165 line 29
+
+      LOOP BEGIN at ext_sweep.c(26,13) inlined into ext_sweep.c(113,18)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15460: masked strided loads: 1 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 13 
+         remark #15477: vector loop cost: 25.250 
+         remark #15478: estimated potential speedup: 0.510 
+         remark #15479: lightweight vector operations: 3 
+         remark #15481: heavy-overhead vector operations: 2 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ext_sweep.c(26,13) inlined into ext_sweep.c(113,18)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(35,5) inlined into ext_sweep.c(113,18)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ ext_sweep.c(37,42) ]
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(42,5) inlined into ext_sweep.c(113,18)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between planes.165 line 49 and planes.165 line 53
+   remark #15346: vector dependence: assumed FLOW dependence between planes.165 line 53 and planes.165 line 49
+
+   LOOP BEGIN at ext_sweep.c(44,9) inlined into ext_sweep.c(113,18)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between planes.165 line 49 and planes.165 line 53
+      remark #15346: vector dependence: assumed FLOW dependence between planes.165 line 53 and planes.165 line 49
+
+      LOOP BEGIN at ext_sweep.c(46,13) inlined into ext_sweep.c(113,18)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15459: masked indexed (or scatter) stores: 3 
+         remark #15460: masked strided loads: 5 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 37 
+         remark #15477: vector loop cost: 55.500 
+         remark #15478: estimated potential speedup: 0.660 
+         remark #15479: lightweight vector operations: 30 
+         remark #15480: medium-overhead vector operations: 4 
+         remark #15481: heavy-overhead vector operations: 1 
+         remark #15487: type converts: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(115,2)
+   remark #15523: loop was not vectorized: cannot compute loop iteration count before executing the loop.
+
+   LOOP BEGIN at ext_sweep.c(98,2) inlined into ext_sweep.c(117,3)
+      remark #15382: vectorization support: call to function sweep_cell(const int, const int, const int, const unsigned int, const double *__restrict__, double *__restrict__, const struct cell *__restrict__, const unsigned int *__restrict__, const unsigned int, const unsigned int) cannot be vectorized   [ ext_sweep.c(100,3) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ext_sweep.c(122,2)
+   remark #15527: loop was not vectorized: function call to free(void *) cannot be vectorized   [ ext_sweep.c(124,3) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: sweep_cell(const int, const int, const int, const unsigned int, const double *__restrict__, double *__restrict__, const struct cell *__restrict__, const unsigned int *__restrict__, const unsigned int, const unsigned int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ext_sweep.c(148,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ext_sweep.c(153,13)
+      remark #15388: vectorization support: reference dd_j has aligned access   [ ext_sweep.c(179,39) ]
+      remark #15388: vectorization support: reference dd_k has aligned access   [ ext_sweep.c(179,39) ]
+      remark #15388: vectorization support: reference mu has aligned access   [ ext_sweep.c(179,39) ]
+      remark #15389: vectorization support: reference mu has unaligned access   [ ext_sweep.c(221,21) ]
+      remark #15389: vectorization support: reference dd_j has unaligned access   [ ext_sweep.c(221,21) ]
+      remark #15389: vectorization support: reference dd_k has unaligned access   [ ext_sweep.c(221,21) ]
+      remark #15389: vectorization support: reference mu has unaligned access   [ ext_sweep.c(234,21) ]
+      remark #15389: vectorization support: reference dd_j has unaligned access   [ ext_sweep.c(234,21) ]
+      remark #15389: vectorization support: reference dd_k has unaligned access   [ ext_sweep.c(234,21) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15301: OpenMP SIMD LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 3 
+      remark #15450: unmasked unaligned unit stride loads: 2 
+      remark #15458: masked indexed (or gather) loads: 12 
+      remark #15459: masked indexed (or scatter) stores: 4 
+      remark #15462: unmasked indexed (or gather) loads: 13 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 952 
+      remark #15477: vector loop cost: 867.500 
+      remark #15478: estimated potential speedup: 1.090 
+      remark #15479: lightweight vector operations: 769 
+      remark #15480: medium-overhead vector operations: 1 
+      remark #15487: type converts: 2 
+      remark #15488: --- end vector loop cost summary ---
+
+      LOOP BEGIN at ext_sweep.c(171,17)
+         remark #25460: No loop optimizations reported
+      LOOP END
+
+      LOOP BEGIN at ext_sweep.c(205,17)
+         remark #25460: No loop optimizations reported
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ext_sweep.c(153,13)
+   <Remainder>
+
+      LOOP BEGIN at ext_sweep.c(171,17)
+         remark #25460: No loop optimizations reported
+      LOOP END
+
+      LOOP BEGIN at ext_sweep.c(205,17)
+         remark #25460: No loop optimizations reported
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
