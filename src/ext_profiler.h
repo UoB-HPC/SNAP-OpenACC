@@ -21,15 +21,17 @@
         char name[_PROFILER_MAX_NAME];
     } profile;
     
+#pragma omp declare target
     // Internal methods
     void _profiler_start_timer();
     void _profiler_end_timer(const char* kernel_name, bool count_for_total);
     void _profiler_print_results();
+#pragma omp end declare target
 
 #else
 
     #define START_PROFILING ; 
-    #define STOP_PROFILING(name) ; 
+    #define STOP_PROFILING(name, tot) ; 
     #define PRINT_PROFILING_RESULTS ;
 
 #endif

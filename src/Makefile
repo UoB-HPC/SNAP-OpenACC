@@ -10,14 +10,16 @@ COPTION  = -Minfo=accel
 FOPTION  = 
 OPENMP 	 = -mp
 TARGET 	 = snap
-CC 		 = mpicc
-FORTRAN  = mpif90
+CC 	 = cc
+FORTRAN  = ftn
 
 # Enables debugging mode
 ifeq ($(DBG),yes)
   #TARGET = snap_db
-  FFLAGS = -g -O0 -check bounds -traceback $(ACCEL) $(FOPTION)
-  CFLAGS = -g -O0 -debug all -traceback $(ACCEL) $(COPTION)
+  #FFLAGS = -g -O0 -check bounds -traceback $(ACCEL) $(FOPTION)
+  FFLAGS = -O0 -g -C -Mchkstk -Ktrap=fp -Mchkfpstk -Mchkptr $(ACCEL)
+  #CFLAGS = -g -O0 -debug all -traceback $(ACCEL) $(COPTION)
+  CFLAGS = -O0 -g -C -Mchkstk -Ktrap=fp -Mchkfpstk $(ACCEL)
 else
   FFLAGS = -O3 $(ACCEL) 
   CFLAGS = -O3 $(ACCEL) $(COPTION) -c99

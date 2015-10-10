@@ -35,13 +35,8 @@ void initialise_parameters(
     int *timesteps_, int *outers_, int *inners_,
     double *epsi_, double *tolr_);
 
-#pragma omp declare target
-
-// Allocates buffers on the host
-void initialise_host_memory(void);
-
 // Allocates buffers on the device
-void initialise_device_memory(
+void initialise_host_memory(
 		double *mu_in, 
 		double *eta_in, 
 		double *xi_in,
@@ -62,8 +57,6 @@ void reduce_angular(void);
 
 // Transposes the scattering coefficient matrix
 double* transpose_scat_coeff(double* scat_coeff_in);
-
-#pragma omp end declare target
 
 // Transposes the scalar flux back to SNAP format
 void ext_get_transpose_scalar_flux_(double *scalar);

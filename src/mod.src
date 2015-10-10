@@ -1,12 +1,6 @@
 #!/bin/bash
 
-module unload intel-mpi/64/4.1.0/024
-module unload languages/gcc-4.8.4
-module unload languages/intel-compiler-15-update-2
-module unload languages/intel-opencl-1.2-4
 module unload openmpi/gcc/64/1.6.5
-module unload openmpi/intel/64/1.6.5
-
-module load mvapich2/pgi/64/1.7-qlc
-module load pgi/64/13.5
-
+module unload languages/gcc-4.8.1
+module load intel-mpi/64/4.1.0/024
+module load languages/intel-compiler-16
