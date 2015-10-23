@@ -11,10 +11,11 @@ void calc_denominator(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop \
+#pragma acc kernels \
     present(denom[:denom_len], total_cross_section[:total_cross_section_len], \
             time_delta[:time_delta_len], mu[:mu_len], dd_j[:dd_j_len], \
             dd_k[:dd_k_len])
+#pragma acc loop collapse(3) independent
     for (unsigned int ind = 0; ind < nx*ny*nz; ind++)
     {
         for (unsigned int g = 0; g < ng; ++g)
@@ -35,8 +36,9 @@ void calc_time_delta(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop \
+#pragma acc kernels \
     present(time_delta[:time_delta_len], velocity[:velocity_len])
+#pragma acc loop independent
     for(int g = 0; g < ng; ++g)
     {
         time_delta(g) = 2.0 / (dt * velocity(g));
@@ -55,7 +57,7 @@ void calc_dd_coefficients(void)
     {
         dd_i = 2.0 / dx;
 
-#pragma acc loop 
+#pragma acc loop independent
         for(int a = 0; a < nang; ++a)
         {
             dd_j(a) = (2.0/dy)*eta(a);
@@ -71,8 +73,9 @@ void calc_total_cross_section(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop \
+#pragma acc kernels \
     present(total_cross_section[:total_cross_section_len], xs[:xs_len], mat[:mat_len])
+#pragma acc loop collapse(4) independent
     for(int k = 0; k < nz; ++k)
     {
         for(int j = 0; j < ny; ++j)
@@ -94,8 +97,9 @@ void calc_scattering_cross_section(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop \
+#pragma acc kernels \
     present(scat_cs[:scat_cs_len], gg_cs[:gg_cs_len], mat[:mat_len])
+#pragma acc loop collapse(5) independent
     for(unsigned int g = 0; g < ng; ++g)
     {
         for (unsigned int k = 0; k < nz; k++)
@@ -121,10 +125,11 @@ void calc_outer_source(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop \
+#pragma acc kernels \
     present(g2g_source[:g2g_source_len], fixed_source[:fixed_source_len], \
             scalar_flux[:scalar_flux_len], mat[:mat_len], lma[:lma_len], \
             scalar_mom[:scalar_mom_len], gg_cs[:gg_cs_len])
+#pragma acc loop collapse(4) independent
     for (unsigned int g1 = 0; g1 < ng; g1++)
     {
         for(int k = 0; k < nz; ++k)
@@ -173,9 +178,10 @@ void calc_inner_source(void)
 {
     START_PROFILING;
 
-#pragma acc parallel loop \
+#pragma acc kernels \
     present(source[:source_len], g2g_source[:g2g_source_len], scat_cs[:scat_cs_len], \
             scalar_flux[:scalar_flux_len], lma[:lma_len], scalar_mom[:scalar_mom_len])
+#pragma acc loop collapse(4) independent
     for (unsigned int g = 0; g < ng; g++)
     {
         for(int k = 0; k < nz; ++k)
@@ -272,61 +278,57 @@ int check_convergence(
     int r = 1;
     int ngt = 0;
 
-#pragma acc parallel reduction(+:ngt) \
+#pragma acc kernels \
     present(old[:scalar_flux_len], new[:scalar_flux_len], groups_todo[:groups_todo_len])
+#pragma acc loop independent reduction(+:ngt) reduction(max:r)
+    for (unsigned int g = 0; g < ng; g++)
     {
-#pragma loop 
-        for (unsigned int g = 0; g < ng; g++)
+        int gr = 0;
+#pragma acc loop reduction(max:gr)
+        for (unsigned int k = 0; k < nz; k++)
         {
-            int gr = 0;
-            for (unsigned int k = 0; k < nz; k++)
+            if (gr) break;
+            for (unsigned int j = 0; j < ny; j++)
             {
                 if (gr) break;
-                for (unsigned int j = 0; j < ny; j++)
+                for (unsigned int i = 0; i < nx; i++)
                 {
-                    if (gr) break;
-                    for (unsigned int i = 0; i < nx; i++)
+                    double val;
+                    if (fabs(old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] > tolr))
                     {
-                        double val;
-                        if (fabs(old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] > tolr))
+                        val = fabs(new[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)]/old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] - 1.0);
+                    }
+                    else
+                    {
+                        val = fabs(new[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] - old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)]);
+                    }
+
+                    if (val > epsi)
+                    {
+                        if (inner)
                         {
-                            val = fabs(new[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)]/old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] - 1.0);
-                        }
-                        else
-                        {
-                            val = fabs(new[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] - old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)]);
+                            gr = 1;
                         }
 
-                        if (val > epsi)
-                        {
-                            if (inner)
-                            {
-                                gr = 1;
-                            }
-
-                            r = 0;
-                            break;
-                        }
+                        r = 0;
+                        break;
                     }
                 }
             }
-
-            // Add g to the list of groups to do if we need to do it
-            if (inner && gr)
-            {
-                groups_todo[ngt] = g;
-                ngt += 1;
-            }
         }
 
-        // Check all inner groups are done in outer convergence test
-        if (!inner)
+        // Add g to the list of groups to do if we need to do it
+        if (inner && gr)
         {
-            if (ngt != 0)
-            {
-                r = 0;
-            }
+            groups_todo[ngt] = g;
+            ngt += 1;
         }
+    }
+
+    // Check all inner groups are done in outer convergence test
+    if (!inner && ngt != 0)
+    {
+        r = 0;
     }
 
     if(inner)
@@ -345,10 +347,10 @@ int check_convergence(
 
 void initialise_device_memory(void)
 {
-   zero_scalar_flux();
-   zero_edge_flux_buffers();
-   zero_flux_moments_buffer();
-   zero_flux_in_out();
+    zero_scalar_flux();
+    zero_edge_flux_buffers();
+    zero_flux_moments_buffer();
+    zero_flux_in_out();
 
 #pragma acc parallel loop \
     present(g2g_source[:g2g_source_len])

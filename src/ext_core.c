@@ -303,25 +303,24 @@ void reduce_angular(void)
     double* angular = (global_timestep % 2 == 0) ? flux_out : flux_in;
     double* angular_prev = (global_timestep % 2 == 0) ? flux_in : flux_out;
 
-    for(unsigned int o = 0; o < 8; ++o)
-    {
-#pragma acc parallel loop \
-        present(weights[:weights_len], angular[:flux_in_len], angular_prev[:flux_in_len], \
+#pragma acc kernels \
+         present(weights[:weights_len], angular[:flux_in_len], angular_prev[:flux_in_len], \
                 scat_coeff[:scat_coeff_len], scalar_flux[:scalar_flux_len], \
                 scalar_mom[:scalar_mom_len])
+    for(unsigned int o = 0; o < 8; ++o)
+    {
+#pragma acc loop independent collapse(2)
         for(unsigned int ind = 0; ind < nx*ny*nz; ++ind)
         {
             for (unsigned int g = 0; g < ng; g++)
             {
-                const int tg = time_delta(g) != 0.0;
-
                 for (unsigned int a = 0; a < nang; a++)
                 {
                     const double weight = weights(a);
                     const double ang = angular(o,ind,g,a);
                     const double ang_p = angular_prev(o,ind,g,a);
 
-                    if (tg)
+                    if (time_delta(g) != 0.0)
                     {
                         scalar_flux[g+ind*ng] += weight * (0.5 * (ang + ang_p));
 
