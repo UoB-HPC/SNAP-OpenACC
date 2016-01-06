@@ -55,7 +55,7 @@ plane *compute_sweep_order(void)
         }
     }
 
-    STOP_PROFILING(__func__, true);
+    STOP_PROFILING(__func__);
 
     return planes;
 }
@@ -149,15 +149,14 @@ void sweep_cell(
     present(groups_todo[:groups_todo_len], source[:source_len], \
             scat_coeff[:scat_coeff_len], flux_i[:flux_i_len], \
             flux_j[:flux_j_len], flux_k[:flux_k_len], dd_j[:dd_j_len], \
-            dd_j[:dd_j_len], mu[:mu_len], l_flux_in[:l_flux_in_len], \
+            dd_k[:dd_k_len], mu[:mu_len], l_flux_in[:l_flux_in_len], \
             l_flux_out[:l_flux_out_len], time_delta[:time_delta_len], \
             total_cross_section[:total_cross_section_len], denom[:denom_len])
-#pragma acc loop collapse(2) independent
+#pragma acc loop independent collapse(3) vector(128)
     for(int nc = 0; nc < num_cells; ++nc)
     {
         for(int tg = 0; tg < num_groups_todo; ++tg)
         {
-#pragma acc loop independent vector(128)
             for(int a = 0; a < nang; ++a)
             {
                 // Get indexes for angle and group
@@ -275,5 +274,5 @@ void sweep_cell(
         }
     }
 
-    STOP_PROFILING(__func__, true);
+    STOP_PROFILING(__func__);
 }

@@ -30,14 +30,16 @@ void ext_solve_(
     copyin(mu[:mu_len], eta[:eta_len], xi[:xi_len], weights[:weights_len], \
             velocity[:velocity_len], mat[:mat_len], fixed_source[:fixed_source_len], \
             gg_cs[:gg_cs_len], lma[:lma_len], xs[:xs_len], \
-            scat_coeff[:scat_coeff_len]), \
+            scat_coeff[:scat_coeff_len])
+#pragma acc declare \
     create(flux_i[:flux_i_len], flux_j[:flux_j_len], flux_k[:flux_k_len], \
             dd_j[:dd_j_len], dd_k[:dd_k_len], scat_cs[:scat_cs_len], \
             total_cross_section[:total_cross_section_len], denom[:denom_len], \
             source[:source_len], time_delta[:time_delta_len], \
             groups_todo[:groups_todo_len], g2g_source[:g2g_source_len], \
             old_inner_scalar[:scalar_flux_len], new_scalar[:scalar_flux_len], \
-            old_outer_scalar[:scalar_flux_len]), \
+            old_outer_scalar[:scalar_flux_len])
+#pragma acc declare \
     copy(flux_in[:flux_in_len], flux_out[:flux_out_len], \
             scalar_mom[:scalar_mom_len], scalar_flux[:scalar_flux_len])
     {
@@ -109,7 +111,7 @@ void initialise_host_memory(
     lma = lma_in;
     xs = xs_in;
 
-    STOP_PROFILING(__func__, false);
+    STOP_PROFILING(__func__);
 
     scat_coeff = transpose_scat_coeff(scat_coeff_in);
 }
@@ -155,7 +157,7 @@ void ext_initialise_parameters_(
         printf("Warning: nx and ichunk are different - expect the answers to be wrong...\n");
     }
 
-    STOP_PROFILING(__func__, false);
+    STOP_PROFILING(__func__);
 }
 
 
@@ -201,15 +203,12 @@ void iterate(void)
             calc_dd_coefficients();
             calc_time_delta();
             calc_denominator();
-            printf("calced\n");
 
             // Compute the outer source
             calc_outer_source();
-            printf("calc outer\n");
 
             // Save flux
             store_scalar_flux(old_outer_scalar);
-            printf("store scalar\n");
 
             // Inner loop
             for (unsigned int i = 0; i < inners; i++)
@@ -218,7 +217,6 @@ void iterate(void)
 
                 // Compute the inner source
                 calc_inner_source();
-                printf("calc_inner\n");
 
                 // Save flux
                 store_scalar_flux(old_inner_scalar);
@@ -306,7 +304,7 @@ void reduce_angular(void)
 #pragma acc kernels \
          present(weights[:weights_len], angular[:flux_in_len], angular_prev[:flux_in_len], \
                 scat_coeff[:scat_coeff_len], scalar_flux[:scalar_flux_len], \
-                scalar_mom[:scalar_mom_len])
+                scalar_mom[:scalar_mom_len], time_delta[:time_delta_len])
     for(unsigned int o = 0; o < 8; ++o)
     {
 #pragma acc loop independent collapse(2)
@@ -345,7 +343,7 @@ void reduce_angular(void)
         }
     }
 
-    STOP_PROFILING(__func__, true);
+    STOP_PROFILING(__func__);
 }
 
 
@@ -438,7 +436,7 @@ double* transpose_scat_coeff(double* scat_coeff_in)
         }
     }
 
-    STOP_PROFILING(__func__,true);
+    STOP_PROFILING(__func__);
 
     return scat_coeff;
 }

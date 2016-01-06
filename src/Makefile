@@ -3,27 +3,35 @@
 #
 
 # User defined parameters
+COMPILER = CRAY
 DBG 	 = no
 PROFILER = yes
-ACCEL	 = -acc -ta=nvidia
-COPTION  = -Minfo=accel
-FOPTION  = 
-OPENMP 	 = -mp
 TARGET 	 = snap
-CC 	 = cc
+CC 	     = cc
 FORTRAN  = ftn
+
+OMP_PGI  = -mp
+OMP_CRAY = 
 
 # Enables debugging mode
 ifeq ($(DBG),yes)
   #TARGET = snap_db
   #FFLAGS = -g -O0 -check bounds -traceback $(ACCEL) $(FOPTION)
-  FFLAGS = -O0 -g -C -Mchkstk -Ktrap=fp -Mchkfpstk -Mchkptr $(ACCEL)
+  FFLAGS_PGI 		= -O0 -g -C -Mchkstk -Ktrap=fp -Mchkfpstk -Mchkptr -acc -ta=nvidia -fast #-em -h list=a
+  FFLAGS_CRAY       = -O0 -g -em -eD
   #CFLAGS = -g -O0 -debug all -traceback $(ACCEL) $(COPTION)
-  CFLAGS = -O0 -g -C -Mchkstk -Ktrap=fp -Mchkfpstk $(ACCEL)
+  CFLAGS_PGI		= -O0 -g -C -Mchkstk -Ktrap=fp -Mchkfpstk -acc -ta=nvidia -fast #-em -h list=a 
+  CFLAGS_CRAY       = -O0 -g -em -eD
 else
-  FFLAGS = -O3 $(ACCEL) 
-  CFLAGS = -O3 $(ACCEL) $(COPTION) -c99
+  FFLAGS_PGI	   = -O3 -acc -ta=nvidia -fast #-em -h list=a 
+  FFLAGS_CRAY      = -em -ra -h acc_model=fast_addr:no_deep_copy:auto_async_all
+  CFLAGS_PGI	   = -O3 -acc -ta=nvidia -fast #-em -h list=a -Minfo=accel #-c99
+  CFLAGS_CRAY      = -em -h list=a
 endif
+
+OMP = $(OMP_$(COMPILER))
+CFLAGS = $(CFLAGS_$(COMPILER)) $(OMP) $(MIC) $(COPTION)
+FFLAGS = $(FFLAGS_$(COMPILER)) $(OMP) $(MIC) $(FOPTION)
 
 CFLAGS2 = -lm
 FFLAG2 =
@@ -103,7 +111,7 @@ ext_init.o:	ext_kernels.h
 # Cleanup
 #
 clean:
-	rm -f *.o *.mod *.bc sweep_kernels.h
+	rm -f *.o *.oo *.lst *.cub *.ptx *.mod *.bc sweep_kernels.h
 
 #
 # Count lines of code

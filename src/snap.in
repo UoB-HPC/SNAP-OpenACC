@@ -13,14 +13,13 @@ npez=1
 ndimen=3
 
 nx=16
-lx=4.8
+lx=1.0
 ny=16
-ly=4.8
+ly=1.0
 nz=16
-lz=4.8
+lz=1.0
 
 ichunk=16
-
 nmom=2
 nang=136
 ng=50
@@ -30,11 +29,11 @@ src_opt=0
 timedep=1
 
 it_det=0
-tf=1.00
+tf=0.01
 nsteps=1
 
-iitm=1
-oitm=1
+iitm=5
+oitm=20
 
 epsi=1.0E-5
 

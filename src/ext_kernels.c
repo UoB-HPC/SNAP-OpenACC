@@ -28,7 +28,7 @@ void calc_denominator(void)
         }
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 }
 
 // Calculate the time delta
@@ -44,7 +44,7 @@ void calc_time_delta(void)
         time_delta(g) = 2.0 / (dt * velocity(g));
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 }
 
 // Calculate the diamond difference coefficients
@@ -65,7 +65,7 @@ void calc_dd_coefficients(void)
         }
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 }
 
 // Calculate the total cross section from the spatial mapping
@@ -90,7 +90,7 @@ void calc_total_cross_section(void)
         }
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 }
 
 void calc_scattering_cross_section(void)
@@ -117,7 +117,7 @@ void calc_scattering_cross_section(void)
         }
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 }
 
 // Calculate the outer source
@@ -170,7 +170,7 @@ void calc_outer_source(void)
         }
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 }
 
 // Calculate the inner source
@@ -206,7 +206,7 @@ void calc_inner_source(void)
         }
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 }
 
 void zero_flux_in_out(void)
@@ -280,55 +280,35 @@ int check_convergence(
 
 #pragma acc kernels \
     present(old[:scalar_flux_len], new[:scalar_flux_len], groups_todo[:groups_todo_len])
-#pragma acc loop independent reduction(+:ngt) reduction(max:r)
     for (unsigned int g = 0; g < ng; g++)
     {
         int gr = 0;
-#pragma acc loop reduction(max:gr)
-        for (unsigned int k = 0; k < nz; k++)
+#pragma acc loop independent reduction(+:ngt) reduction(min:r)
+        for (unsigned int ind = 0; ind < nx*ny*nz; ind++)
         {
-            if (gr) break;
-            for (unsigned int j = 0; j < ny; j++)
+            double val;
+            if (fabs(old[g+(ng*ind)] > tolr))
             {
-                if (gr) break;
-                for (unsigned int i = 0; i < nx; i++)
+                val = fabs(new[g+(ng*ind)]/old[g+(ng*ind)] - 1.0);
+            }
+            else
+            {
+                val = fabs(new[g+(ng*ind)] - old[g+(ng*ind)]);
+            }
+
+            if (val > epsi)
+            {
+                // Hacked out for OpenACC
+                if (inner && ngt > 0 && groups_todo[ngt-1] != g)
                 {
-                    double val;
-                    if (fabs(old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] > tolr))
-                    {
-                        val = fabs(new[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)]/old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] - 1.0);
-                    }
-                    else
-                    {
-                        val = fabs(new[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)] - old[g+(ng*i)+(ng*nx*j)+(ng*nx*ny*k)]);
-                    }
-
-                    if (val > epsi)
-                    {
-                        if (inner)
-                        {
-                            gr = 1;
-                        }
-
-                        r = 0;
-                        break;
-                    }
+                    groups_todo[ngt] = g;
+                    ngt++;
                 }
+
+                r = 0;
+                //break;
             }
         }
-
-        // Add g to the list of groups to do if we need to do it
-        if (inner && gr)
-        {
-            groups_todo[ngt] = g;
-            ngt += 1;
-        }
-    }
-
-    // Check all inner groups are done in outer convergence test
-    if (!inner && ngt != 0)
-    {
-        r = 0;
     }
 
     if(inner)
@@ -340,7 +320,7 @@ int check_convergence(
         *num_groups_todo += ngt;
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 
     return r;
 }
@@ -372,5 +352,5 @@ void store_scalar_flux(double* to)
         to[i] = scalar_flux[i];
     }
 
-    STOP_PROFILING(__func__, 1);
+    STOP_PROFILING(__func__);
 }
